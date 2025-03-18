@@ -1,0 +1,458 @@
+[
+    {
+        "imagen": "./images/oficial-todo-sobre-los-nuevos-volkswagen-gol-trend-y-voyage-2016.webp",
+        "marca": "Volkswagen ",
+        "modelo": "Gol Trend / Voyage 1.6 8v",
+        "año": "2009->",
+        "codigos": [
+            "172795",
+            "4011558729509",
+            "18958",
+            "15424",
+            "4011558807948",
+            "12167"
+        ],
+        "detalles": [
+            "Lubricante: Elaion Auro Plus 540",
+            "Filtro de Aceite",
+            "Filtro de Aire",
+            "Filtro de Combustible",
+            "Filtro de Habitáculo",
+            "Revisión de 36 puntos",
+            "Escaneo Electrónico"
+        ]
+    },
+    {
+        "imagen": "./images/Chevrolet-Prisma-2019-1-1024x683.jpg",
+        "marca": "Chevrolet",
+        "modelo": "Prisma / Onix 1.4",
+        "año": "2013->2019",
+        "codigos": [
+            "171795",
+            "4011558744502",
+            "15550",
+            "15539",
+            "12167"
+        ],
+        "detalles": [
+            "Lubricante : Elaion Auro D1 530",
+            "Filtro de Aceite",
+            "Filtro de Aire",
+            "Filtro de Habitáculo",
+            "Revisión de 36 puntos",
+            "Escaneo Electrónico"
+        ]
+    },
+    {
+        "imagen": "./images/el-nuevo-peugeot-208-se-presenta-el-1deg-de-julio-en-argentina.webp",
+        "marca": "Peugeot",
+        "modelo": "208 vti 1.6 / 1.4",
+        "año": "",
+        "codigos": [
+            "172895",
+            "15067",
+            "15345",
+            "15141",
+            "15576",
+            "12167"
+        ],
+        "detalles": [
+            "Lubricante: Elaion Auro Fr",
+            "Filtro de Aceite",
+            "Filtro de Aire",
+            "Filtro de Combustible",
+            "Filtro de Habitáculo",
+            "Revisión de 36 puntos",
+            "Escaneo Electrónico"
+        ]
+    },
+    {
+        "imagen": "https://cronos.fiat.com.ar/assets/images/img-version-cronos-drive-13-at.png",
+        "marca": "Fiat",
+        "modelo": "Cronos /Argo 1.3 Firefly",
+        "año": "",
+        "codigos": [
+            "170995",
+            "4011558758004",
+            "4011558080624",
+            "18711",
+            "12167"
+        ],
+        "detalles": [
+            "Lubricante: Elaion Auro D1 020 ",
+            "Filtro de Aceite",
+            "Filtro de Aire",
+            "Filtro de Combustible",
+            "Revisión de 36 puntos",
+            "Escaneo Electrónico"
+        ]
+    },
+    {
+        "imagen": "https://cdn.motor1.com/images/mgl/819Po/s1/lanzamiento-ford-fiesta-kinetic-mercosur.jpg",
+        "marca": "Ford",
+        "modelo": "Fiesta Kinetic 1.6",
+        "año": "",
+        "codigos": [
+            "171895",
+            "15400",
+            "4011558352998",
+            "18726",
+            "12167"
+        ],
+        "detalles": [
+            "Lubricante: Elaion Auro FE 530 ",
+            "Filtro de Aceite",
+            "Filtro de Aire",
+            "Filtro de Combustible",
+            "Revisión de 36 puntos",
+            "Escaneo Electrónico"
+        ]
+    },
+    {
+        "imagen": "https://www.jeep.com.ar/content/dam/cross-regional/latam/jeep/es_ar/2022/renegade-2022/sport-at6/Renegade_Sport_Branco_Polar-at6-modelizer-new.png.img.1440.png",
+        "marca": "Jeep",
+        "modelo": "Renegade 1.8 E-torq",
+        "año": "",
+        "codigos": [
+            "171895",
+            "171896",
+            "15353",
+            "4011558088132",
+            "4011558621636",
+            "12167"
+        ],
+        "detalles": [
+            "Lubricante: Elaion Auro FE 530 ",
+            "Filtro de Aceite",
+            "Filtro de Aire",
+            "Filtro de Combustible",
+            "Revisión de 36 puntos",
+            "Escaneo Electrónico"
+        ]
+    },
+    {
+        "imagen": "https://cdn.motor1.com/images/mgl/90Xky/s3/lanzamiento-toyota-etios-2018.jpg",
+        "marca": "Toyota",
+        "modelo": "Etios 1.5",
+        "año": "",
+        "codigos": [
+            "172895",
+            "18580",
+            "4011558086305",
+            "4011558658670",
+            "12167"
+        ],
+        "detalles": [
+            "Lubricante: Elaion Auro Fr",
+            "Filtro de Aceite",
+            "Filtro de Aire",
+            "Filtro de Habitáculo",
+            "Revisión de 36 puntos",
+            "Escaneo Electrónico"
+        ]
+    },
+    {
+        "imagen": "https://cdn.motor1.com/images/mgl/Rvkqw/s3/critica-chevrolet-cruze-ii-1-4-turbo.webp",
+        "marca": "Chevrolet",
+        "modelo": "Cruze 1.4 Turbo",
+        "año": "",
+        "codigos": [
+            "170995",
+            "170996",
+            "4011558094072",
+            "4011558084448",
+            "12167"
+        ],
+        "detalles": [
+            "Lubricante: Elaion Auro D1 020",
+            "Filtro de Aceite",
+            "Filtro de Aire",
+            "Revisión de 36 puntos",
+            "Escaneo Electrónico"
+        ]
+    },
+    {
+        "imagen": "https://www.zingaro.com.ar/wp-content/uploads/2019/09/ka-2.png",
+        "marca": "Ford",
+        "modelo": "Ka Dragon 1.5",
+        "año": "",
+        "codigos": [
+            "171895",
+            "15400",
+            "4011558340506",
+            "18726",
+            "12167"
+        ],
+        "detalles": [
+            "Lubricante: Elaion Auro FE 530 ",
+            "Filtro de Aceite",
+            "Filtro de Aire",
+            "Filtro de Combustible",
+            "Revisión de 36 puntos",
+            "Escaneo Electrónico"
+        ]
+    },
+    {
+        "imagen": "https://www.autodato.com/wp-content/uploads/2014/02/Ford-Ecosport.jpg.webp",
+        "marca": "Ford",
+        "modelo": "Ecosport 1.6 Sigma",
+        "año": "2014->",
+        "codigos": [
+            "171895",
+            "15400",
+            "4011558352998",
+            "18726",
+            "12167"
+        ],
+        "detalles": [
+            "Lubricante: Elaion Auro FE 530 ",
+            " Filtro de Aceite",
+            " Filtro de Aire",
+            " Filtro de Combustible",
+            " Revisión de 36 puntos",
+            " Escaneo Electrónico"
+        ]
+    },
+    {
+        "imagen": "https://i0.wp.com/autoaldia.tv/wp-content/uploads/2015/10/Volkswagen-Suran-2015-1.jpg?fit=672%2C420&ssl=1&w=640",
+        "marca": "Volkswagen",
+        "modelo": "Suran 1.6 16v",
+        "año": "2015->",
+        "codigos": [
+            "172795",
+            "172796",
+            "15502",
+            "15979",
+            "18739",
+            "4011558807948",
+            "12167"
+        ],
+        "detalles": [
+            "Lubricante: Elaion Auro Plus 540  ",
+            " Filtro de Aceite",
+            " Filtro de Aire",
+            " Filtro de Combustible",
+            "Habitáculo",
+            " Revisión de 36 puntos",
+            " Escaneo Electrónico"
+        ]
+    },
+    {
+        "imagen": "https://noticias.coches.com/wp-content/uploads/2014/07/ford_ecosport-2007_r4.jpg",
+        "marca": "Ford",
+        "modelo": "Ecosport 1.6 Zetec Rocam",
+        "año": "2003->",
+        "codigos": [
+            "171895",
+            "171896",
+            "18617",
+            "15148",
+            "18944",
+            "12167"
+        ],
+        "detalles": [
+            "Lubricante: Elaion Auro FE 530 ",
+            " Filtro de Aceite",
+            " Filtro de Aire",
+            " Filtro de Combustible",
+            " Revisión de 36 puntos",
+            " Escaneo Electrónico"
+        ]
+    },
+    {
+        "imagen": "https://maipuford.com.ar/wp-content/uploads/sites/6/2021/12/image.imgs_.full_.high-2-2-753x502.jpg.webp",
+        "marca": "Ford ",
+        "modelo": "Ecosport 1.5 Dragon",
+        "año": "2018->",
+        "codigos": [
+            "171895",
+            "15400",
+            "4011558340506",
+            "18726",
+            "12167"
+        ],
+        "detalles": [
+            "Lubricante: Elaion Auro FE 530 ",
+            " Filtro de Aceite",
+            " Filtro de Aire",
+            " Filtro de Combustible",
+            " Revisión de 36 puntos",
+            " Escaneo Electrónico"
+        ]
+    },
+    {
+        "imagen": "https://stellantis3.dam-broadcast.com/medias/domain12808/images/folders/308782-191b4.jpg",
+        "marca": "Fiat ",
+        "modelo": "Toro 2.0 Turbodiesel",
+        "año": "2016->",
+        "codigos": [
+            "172695",
+            "172696",
+            "16229",
+            "4011558088132",
+            "16234",
+            "12167"
+        ],
+        "detalles": [
+            "Lubricante: Elaion Auro DPF 530 ",
+            " Filtro de Aceite",
+            " Filtro de Aire",
+            " Filtro de Combustible",
+            " Revisión de 36 puntos",
+            " Escaneo Electrónico"
+        ]
+    },
+    {
+        "imagen": "https://cdn.motor1.com/images/mgl/zz0O6/s1/lanzamiento-volkswagen-amarok-2017.webp",
+        "marca": "Volkswagen",
+        "modelo": "Amarok 2.0 ",
+        "año": "2015->",
+        "codigos": [
+            "172695",
+            "172695",
+            "15407",
+            "15169",
+            "4011558353834",
+            "15386",
+            "12167"
+        ],
+        "detalles": [
+            "Lubricante: Elaion Auro DPF 530 ",
+            " Filtro de Aceite",
+            " Filtro de Aire",
+            " Filtro de Combustible",
+            "Filtro de Habitáculo",
+            " Revisión de 36 puntos",
+            " Escaneo Electrónico"
+        ]
+    },
+    {
+        "imagen": "https://autofinancia.com.ar/wp-content/uploads/2021/10/MobiLike34.jpeg",
+        "marca": "Fiat ",
+        "modelo": "Mobi 1.0 L",
+        "año": "2016->",
+        "codigos": [
+            "171895",
+            "18572",
+            "4011558072872",
+            "4011558621636",
+            "12167"
+        ],
+        "detalles": [
+            "Lubricante: Elaion Auro FE 530 ",
+            " Filtro de Aceite",
+            " Filtro de Aire",
+            " Filtro de Combustible",
+            " Revisión de 36 puntos",
+            " Escaneo Electrónico"
+        ]
+    },
+    {
+        "imagen": "https://i.pinimg.com/736x/8c/05/63/8c0563f611199967f6a9ab2efa9c517d.jpg",
+        "marca": "Volkswagen",
+        "modelo": "Gol 1.4 Power/Country",
+        "año": "2010->",
+        "codigos": [
+            "172795",
+            "18622",
+            "18310",
+            "15424",
+            "12167"
+        ],
+        "detalles": [
+            "Lubricante: Elaion Auro Plus 540",
+            " Filtro de Aceite",
+            " Filtro de Aire",
+            " Filtro de Combustible",
+            " Revisión de 36 puntos",
+            " Escaneo Electrónico"
+        ]
+    },
+    {
+        "imagen": "https://cdn.motor1.com/images/mgl/vR9pR/s1/lanzamiento-chevrolet-aveo-g3.jpg",
+        "marca": "Chevrolet ",
+        "modelo": "Aveo 1.6 ",
+        "año": "2005->",
+        "codigos": [
+            "171795",
+            "4011558744502",
+            "18959",
+            "15351",
+            "12167"
+        ],
+        "detalles": [
+            "Lubricante : Elaion Auro D1 530",
+            " Filtro de Aceite",
+            " Filtro de Aire",
+            " Filtro de Combustible",
+            " Revisión de 36 puntos",
+            " Escaneo Electrónico \t"
+        ]
+    },
+    {
+        "imagen": "https://cdn.motor1.com/images/mgl/B39ej/s1/lanzamiento-peugeot-partner-2018.jpg",
+        "marca": "Peugeot ",
+        "modelo": "Partner Hdi 1.6 ",
+        "año": "2011->",
+        "codigos": [
+            "172995",
+            "18484",
+            "15397",
+            "15504",
+            "15610",
+            "12167"
+        ],
+        "detalles": [
+            "Lubricante: Elaion Auro Fr",
+            " Filtro de Aceite",
+            " Filtro de Aire",
+            " Filtro de Combustible",
+            " Filtro de Habitáculo",
+            " Revisión de 36 puntos",
+            " Escaneo Electrónico"
+        ]
+    },
+    {
+        "imagen": "https://cdn.motor1.com/images/mgl/B3O9j/s3/lanzamiento-renault-clio-mio.jpg",
+        "marca": "Renault",
+        "modelo": "Clio Mio 1.2 ",
+        "año": "2012->",
+        "codigos": [
+            "172995",
+            "18577",
+            "18416",
+            "15141",
+            "12167"
+        ],
+        "detalles": [
+            "Lubricante: Elaion Auro Fr 540",
+            " Filtro de Aceite",
+            " Filtro de Aire",
+            " Filtro de Combustible",
+            "Revisión de 36 puntos",
+            " Escaneo Electrónico"
+        ]
+    },
+    {
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTckvzcugobl3ZKteu8OHV3543Rdl3OD2KjcQ&s",
+        "marca": "Renault",
+        "modelo": "Kangoo 1.6 16v K4M",
+        "año": "2008->",
+        "codigos": [
+            "172995",
+            "172996",
+            "18624",
+            "18042",
+            "15141",
+            "12167"
+        ],
+        "detalles": [
+            "Lubricante: Elaion Auro Fr 540",
+            " Filtro de Aceite",
+            " Filtro de Aire",
+            " Filtro de Combustible",
+            " Revisión de 36 puntos",
+            " Escaneo Electrónico"
+        ]
+    }
+]
