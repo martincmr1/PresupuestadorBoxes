@@ -15,9 +15,9 @@ function BuscarModelo({ setProductos }) {
     fetch('https://api-boxes-default-rtdb.firebaseio.com/productos.json')
       .then(res => res.json())
       .then(data => {
-        const productosSeleccionados = modelo.codigos.map(codigo =>
-          data.find(p => p.codigo === codigo.toString())
-        ).filter(Boolean);
+        const productosSeleccionados = modelo.codigos
+          .map(codigo => data.find(p => p.codigo === codigo.toString()))
+          .filter(Boolean);
         setProductos(productosSeleccionados);
       })
       .catch(err => console.error('Error cargando productos:', err));
@@ -33,9 +33,14 @@ function BuscarModelo({ setProductos }) {
         onChange={(e) => setFiltro(e.target.value)}
       />
       <ul className="list-group mt-2">
-        {modelos.filter(m => m.modelo.toLowerCase().includes(filtro.toLowerCase()))
+        {modelos
+          .filter(m => filtro.length > 0 && m.modelo.toLowerCase().includes(filtro.toLowerCase())) // 🔥 Solo muestra si hay match
           .map((modelo, index) => (
-            <li key={index} className="list-group-item list-group-item-action" onClick={() => handleSelect(modelo)}>
+            <li 
+              key={index} 
+              className="list-group-item list-group-item-action" 
+              onClick={() => handleSelect(modelo)}
+            >
               {modelo.marca} - {modelo.modelo}
             </li>
           ))}
