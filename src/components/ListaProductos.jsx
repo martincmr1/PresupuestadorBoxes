@@ -1,32 +1,6 @@
 import React from "react";
-import { FaPrint, FaFilePdf } from "react-icons/fa";
-import html2pdf from "html2pdf.js";
 
-function ListaProductos({ productos, setProductos, presupuestoRef }) {
-  const prepararParaExportar = () => {
-    document.querySelectorAll(".ocultar-al-exportar").forEach((el) => (el.style.display = "none"));
-  };
-
-  const restaurarDespuesDeExportar = () => {
-    document.querySelectorAll(".ocultar-al-exportar").forEach((el) => (el.style.display = "block"));
-  };
-
-  const imprimirPresupuesto = () => {
-    prepararParaExportar();
-    setTimeout(() => {
-      window.print();
-      setTimeout(restaurarDespuesDeExportar, 500);
-    }, 300);
-  };
-
-  const exportarPDF = () => {
-    prepararParaExportar();
-    setTimeout(() => {
-      html2pdf().from(presupuestoRef.current).save("Presupuesto.pdf");
-      setTimeout(restaurarDespuesDeExportar, 500);
-    }, 300);
-  };
-
+function ListaProductos({ productos, setProductos }) {
   const total = productos.reduce((acc, p) => acc + (p.precio * (p.cantidad || 1)), 0);
   const totalCuotas = total / 6;
 
@@ -72,7 +46,6 @@ function ListaProductos({ productos, setProductos, presupuestoRef }) {
         </button>
       </div>
 
-      {/* Contenido exportable */}
       <div className="p-3 border bg-white mt-4 presupuesto-print-inner">
         <table className="table">
           <thead>
@@ -94,21 +67,11 @@ function ListaProductos({ productos, setProductos, presupuestoRef }) {
             ))}
           </tbody>
         </table>
-        <h5 className="text-end fw-bold">Total: ${total.toFixed(0)}</h5>
+        <h5 className="text-end fw-bold">Total Servicio Premium: ${total.toFixed(0)}</h5>
         <h6 className="text-end text-muted">
           Total en 6 cuotas sin interés con Visa o Mastercard (Exclusivo App YPF): 
           <strong> ${totalCuotas.toFixed(0)} x 6</strong>
         </h6>
-      </div>
-
-      {/* Botones ocultos al exportar/imprimir */}
-      <div className="text-end my-3 ocultar-al-exportar no-print">
-        <button className="btn btn-primary me-2" onClick={imprimirPresupuesto}>
-          <FaPrint /> Imprimir
-        </button>
-        <button className="btn btn-danger" onClick={exportarPDF}>
-          <FaFilePdf /> Exportar PDF
-        </button>
       </div>
     </div>
   );

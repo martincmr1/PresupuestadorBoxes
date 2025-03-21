@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
-function BuscarModelo({ setProductos }) {
+function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
   const [modelos, setModelos] = useState([]);
   const [filtro, setFiltro] = useState('');
-  const [vehiculoSeleccionado, setVehiculoSeleccionado] = useState(null); // 🔹 Guarda el vehículo seleccionado
+  const [seleccionado, setSeleccionado] = useState(null);
 
   useEffect(() => {
     fetch('/services.json')
@@ -13,7 +13,8 @@ function BuscarModelo({ setProductos }) {
   }, []);
 
   const handleSelect = (modelo) => {
-    setVehiculoSeleccionado(modelo); // 🔹 Guarda el vehículo seleccionado
+    setSeleccionado(modelo);
+    setVehiculoSeleccionado(modelo); // ✅ importante para usarlo en App.jsx
 
     fetch('https://api-boxes-default-rtdb.firebaseio.com/productos.json')
       .then(res => res.json())
@@ -28,8 +29,8 @@ function BuscarModelo({ setProductos }) {
 
   return (
     <div className="mb-3">
-      {/* 🔹 Input de búsqueda que se oculta al imprimir */}
-      <div className="no-print">
+      {/* 🔻 Se oculta al imprimir/exportar */}
+      <div className="ocultar-al-exportar">
         <input
           type="text"
           className="form-control"
@@ -41,9 +42,9 @@ function BuscarModelo({ setProductos }) {
           {modelos
             .filter(m => filtro.length > 0 && m.modelo.toLowerCase().includes(filtro.toLowerCase()))
             .map((modelo, index) => (
-              <li 
-                key={index} 
-                className="list-group-item list-group-item-action" 
+              <li
+                key={index}
+                className="list-group-item list-group-item-action"
                 onClick={() => handleSelect(modelo)}
               >
                 {modelo.marca} - {modelo.modelo}
@@ -52,10 +53,10 @@ function BuscarModelo({ setProductos }) {
         </ul>
       </div>
 
-      {/* 🔹 Solo muestra "Vehículo:" seguido del modelo seleccionado */}
-      {vehiculoSeleccionado && (
-        <div className="vehiculo-seleccionado mt-3">
-          <p><strong>Vehículo:</strong> {vehiculoSeleccionado.marca} - {vehiculoSeleccionado.modelo}</p>
+      {/* ✅ Esto sí se imprime/exporta */}
+      {seleccionado && (
+        <div className="vehiculo-seleccionado mt-2">
+          <p><strong>Vehículo:</strong> {seleccionado.marca} - {seleccionado.modelo}</p>
         </div>
       )}
     </div>
