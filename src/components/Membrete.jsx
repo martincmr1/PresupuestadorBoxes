@@ -1,51 +1,73 @@
-import React from "react";
-import { FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa"; // ✅ Iconos corregidos
+import React, { useEffect, useState } from "react";
+import { FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
 
 function Membrete() {
+  const [direccion, setDireccion] = useState("Bartolomé Mitre 1666");
+  const [telefono, setTelefono] = useState("1138110074");
+
+  // 🔹 Cargar valores almacenados en localStorage
+  useEffect(() => {
+    const dirGuardada = localStorage.getItem("direccion");
+    const telGuardado = localStorage.getItem("telefono");
+
+    if (dirGuardada) setDireccion(dirGuardada);
+    if (telGuardado) setTelefono(telGuardado);
+  }, []);
+
+  const fecha = new Date().toLocaleDateString();
+  const hora = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: false });
+
   return (
     <div className="container-fluid bg-white p-3 shadow-sm">
-      <div className="row align-items-center">
-        {/* 🔵 Logo YPF */}
-        <div className="col-md-4 d-flex align-items-center">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/e/e8/YPF-Logo.svg"
-            alt="YPF Boxes"
-            style={{ height: "40px", marginRight: "10px" }}
-          />
+      <div className="row align-items-center justify-content-between">
+        {/* 🔵 Logo en la esquina superior izquierda */}
+        <div className="col-auto d-flex align-items-center">
+          <a href="/" onClick={(e) => { e.preventDefault(); window.location.reload(); }}>
+            <img 
+              src="./logo boxes@200x.png" 
+              alt="YPF Boxes" 
+              style={{ height: "30px", marginRight: "15px", cursor: "pointer" }} 
+            />
+          </a>
+        </div>
+
+        {/* 📌 Texto Centrado */}
+        <div className="col text-center">
           <h5 className="fw-bold mb-0">
-            BOXES <span className="text-muted fs-6">27 PUNTOS DE REVISIÓN + ESCANEO ELECTRÓNICO</span>
+            <span className="text-muted fs-6">
+              27 PUNTOS DE REVISIÓN + ESCANEO ELECTRÓNICO
+            </span>
           </h5>
         </div>
 
         {/* 📅 Fecha y Hora */}
-        <div className="col-md-4 text-center d-none d-md-block">
-          <span className="fw-bold">{new Date().toLocaleDateString()}</span>,{" "}
-          {new Date().toLocaleTimeString()}
+        <div className="col-auto text-end">
+          <span className="fw-bold d-block">{fecha}</span>
+          <span className="text-muted">{hora}</span>
+        </div>
+      </div>
+
+      {/* Segunda fila con Dirección, Turnos y Teléfono */}
+      <div className="row align-items-center justify-content-between mt-2">
+        {/* 📍 Dirección */}
+        <div className="col-auto d-flex align-items-center">
+          <FaMapMarkerAlt size={18} className="text-dark me-2" />
+          <span className="me-4">{direccion}</span>
         </div>
 
-        {/* 📍 Ubicación y Contacto */}
-        <div className="col-md-4 d-flex justify-content-end align-items-center">
-          <FaMapMarkerAlt size={18} className="text-dark me-2" />
-          <span className="me-3">Bartolomé Mitre 1666</span>
+        {/* 📱 Turnos, APP YPF y Teléfono */}
+        <div className="col-auto d-flex align-items-center">
+          <span className="fw-bold text-dark me-2">Turnos</span>👉
 
-          <a
-            href="https://api.whatsapp.com/send?phone=1138110074"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-success me-3"
-          >
-            <FaWhatsapp size={22} />
-            <span className="ms-1">1138110074</span>
-          </a>
+          <div className="d-flex align-items-center ms-3">
+            <img src="./applogo.png" alt="APP YPF" style={{ height: "20px", marginRight: "5px" }} />
+            <span className="text-dark fw-bold">APP YPF</span>
+          </div>
 
-          {/* 📱 App YPF */}
-          <a href="https://www.ypf.com" target="_blank" rel="noopener noreferrer">
-            <img
-              src="https://www.ypf.com/favicon.ico"
-              alt="App YPF"
-              style={{ height: "25px" }}
-            />
-          </a>
+          <div className="d-flex align-items-center ms-3">
+            <FaWhatsapp size={22} className="text-success" />
+            <span className="ms-1 fw-bold">{telefono}</span> {/* 🔹 Teléfono ahora es texto normal */}
+          </div>
         </div>
       </div>
     </div>

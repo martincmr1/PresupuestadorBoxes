@@ -3,5 +3,73 @@
 #someElementId {
     display: block;
     color: black;
-}
-/* ...existing code... */
+  }
+  
+  /* 🔹 Promociones: cards más compactas */
+  .promociones-container {
+    padding: 0 10px;
+  }
+  
+  .promo-card {
+    border: 1px solid #ddd;
+    padding: 0;
+  }
+  
+  .promo-card .card-body {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    min-height: auto;
+  }
+  
+  .promo-card .card-text {
+    margin-bottom: 0;
+  }
+  
+  /* 🔹 Diagnóstico y presupuesto más compacto en impresión */
+  @media print {
+    .no-print,
+    .ocultar-al-exportar {
+      display: none !important;
+    }
+  
+    body {
+      margin: 0;
+      padding: 0;
+      background: white;
+    }
+  
+    /* 🔹 Reducción de fuentes en presupuesto */
+    .presupuesto-print {
+      font-size: 0.75rem !important;
+    }
+  
+    .presupuesto-print h5,
+    .presupuesto-print h6,
+    .presupuesto-print strong {
+      font-size: 0.8rem !important;
+    }
+  
+    .presupuesto-print table {
+      font-size: 0.75rem !important;
+    }
+  
+    .presupuesto-print th,
+    .presupuesto-print td {
+      padding: 4px !important;
+    }
+  
+    /* 🔹 Diagnósticos compactos */
+    .diagnostico-texto {
+      font-size: 0.75rem !important;
+      line-height: 1.3;
+    }
+  
+    .promo-card {
+      font-size: 0.75rem !important;
+    }
+  
+    .promo-card .card-body {
+      padding: 0.4rem !important;
+    }
+  }
+  

@@ -5,37 +5,17 @@ import html2pdf from "html2pdf.js";
 function ExportarPresupuesto({ productos }) {
   const presupuestoRef = useRef();
 
-  // 🔹 Oculta elementos antes de imprimir/exportar
+  // 🔹 Oculta elementos antes de exportar
   const prepararParaExportar = () => {
-    const elementosOcultar = document.querySelectorAll(".busqueda-vehiculo, .eliminar-btn, .agregar-btn");
-    elementosOcultar.forEach((el) => (el.style.display = "none"));
-    
-    document.querySelectorAll(".cantidad-input").forEach((input) => {
-      input.style.appearance = "none";
-      input.style.border = "none";
-    });
-
-    document.querySelectorAll(".descripcion-input").forEach((input) => {
-      input.style.border = "none";
-    });
+    document.querySelectorAll(".ocultar-al-exportar").forEach((el) => (el.style.display = "none"));
   };
 
-  // 🔹 Restaura la vista después de imprimir/exportar
+  // 🔹 Restaura la vista después de exportar
   const restaurarDespuesDeExportar = () => {
-    const elementosOcultar = document.querySelectorAll(".busqueda-vehiculo, .eliminar-btn, .agregar-btn");
-    elementosOcultar.forEach((el) => (el.style.display = "block"));
-
-    document.querySelectorAll(".cantidad-input").forEach((input) => {
-      input.style.appearance = "auto";
-      input.style.border = "1px solid #ccc";
-    });
-
-    document.querySelectorAll(".descripcion-input").forEach((input) => {
-      input.style.border = "1px solid #ccc";
-    });
+    document.querySelectorAll(".ocultar-al-exportar").forEach((el) => (el.style.display = "block"));
   };
 
-  // 🔹 Función para imprimir
+  // 🔹 Imprimir
   const imprimirPresupuesto = () => {
     prepararParaExportar();
     setTimeout(() => {
@@ -44,7 +24,7 @@ function ExportarPresupuesto({ productos }) {
     }, 300);
   };
 
-  // 🔹 Función para exportar a PDF
+  // 🔹 Exportar a PDF
   const exportarPDF = () => {
     prepararParaExportar();
     setTimeout(() => {
@@ -53,9 +33,14 @@ function ExportarPresupuesto({ productos }) {
     }, 300);
   };
 
+  // 🔹 Cálculo de Totales
+  const total = productos.reduce((acc, p) => acc + (p.precio * (p.cantidad || 1)), 0);
+  const totalCuotas = total / 6; // 🔹 Total en 6 cuotas sin interés
+
   return (
     <div>
-      <div className="text-end my-3">
+      {/* 🔹 Botones de acción (NO se imprimen ni exportan) */}
+      <div className="text-end my-3 ocultar-al-exportar">
         <button className="btn btn-primary me-2" onClick={imprimirPresupuesto}>
           <FaPrint /> Imprimir
         </button>
@@ -64,8 +49,10 @@ function ExportarPresupuesto({ productos }) {
         </button>
       </div>
 
+      {/* 🔹 Solo toma los datos sin volver a renderizar la lista */}
       <div ref={presupuestoRef} className="p-3 border bg-white">
         <h4 className="text-center fw-bold">Presupuesto de Cambio de Aceite</h4>
+        
         <table className="table">
           <thead>
             <tr>
@@ -77,23 +64,8 @@ function ExportarPresupuesto({ productos }) {
           <tbody>
             {productos.map((producto, index) => (
               <tr key={index}>
-                <td>
-                  <input
-                    type="text"
-                    value={producto.descripcion}
-                    className="descripcion-input form-control-plaintext"
-                    readOnly
-                  />
-                </td>
-                <td className="text-end">
-                  <input
-                    type="number"
-                    min="1"
-                    value={producto.cantidad || 1}
-                    className="cantidad-input form-control text-end"
-                    readOnly
-                  />
-                </td>
+                <td>{producto.descripcion}</td>
+                <td className="text-end">{producto.cantidad || 1}</td>
                 <td className="text-end">
                   <strong>${(producto.precio * (producto.cantidad || 1)).toFixed(2)}</strong>
                 </td>
@@ -101,9 +73,15 @@ function ExportarPresupuesto({ productos }) {
             ))}
           </tbody>
         </table>
+
+        {/* 🔹 Mostrar totales sin re-renderizar la lista */}
         <h5 className="text-end fw-bold">
-          Total: ${productos.reduce((acc, p) => acc + p.precio * p.cantidad, 0).toFixed(2)}
+          Total: ${total.toFixed(2)}
         </h5>
+        <h6 className="text-end text-muted">
+          Total en 6 cuotas sin interés con Visa o Mastercard (Exclusivo App YPF): 
+          <strong> ${totalCuotas.toFixed(2)} x 6</strong>
+        </h6>
       </div>
     </div>
   );
