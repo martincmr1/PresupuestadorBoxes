@@ -121,6 +121,11 @@ function App() {
         <Membrete direccion={direccion} telefono={telefono} />
         <BuscarModelo setProductos={setProductos} setVehiculoSeleccionado={setVehiculoSeleccionado} />
         <ListaProductos productos={productos} setProductos={setProductos} />
+
+
+
+
+        
         <Promociones />
 
         {/* 🔥 Diagnóstico y NotaLegal solo visibles al exportar */}

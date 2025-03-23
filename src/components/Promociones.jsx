@@ -33,7 +33,7 @@ function Promociones() {
   return (
     <div className="container mt-4 promociones-container promos-mobile">
       <h2 className="text-dark fw-bold fs-5 mb-3">
-        <i className="bi bi-camera me-2"></i> PROMOCIONES VIGENTES
+        <i className="bi bi-gift me-2"></i> PROMOCIONES VIGENTES
       </h2>
 
       <div className="row row-cols-1 row-cols-md-5 g-2">
