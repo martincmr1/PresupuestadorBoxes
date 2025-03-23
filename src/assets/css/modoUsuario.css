@@ -1,0 +1,238 @@
+ /* ------------------------- */
+/* 🔹 MODO USUARIO GENERAL */
+/* ------------------------- */
+/* ======================== */
+/* 🔹 MODO USUARIO GENERAL */
+/* ======================== */
+/* ======================== */
+/* 🔹 MODO USUARIO GENERAL */
+/* ======================== */
+
+@media screen {
+  .modo-usuario {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+
+  .modo-usuario .logo-boxes {
+    height: 50px !important;
+    margin-right: 15px;
+    cursor: pointer;
+  }
+}
+
+.modo-usuario .table th,
+.modo-usuario .table td {
+  font-size: 0.9rem;
+  padding: 1px;
+}
+
+.modo-usuario .presupuesto-print-inner {
+  font-size: 0.7rem;
+  line-height: 1.5;
+}
+
+.modo-usuario .presupuesto-print-inner table {
+  font-size: 1rem;
+}
+
+.modo-usuario .presupuesto-print-inner h5,
+.modo-usuario .presupuesto-print-inner h6 {
+  font-size: 1.05rem;
+}
+
+.modo-usuario .list-group-item input {
+  font-size: 1.05rem;
+  padding: 6px 8px;
+}
+
+.modo-usuario .list-group-item strong {
+  font-size: 1.05rem;
+}
+
+.modo-usuario .btn {
+  font-size: 1rem;
+}
+
+.modo-usuario .form-control {
+  font-size: 1.05rem;
+  padding: 8px 10px;
+}
+
+.modo-usuario .list-group-item {
+  font-size: 1.05rem;
+  padding: 10px 12px;
+}
+
+.modo-usuario .vehiculo-seleccionado p {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.modo-usuario .container-fluid {
+  font-size: 1rem;
+}
+
+.modo-usuario .container-fluid .fw-bold {
+  font-size: 1.05rem;
+}
+
+.modo-usuario .container-fluid .text-muted {
+  font-size: 0.95rem;
+}
+
+.modo-usuario .container-fluid span {
+  font-size: 1rem;
+}
+
+/* Esta línea se elimina para evitar sobrescribir el tamaño del logo */
+/* .modo-usuario .container-fluid img {
+  max-height: 26px;
+} */
+
+.modo-usuario .diagnostico-texto {
+  font-size: 0.7rem;
+  line-height: 1.5;
+}
+
+.modo-usuario h5.fw-bold {
+  font-size: 1.2rem;
+}
+
+.modo-usuario .promo-card {
+  height: 75% !important;
+}
+
+/* Oculta contenido fuera del PDF o impresión */
+.solo-al-exportar {
+  display: none;
+}
+
+@media print {
+  .solo-al-exportar {
+    display: block !important;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .modo-usuario .logo-boxes {
+    height: 30px !important;
+  }
+
+  .modo-usuario .list-group-item {
+    padding: 6px 8px;
+    font-size: 0.85rem;
+  }
+
+  .modo-usuario .list-group-item input {
+    font-size: 0.85rem;
+    padding: 4px 6px;
+  }
+
+  .modo-usuario .list-group-item strong {
+    font-size: 0.85rem;
+  }
+
+  .modo-usuario .btn {
+    font-size: 0.8rem;
+    padding: 4px 6px;
+  }
+
+  .modo-usuario .presupuesto-print-inner {
+    padding: 0.75rem;
+  }
+
+  .modo-usuario .presupuesto-print-inner table th,
+  .modo-usuario .presupuesto-print-inner table td {
+    font-size: 0.8rem;
+    padding: 4px;
+  }
+
+  .modo-usuario .presupuesto-print-inner h5,
+  .modo-usuario .presupuesto-print-inner h6 {
+    font-size: 0.9rem;
+  }
+
+  .modo-usuario .container-fluid {
+    padding: 0.5rem !important;
+    font-size: 0.85rem;
+  }
+
+  .modo-usuario .container-fluid .fw-bold {
+    font-size: 0.95rem;
+  }
+
+  .modo-usuario .container-fluid .text-muted {
+    font-size: 0.8rem;
+  }
+
+  .modo-usuario .logo-boxes {
+    height: 24px !important;
+  }
+
+  .modo-usuario .container-fluid img[alt="APP YPF"] {
+    height: 16px !important;
+    margin-right: 4px !important;
+  }
+
+  .modo-usuario .container-fluid span {
+    font-size: 0.85rem;
+  }
+
+  .modo-usuario .container-fluid svg {
+    font-size: 0.9rem;
+  }
+
+  .modo-usuario .container-fluid .row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .modo-usuario .container-fluid .col,
+  .modo-usuario .container-fluid .col-auto {
+    width: 100% !important;
+    text-align: left !important;
+    justify-content: flex-start !important;
+    margin-bottom: 0.5rem;
+  }
+
+  .modo-usuario .container-fluid .text-center,
+  .modo-usuario .container-fluid .text-end {
+    text-align: left !important;
+  }
+
+  
+  
+    .modo-usuario .texto-membrete {
+      display: none;
+    
+  }
+
+  .modo-usuario .fecha-hora {
+    display: none;
+  
+
+
+}
+
+
+.modo-usuario .turnos-text {
+  display: none;
+
+}
+
+.modo-usuario .promos-mobile {
+  display: none;
+
+}
+  
+.modo-usuario .app-text {
+  display: none;
+
+}
+  
+
+
+
+}

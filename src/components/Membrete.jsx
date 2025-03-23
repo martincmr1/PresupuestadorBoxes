@@ -25,15 +25,17 @@ function Membrete() {
           <a href="/" onClick={(e) => { e.preventDefault(); window.location.reload(); }}>
             <img 
               src="./logo boxes@200x.png" 
+              className="logo-boxes"
               alt="YPF Boxes" 
-              style={{ height: "30px", marginRight: "15px", cursor: "pointer" }} 
+              style={{ height: "30px" }}
+              
             />
           </a>
         </div>
 
         {/* 📌 Texto Centrado */}
-        <div className="col text-center">
-          <h5 className="fw-bold mb-0">
+        <div className="col text-center texto-membrete">
+          <h5 className="fw-bold mb-0 ">
             <span className="text-muted fs-6">
               27 PUNTOS DE REVISIÓN + ESCANEO ELECTRÓNICO
             </span>
@@ -41,7 +43,7 @@ function Membrete() {
         </div>
 
         {/* 📅 Fecha y Hora */}
-        <div className="col-auto text-end">
+        <div className="col-auto text-end fecha-hora">
           <span className="fw-bold d-block">{fecha}</span>
           <span className="text-muted">{hora}</span>
         </div>
@@ -56,16 +58,19 @@ function Membrete() {
         </div>
 
         {/* 📱 Turnos, APP YPF y Teléfono */}
-        <div className="col-auto d-flex align-items-center">
-          <span className="fw-bold text-dark me-2">Turnos</span>👉
 
-          <div className="d-flex align-items-center ms-3">
-            <img src="./applogo.png" alt="APP YPF" style={{ height: "20px", marginRight: "5px" }} />
-            <span className="text-dark fw-bold">APP YPF</span>
+       
+        <div className="col-auto d-flex align-items-center ">
+          <span className="fw-bold text-dark me-2 turnos-text">Turnos</span> <span className="app-text">👉</span>
+
+          <div className="d-flex align-items-center ms-3  ">
+            <img  className="app-text" src="./applogo.png" alt="APP YPF" style={{ height: "20px", marginRight: "5px" }} />
+            <span className="text-dark fw-bold app-text">APP YPF</span>
           </div>
+         
 
           <div className="d-flex align-items-center ms-3">
-            <FaWhatsapp size={22} className="text-success" />
+            <FaWhatsapp size={22} className="text-success " />
             <span className="ms-1 fw-bold">{telefono}</span> {/* 🔹 Teléfono ahora es texto normal */}
           </div>
         </div>

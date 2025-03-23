@@ -5,7 +5,12 @@ import ListaProductos from './components/ListaProductos.jsx';
 import Configuracion from "./components/Configuracion.jsx";
 import Promociones from './components/Promociones.jsx';
 import Diagnosticos from './components/Diagnosticos.jsx';
-import "./assets/css/styles.css";
+import NotaLegal from './components/NotaLegal.jsx';
+
+import './assets/css/modoUsuario.css';
+import './assets/css/pdfExport.css';
+import './assets/css/printMode.css';
+
 import { FaPrint, FaFilePdf } from "react-icons/fa";
 import html2pdf from "html2pdf.js";
 
@@ -24,13 +29,14 @@ function App() {
 
   const prepararParaExportar = () => {
     document.querySelectorAll(".ocultar-al-exportar").forEach((el) => (el.style.display = "none"));
+    document.querySelectorAll(".solo-al-exportar").forEach((el) => (el.style.display = "block"));
   };
 
   const restaurarDespuesDeExportar = () => {
     document.querySelectorAll(".ocultar-al-exportar").forEach((el) => (el.style.display = "block"));
+    document.querySelectorAll(".solo-al-exportar").forEach((el) => (el.style.display = "none"));
   };
 
-  // 🔹 Generar nombre dinámico para el archivo PDF con fecha y hora
   const generarNombreArchivo = () => {
     const ahora = new Date();
     const fechaHora = ahora.toLocaleString('sv-SE', {
@@ -48,34 +54,60 @@ function App() {
     return `${modelo}_${fechaHora}.pdf`;
   };
 
-  // 🔹 Exportar a PDF con márgenes reducidos
   const exportarPDF = () => {
     prepararParaExportar();
+
+    // 👉 Activar atributos para aplicar estilos especiales en PDF
+    document.documentElement.setAttribute("data-pdf-export", "true");
+
     setTimeout(() => {
       const opt = {
-        margin: [2, 5, 2, 5], // 🔹 Márgenes aún más reducidos [top, left, bottom, right]
+        margin: 0,
         filename: generarNombreArchivo(),
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+        html2canvas: {
+          scale: 1.3,
+          useCORS: true,
+          scrollY: 0
+        },
+        jsPDF: {
+          unit: "mm",
+          format: "a4",
+          orientation: "portrait"
+        },
+        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
       };
 
       html2pdf().set(opt).from(exportRef.current).save();
-      setTimeout(restaurarDespuesDeExportar, 500);
+
+      setTimeout(() => {
+        // 👈 Restaurar luego del export
+        restaurarDespuesDeExportar();
+        document.documentElement.removeAttribute("data-pdf-export");
+      }, 500);
     }, 300);
   };
 
-  // 🔹 Función para imprimir sin margen extra
   const imprimir = () => {
     prepararParaExportar();
+
+    const style = document.createElement("style");
+    style.innerHTML = `
+      @page { size: A4; margin: 0; }
+      html, body { overflow: hidden !important; }
+    `;
+    document.head.appendChild(style);
+
     setTimeout(() => {
       window.print();
-      setTimeout(restaurarDespuesDeExportar, 500);
+      setTimeout(() => {
+        document.head.removeChild(style);
+        restaurarDespuesDeExportar();
+      }, 500);
     }, 300);
   };
 
   return (
-    <>
-      {/* Botones de acción (ocultos al imprimir/exportar) */}
+    <div className="modo-usuario">
       <div className="text-end mb-3 ocultar-al-exportar container">
         <button className="btn btn-primary me-2" onClick={imprimir}>
           <FaPrint /> Imprimir
@@ -85,21 +117,25 @@ function App() {
         </button>
       </div>
 
-      {/* Contenido que se exporta a PDF e imprime */}
       <div ref={exportRef} className="container mt-2 presupuesto-print">
         <Membrete direccion={direccion} telefono={telefono} />
         <BuscarModelo setProductos={setProductos} setVehiculoSeleccionado={setVehiculoSeleccionado} />
         <ListaProductos productos={productos} setProductos={setProductos} />
-       
-        <Diagnosticos />
         <Promociones />
 
-        {/* Configuración se oculta tanto al imprimir como al exportar */}
-        <div className="no-print ocultar-al-exportar">
+        {/* 🔥 Diagnóstico y NotaLegal solo visibles al exportar */}
+        <div className="solo-al-exportar">
+          <Diagnosticos />
+          <div className="nota-legal border rounded mt-4 bg-light text-center small text-muted" style={{ fontStyle: "italic" }}>
+            <NotaLegal />
+          </div>
+        </div>
+
+        <div className="ocultar-al-exportar">
           <Configuracion actualizarDatos={actualizarDatos} />
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

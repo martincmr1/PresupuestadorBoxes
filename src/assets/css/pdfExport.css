@@ -1,0 +1,38 @@
+ /* 🔹 Estilos específicos para PDF Exportación */
+ @media print {
+  .logo-boxes {
+    height: 30px !important;
+  }
+}
+
+
+
+
+ .presupuesto-print {
+    font-size: 0.75rem;
+    page-break-inside: avoid;
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  
+  
+  .avoid-break {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  
+
+  html[data-pdf-export] .promociones-container .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  html[data-pdf-export] .promociones-container .col {
+    flex: 0 0 19%; /* 5 columnas aprox. */
+    max-width: 19%;
+  }
+  

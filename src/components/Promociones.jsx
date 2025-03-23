@@ -31,7 +31,7 @@ function Promociones() {
   ];
 
   return (
-    <div className="container mt-4 promociones-container">
+    <div className="container mt-4 promociones-container promos-mobile">
       <h2 className="text-dark fw-bold fs-5 mb-3">
         <i className="bi bi-camera me-2"></i> PROMOCIONES VIGENTES
       </h2>
