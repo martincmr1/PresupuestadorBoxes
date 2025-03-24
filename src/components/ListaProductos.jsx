@@ -3,7 +3,10 @@ import React, { useEffect, useState } from "react";
 function ListaProductos({ productos, setProductos }) {
   const [baseProductos, setBaseProductos] = useState([]);
 
-  const total = productos.reduce((acc, p) => acc + (p.precio * (p.cantidad || 1)), 0);
+  const total = productos.reduce(
+    (acc, p) => acc + p.precio * (p.cantidad || 1),
+    0
+  );
   const totalCuotas = total / 6;
 
   useEffect(() => {
@@ -19,25 +22,36 @@ function ListaProductos({ productos, setProductos }) {
 
     const productoEncontrado = baseProductos.find((p) =>
       esCodigo
-        ? p.codigo?.toString() === valorTrim
-        : p.descripcion?.toLowerCase() === valorTrim.toLowerCase()
+        ? p.codigo?.toString().trim() === valorTrim
+        : p.descripcion?.toLowerCase().trim() === valorTrim.toLowerCase()
     );
 
     if (productoEncontrado) {
       const nuevos = [...productos];
       nuevos[index] = {
         ...productoEncontrado,
+        descripcion: productoEncontrado.descripcion || productos[index].descripcion,
+        precio: productoEncontrado.precio || 0,
+        codigo: productoEncontrado.codigo, // 👈 se actualiza el código
         cantidad: productos[index].cantidad || 1,
       };
       setProductos(nuevos);
     }
   };
 
+  const CODIGOS_PREMIUM = ["12167", "12168", "12160", "12179", "16448", "12177"];
+  const contienePremium = productos.some((p) =>
+    CODIGOS_PREMIUM.includes(p.codigo?.toString())
+  );
+
   return (
     <div>
       <ul className="list-group ocultar-al-exportar">
         {productos.map((producto, index) => (
-          <li key={index} className="list-group-item d-flex align-items-center">
+          <li
+            key={index}
+            className="list-group-item d-flex align-items-center"
+          >
             <input
               type="text"
               list="sugerencias-productos"
@@ -48,7 +62,9 @@ function ListaProductos({ productos, setProductos }) {
                 nuevos[index].descripcion = e.target.value;
                 setProductos(nuevos);
               }}
-              onBlur={(e) => actualizarProductoPorDescripcion(index, e.target.value)}
+              onBlur={(e) =>
+                actualizarProductoPorDescripcion(index, e.target.value)
+              }
             />
             <input
               type="number"
@@ -63,9 +79,12 @@ function ListaProductos({ productos, setProductos }) {
             />
             <strong>
               $
-              {(producto.precio * (producto.cantidad || 1)).toLocaleString("es-AR", {
-                maximumFractionDigits: 0,
-              })}
+              {(producto.precio * (producto.cantidad || 1))
+                .toLocaleString("es-AR", {
+                  minimumFractionDigits: 0,
+                  maximumFractionDigits: 0,
+                })
+                .replace(/,/g, ".")}
             </strong>
             <button
               className="btn btn-danger btn-sm ms-2 ocultar-al-exportar"
@@ -85,7 +104,7 @@ function ListaProductos({ productos, setProductos }) {
           <option
             key={i}
             value={p.descripcion}
-            label={`$${p.precio?.toLocaleString("es-AR", { maximumFractionDigits: 0 })} | Cód: ${p.codigo}`}
+            label={`$${p.precio?.toLocaleString("es-AR")} | Cód: ${p.codigo}`}
           />
         ))}
       </datalist>
@@ -94,7 +113,10 @@ function ListaProductos({ productos, setProductos }) {
         <button
           className="btn btn-primary"
           onClick={() =>
-            setProductos([...productos, { descripcion: "", cantidad: 1, precio: 0 }])
+            setProductos([
+              ...productos,
+              { descripcion: "", cantidad: 1, precio: 0 },
+            ])
           }
         >
           Agregar Producto
@@ -118,21 +140,40 @@ function ListaProductos({ productos, setProductos }) {
                 <td className="text-end">
                   <strong>
                     $
-                    {(producto.precio * (producto.cantidad || 1)).toLocaleString("es-AR", {
-                      maximumFractionDigits: 0,
-                    })}
+                    {(producto.precio * (producto.cantidad || 1))
+                      .toLocaleString("es-AR", {
+                        minimumFractionDigits: 0,
+                        maximumFractionDigits: 0,
+                      })
+                      .replace(/,/g, ".")}
                   </strong>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
+
         <h5 className="text-end fw-bold">
-          Total Servicio Premium: ${total.toLocaleString("es-AR", { maximumFractionDigits: 0 })}
+          Total {contienePremium ? "Servicio Premium" : "Servicio Completo o Express"}: $
+          {total
+            .toLocaleString("es-AR", {
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 0,
+            })
+            .replace(/,/g, ".")}
         </h5>
         <h6 className="text-end text-muted">
           Total en 6 cuotas sin interés con Visa o Mastercard (Exclusivo App YPF):{" "}
-          <strong>${totalCuotas.toLocaleString("es-AR", { maximumFractionDigits: 0 })} x 6</strong>
+          <strong>
+            $
+            {totalCuotas
+              .toLocaleString("es-AR", {
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0,
+              })
+              .replace(/,/g, ".")}{" "}
+            x 6
+          </strong>
         </h6>
       </div>
     </div>
