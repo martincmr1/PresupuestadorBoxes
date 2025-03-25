@@ -73,7 +73,7 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
         <input
           type="text"
           className="form-control"
-          placeholder="Buscar modelo..."
+          placeholder="Buscar modelo del vehiculo..."
           value={filtro}
           onChange={(e) => setFiltro(e.target.value)}
           disabled={!!seleccionado || modoManual}

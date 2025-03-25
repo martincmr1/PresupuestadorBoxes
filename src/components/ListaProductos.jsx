@@ -18,21 +18,30 @@ function ListaProductos({ productos, setProductos }) {
 
   const actualizarProductoPorDescripcion = (index, valor) => {
     const valorTrim = valor.trim();
-    const esCodigo = /^\d{5,}$/.test(valorTrim);
+    const valorNormalizado = valorTrim.replace(/\s+/g, "").toLowerCase();
 
-    const productoEncontrado = baseProductos.find((p) =>
-      esCodigo
-        ? p.codigo?.toString().trim() === valorTrim
-        : p.descripcion?.toLowerCase().trim() === valorTrim.toLowerCase()
-    );
+    // ✅ solo considera código si son 5 o más dígitos seguidos y nada más
+    const esCodigoValido = /^[0-9]{5,}$/.test(valorTrim);
+
+    console.log("Valor ingresado:", valorTrim, "¿Es código válido?", esCodigoValido);
+
+    let productoEncontrado = null;
+
+    if (esCodigoValido) {
+      productoEncontrado = baseProductos.find(
+        (p) => p.codigo?.toString() === valorTrim
+      );
+    } else {
+      productoEncontrado = baseProductos.find((p) => {
+        const descNormalizada = p.descripcion?.toLowerCase().replace(/\s+/g, "");
+        return descNormalizada === valorNormalizado;
+      });
+    }
 
     if (productoEncontrado) {
       const nuevos = [...productos];
       nuevos[index] = {
         ...productoEncontrado,
-        descripcion: productoEncontrado.descripcion || productos[index].descripcion,
-        precio: productoEncontrado.precio || 0,
-        codigo: productoEncontrado.codigo, // 👈 se actualiza el código
         cantidad: productos[index].cantidad || 1,
       };
       setProductos(nuevos);
@@ -44,14 +53,14 @@ function ListaProductos({ productos, setProductos }) {
     CODIGOS_PREMIUM.includes(p.codigo?.toString())
   );
 
+  const maximoProductos = 7;
+  const puedeAgregarProducto = productos.length < maximoProductos;
+
   return (
     <div>
       <ul className="list-group ocultar-al-exportar">
         {productos.map((producto, index) => (
-          <li
-            key={index}
-            className="list-group-item d-flex align-items-center"
-          >
+          <li key={index} className="list-group-item d-flex align-items-center">
             <input
               type="text"
               list="sugerencias-productos"
@@ -62,9 +71,7 @@ function ListaProductos({ productos, setProductos }) {
                 nuevos[index].descripcion = e.target.value;
                 setProductos(nuevos);
               }}
-              onBlur={(e) =>
-                actualizarProductoPorDescripcion(index, e.target.value)
-              }
+              onBlur={(e) => actualizarProductoPorDescripcion(index, e.target.value)}
             />
             <input
               type="number"
@@ -90,7 +97,8 @@ function ListaProductos({ productos, setProductos }) {
               className="btn btn-danger btn-sm ms-2 ocultar-al-exportar"
               title="Eliminar producto"
               onClick={() => {
-                setProductos(productos.filter((_, i) => i !== index));
+                const nuevos = productos.filter((_, i) => i !== index);
+                setProductos(nuevos);
               }}
             >
               <i className="bi bi-trash text-white"></i>
@@ -104,7 +112,7 @@ function ListaProductos({ productos, setProductos }) {
           <option
             key={i}
             value={p.descripcion}
-            label={`$${p.precio?.toLocaleString("es-AR")} | Cód: ${p.codigo}`}
+            label={`Cód: ${p.codigo}`}
           />
         ))}
       </datalist>
@@ -118,9 +126,15 @@ function ListaProductos({ productos, setProductos }) {
               { descripcion: "", cantidad: 1, precio: 0 },
             ])
           }
+          disabled={!puedeAgregarProducto}
         >
           Agregar Producto
         </button>
+        {!puedeAgregarProducto && (
+          <small className="text-danger d-block mt-1">
+            Límite máximo de 7 productos alcanzado.
+          </small>
+        )}
       </div>
 
       <div className="p-3 border bg-white mt-4 presupuesto-print-inner">
@@ -181,4 +195,3 @@ function ListaProductos({ productos, setProductos }) {
 }
 
 export default ListaProductos;
-
