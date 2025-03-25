@@ -5,28 +5,33 @@ function Promociones() {
   const promociones = [
     {
       id: 1,
-      imagen: "./nacion.jpg",
-      descripcion: "Club La Nación – 30% de descuento (tope $10.000).",
+      imagen: "./Promo20porciento.jpg",
+      descripcion: "20% de descuento con ELAION sintético y semisintético reservando turno en App YPF. <strong>Vigencia: hasta el 31/03/2025</strong>",
     },
     {
       id: 2,
       imagen: "./Promoescalonado.jpg",
-      descripcion: "Escalonada ServiClub (ahorrá hasta $49.000).",
+      descripcion: "Escalonada ServiClub (ahorrá hasta $49.000).<strong>Vigencia: hasta el 31/03/2025</strong>",
     },
     {
       id: 3,
-      imagen: "./Promo20porciento.jpg",
-      descripcion: "20% de descuento con ELAION sintético y semisintético.",
+      imagen: "./Promo_cuotas.png",
+      descripcion:
+        "3 y 6 cuotas sin interés Pagando con App YPF (VISA/MASTERCARD).<strong>Vigencia: hasta el 31/03/2025</strong>",
+      
+      
     },
     {
       id: 4,
-      imagen: "./Promo_uber.png",
-      descripcion: "Uber DIAMANTE - 30% de descuento (tope $23.000).",
+      imagen: "./nacion.jpg",
+      descripcion:
+        "30% de descuento en tu cambio con aceites sintéticos (tope $25.000) Pagando a travez de App YPF. <strong>Vigencia: hasta el 31/03/2025</strong>",
     },
     {
       id: 5,
-      imagen: "./Promo_cuotas.png",
-      descripcion: "3 y 6 cuotas sin interés (Pagando con App YPF VISA/MASTERCARD).",
+      imagen: "./Promo_uber.png",
+      descripcion: "Uber DIAMANTE - 30% de descuento (tope $23.000) Exclusivo linea Elaion Auro, Fs ó Ts .<strong>Vigencia: hasta el 31/03/2025</strong>",
+     
     },
   ];
 
@@ -40,9 +45,16 @@ function Promociones() {
         {promociones.map((promo) => (
           <div key={promo.id} className="col">
             <div className="card h-100 shadow-sm promo-card">
-              <img src={promo.imagen} className="card-img-top" alt={promo.titulo} />
+              <img
+                src={promo.imagen}
+                className="card-img-top"
+                alt={`Promo ${promo.id}`}
+              />
               <div className="card-body p-2 d-flex flex-column justify-content-between">
-                <p className="card-text text-center mb-1">{promo.descripcion}</p>
+                <p
+                  className="card-text text-center mb-1"
+                  dangerouslySetInnerHTML={{ __html: promo.descripcion }}
+                ></p>
               </div>
             </div>
           </div>

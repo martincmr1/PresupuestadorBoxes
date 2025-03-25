@@ -12,6 +12,10 @@
   .ocultar-al-exportar {
     display: none !important;
   }
+  .promo-card {
+    border: none !important;
+    box-shadow: none !important;
+  }
 
   .solo-al-exportar {
     display: block !important;
