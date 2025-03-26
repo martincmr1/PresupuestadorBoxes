@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 function ListaProductos({ productos, setProductos }) {
   const [baseProductos, setBaseProductos] = useState([]);
+  const [productoPrevio, setProductoPrevio] = useState(null);
 
   const total = productos.reduce(
     (acc, p) => acc + p.precio * (p.cantidad || 1),
@@ -19,11 +20,7 @@ function ListaProductos({ productos, setProductos }) {
   const actualizarProductoPorDescripcion = (index, valor) => {
     const valorTrim = valor.trim();
     const valorNormalizado = valorTrim.replace(/\s+/g, "").toLowerCase();
-
-    // ✅ solo considera código si son 5 o más dígitos seguidos y nada más
     const esCodigoValido = /^[0-9]{5,}$/.test(valorTrim);
-
-    console.log("Valor ingresado:", valorTrim, "¿Es código válido?", esCodigoValido);
 
     let productoEncontrado = null;
 
@@ -38,14 +35,20 @@ function ListaProductos({ productos, setProductos }) {
       });
     }
 
-    if (productoEncontrado) {
-      const nuevos = [...productos];
+    const nuevos = [...productos];
+
+    if (productoEncontrado && productoEncontrado.precio > 0) {
       nuevos[index] = {
         ...productoEncontrado,
         cantidad: productos[index].cantidad || 1,
       };
       setProductos(nuevos);
+    } else {
+      nuevos.splice(index, 1); // eliminar línea
+      setProductos(nuevos);
     }
+
+    setProductoPrevio(null);
   };
 
   const CODIGOS_PREMIUM = ["12167", "12168", "12160", "12179", "16448", "12177"];
@@ -57,7 +60,7 @@ function ListaProductos({ productos, setProductos }) {
   const puedeAgregarProducto = productos.length < maximoProductos;
 
   return (
-    <div>
+    <div className="container p-0 m-0">
       <ul className="list-group ocultar-al-exportar">
         {productos.map((producto, index) => (
           <li key={index} className="list-group-item d-flex align-items-center">
@@ -66,24 +69,59 @@ function ListaProductos({ productos, setProductos }) {
               list="sugerencias-productos"
               value={producto.descripcion}
               className="form-control form-control-sm border-0"
+              onFocus={(e) => {
+                e.target.select(); // Selecciona todo el texto
+                setProductoPrevio({ ...producto });
+              }}
               onChange={(e) => {
                 const nuevos = [...productos];
                 nuevos[index].descripcion = e.target.value;
                 setProductos(nuevos);
               }}
+              onInput={(e) => actualizarProductoPorDescripcion(index, e.target.value)}
               onBlur={(e) => actualizarProductoPorDescripcion(index, e.target.value)}
+
+              inputMode="text"
+              autoComplete="off"
+              style={{ textAlign: "left", paddingLeft: "8px", paddingRight: "8px" }}
             />
-            <input
-              type="number"
-              min="1"
-              value={producto.cantidad || 1}
-              className="form-control form-control-sm mx-2 text-end border-0"
-              onChange={(e) => {
-                const nuevos = [...productos];
-                nuevos[index].cantidad = Number(e.target.value);
-                setProductos(nuevos);
-              }}
-            />
+            <div className="btn-group mx-2" role="group">
+              <button
+                type="button"
+                className="btn btn-sm btn-primary"
+                onClick={() => {
+                  const nuevos = [...productos];
+                  nuevos[index].cantidad = Math.max(1, (producto.cantidad || 1) - 1);
+                  setProductos(nuevos);
+                }}
+              >
+                -
+              </button>
+              <input
+                type="number"
+                min="1"
+                max="9"
+                value={producto.cantidad || 1}
+                className="form-control form-control-sm text-center"
+                onChange={(e) => {
+                  const nuevos = [...productos];
+                  nuevos[index].cantidad = Number(e.target.value);
+                  setProductos(nuevos);
+                }}
+                style={{ width: "40px" }}
+              />
+              <button
+                type="button"
+                className="btn btn-sm btn-primary"
+                onClick={() => {
+                  const nuevos = [...productos];
+                  nuevos[index].cantidad = (producto.cantidad || 1) + 1;
+                  setProductos(nuevos);
+                }}
+              >
+                +
+              </button>
+            </div>
             <strong>
               $
               {(producto.precio * (producto.cantidad || 1))
@@ -112,19 +150,19 @@ function ListaProductos({ productos, setProductos }) {
           <option
             key={i}
             value={p.descripcion}
-            label={`Cód: ${p.codigo}`}
+            label={`Cód: ${p.codigo} | $${p.precio?.toLocaleString("es-AR", {
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 0,
+            }).replace(/,/g, ".")}`}
           />
         ))}
       </datalist>
 
       <div className="text-end mt-2 ocultar-al-exportar">
         <button
-          className="btn btn-primary"
+          className="btn btn-primary btn-mobile"
           onClick={() =>
-            setProductos([
-              ...productos,
-              { descripcion: "", cantidad: 1, precio: 0 },
-            ])
+            setProductos([...productos, { descripcion: "", cantidad: 1, precio: 0 }])
           }
           disabled={!puedeAgregarProducto}
         >

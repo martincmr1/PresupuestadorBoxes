@@ -18,7 +18,7 @@ function Membrete() {
   const hora = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: false });
 
   return (
-    <div className="container-fluid bg-white p-3 shadow-sm">
+    <div className="container-fluid bg-white p-1 shadow-sm">
       <div className="row align-items-center justify-content-between">
         {/* 🔵 Logo en la esquina superior izquierda */}
         <div className="col-auto d-flex align-items-center">

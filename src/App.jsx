@@ -109,10 +109,10 @@ function App() {
   return (
     <div className="modo-usuario">
       <div className="text-end mb-3 ocultar-al-exportar container">
-        <button className="btn btn-primary me-2" onClick={imprimir}>
+        <button className="btn btn-primary me-5 btn-mobile" onClick={imprimir}>
           <FaPrint /> Imprimir
         </button>
-        <button className="btn btn-danger" onClick={exportarPDF}>
+        <button className="btn btn-danger me-5 btn-mobile" onClick={exportarPDF}>
           <FaFilePdf /> Exportar PDF
         </button>
       </div>

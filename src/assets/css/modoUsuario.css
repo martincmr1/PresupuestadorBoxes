@@ -99,9 +99,7 @@
   font-size: 1.2rem;
 }
 
-.modo-usuario .promo-card {
-  height: 75% !important;
-}
+
 
 /* Oculta contenido fuera del PDF o impresión */
 .solo-al-exportar {
@@ -231,7 +229,30 @@
   display: none;
 
 }
-  
+.cantidad-btn {
+  border-radius: 50% !important;
+  width: 30px;
+  height: 30px;
+  padding: 0 !important;
+  text-align: center;
+}
+
+.cantidad-control span {
+  font-size: 0.9rem;
+} 
+
+
+  .btn-group .btn {
+    border-radius: 50% !important;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+  }
+
+  .btn-mobile {
+    font-size: 1.05rem !important; /* aumenta el tamaño de fuente */
+   padding: auto; /* agranda el padding para que se vean más grandes */
+  }
 
 
 

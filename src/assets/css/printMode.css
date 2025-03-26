@@ -1,20 +1,8 @@
-
-
-
-
-
-
-
-
 @media print {
-  /* Oculta lo que no debe imprimirse */
+  /* Oculta elementos que no deben imprimirse */
   .no-print,
   .ocultar-al-exportar {
     display: none !important;
-  }
-  .promo-card {
-    border: none !important;
-    box-shadow: none !important;
   }
 
   .solo-al-exportar {
@@ -30,12 +18,12 @@
     background: white;
   }
 
+  /* Ajustes de logo */
+  .logo-boxes {
+    height: 30px !important;
+  }
 
-  @media print {
-    .logo-boxes {
-      height: 30px !important;
-    }
-
+  /* Ajustes generales para la impresión del presupuesto */
   .presupuesto-print {
     font-size: 0.75rem !important;
     line-height: 1.3;
@@ -64,21 +52,11 @@
     line-height: 1.3;
   }
 
-  .promo-card {
-    font-size: 0.75rem !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+  /* Ajustes para tarjetas de promoción */
 
-  .promo-card .card-body {
-    padding: 0.4rem !important;
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
+  
+  
+ 
   .membrete {
     padding-top: 0 !important;
     margin-top: 0 !important;
@@ -88,4 +66,10 @@
     break-inside: avoid;
     page-break-inside: avoid;
   }
-  }}
+}
+
+
+
+
+
+

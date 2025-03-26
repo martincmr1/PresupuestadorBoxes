@@ -2,7 +2,7 @@ import React from 'react';
 
 function Diagnosticos() {
   return (
-    <div className="mt-4">
+    <div className="p-0 mt-2">
       <h4 className="fw-bold mb-2">
         <i className="bi bi-clipboard-check me-2"></i>ACERCA DE YPF BOXES
       </h4>

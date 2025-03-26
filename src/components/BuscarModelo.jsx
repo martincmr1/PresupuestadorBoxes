@@ -117,13 +117,13 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
           <div className="d-flex gap-2 flex-wrap ocultar-al-exportar">
             {!mostrarPatente && (
               <button
-                className="btn btn-secondary btn-sm ocultar-al-exportar"
+                className="btn btn-secondary btn-sm ocultar-al-exportar btn-mobile"
                 onClick={() => setMostrarPatente(true)}
               >
                 Ingresar patente
               </button>
             )}
-            <button className="btn btn-primary btn-sm ocultar-al-exportar" onClick={handleReset}>
+            <button className="btn btn-primary btn-sm ocultar-al-exportar btn-mobile" onClick={handleReset}>
               Nueva búsqueda
             </button>
           </div>
@@ -134,7 +134,7 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
       {!seleccionado && !modoManual && (
         <div className="text-end mt-3 ocultar-al-exportar">
           <button
-            className="btn btn-outline-dark btn-sm ocultar-al-exportar"
+            className="btn btn-outline-dark btn-sm ocultar-al-exportar btn-mobile"
             onClick={() => {
               setModoManual(true);
               setFiltro('');
