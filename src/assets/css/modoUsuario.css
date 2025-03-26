@@ -106,6 +106,20 @@
   display: none;
 }
 
+.btn-group .btn,
+.btn-group input[type="number"] {
+  height: 32px; /* o el valor que uses en tus inputs */
+  padding: 0 8px;
+  font-size: 0.875rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
 @media print {
   .solo-al-exportar {
     display: block !important;

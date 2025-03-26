@@ -44,7 +44,7 @@ function ListaProductos({ productos, setProductos }) {
       };
       setProductos(nuevos);
     } else {
-      nuevos.splice(index, 1); // eliminar línea
+      nuevos.splice(index, 1); // eliminar si no es válido
       setProductos(nuevos);
     }
 
@@ -63,14 +63,17 @@ function ListaProductos({ productos, setProductos }) {
     <div className="container p-0 m-0">
       <ul className="list-group ocultar-al-exportar">
         {productos.map((producto, index) => (
-          <li key={index} className="list-group-item d-flex align-items-center">
+          <li
+            key={index}
+            className="list-group-item d-flex align-items-center justify-content-between"
+          >
             <input
               type="text"
               list="sugerencias-productos"
               value={producto.descripcion}
               className="form-control form-control-sm border-0"
               onFocus={(e) => {
-                e.target.select(); // Selecciona todo el texto
+                e.target.select();
                 setProductoPrevio({ ...producto });
               }}
               onChange={(e) => {
@@ -78,17 +81,16 @@ function ListaProductos({ productos, setProductos }) {
                 nuevos[index].descripcion = e.target.value;
                 setProductos(nuevos);
               }}
-              onInput={(e) => actualizarProductoPorDescripcion(index, e.target.value)}
               onBlur={(e) => actualizarProductoPorDescripcion(index, e.target.value)}
-
               inputMode="text"
               autoComplete="off"
               style={{ textAlign: "left", paddingLeft: "8px", paddingRight: "8px" }}
             />
-            <div className="btn-group mx-2" role="group">
+
+            <div className="d-flex align-items-center btn-group mx-2" role="group">
               <button
                 type="button"
-                className="btn btn-sm btn-primary"
+                className="btn btn-sm btn-primary px-2"
                 onClick={() => {
                   const nuevos = [...productos];
                   nuevos[index].cantidad = Math.max(1, (producto.cantidad || 1) - 1);
@@ -108,11 +110,15 @@ function ListaProductos({ productos, setProductos }) {
                   nuevos[index].cantidad = Number(e.target.value);
                   setProductos(nuevos);
                 }}
-                style={{ width: "40px" }}
+                style={{
+                  width: "40px",
+                  height: "32px",
+                  padding: "0",
+                }}
               />
               <button
                 type="button"
-                className="btn btn-sm btn-primary"
+                className="btn btn-sm btn-primary px-2"
                 onClick={() => {
                   const nuevos = [...productos];
                   nuevos[index].cantidad = (producto.cantidad || 1) + 1;
@@ -122,6 +128,7 @@ function ListaProductos({ productos, setProductos }) {
                 +
               </button>
             </div>
+
             <strong>
               $
               {(producto.precio * (producto.cantidad || 1))
@@ -131,6 +138,7 @@ function ListaProductos({ productos, setProductos }) {
                 })
                 .replace(/,/g, ".")}
             </strong>
+
             <button
               className="btn btn-danger btn-sm ms-2 ocultar-al-exportar"
               title="Eliminar producto"
