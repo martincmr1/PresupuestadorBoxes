@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 
 function ListaProductos({ productos, setProductos }) {
   const [baseProductos, setBaseProductos] = useState([]);
-  const [productoPrevio, setProductoPrevio] = useState(null);
 
   const total = productos.reduce(
     (acc, p) => acc + p.precio * (p.cantidad || 1),
@@ -47,8 +46,6 @@ function ListaProductos({ productos, setProductos }) {
       nuevos.splice(index, 1); // eliminar si no es válido
       setProductos(nuevos);
     }
-
-    setProductoPrevio(null);
   };
 
   const CODIGOS_PREMIUM = ["12167", "12168", "12160", "12179", "16448", "12177"];
@@ -72,10 +69,7 @@ function ListaProductos({ productos, setProductos }) {
               list="sugerencias-productos"
               value={producto.descripcion}
               className="form-control form-control-sm border-0"
-              onFocus={(e) => {
-                e.target.select();
-                setProductoPrevio({ ...producto });
-              }}
+              onFocus={(e) => e.target.select()}
               onChange={(e) => {
                 const nuevos = [...productos];
                 nuevos[index].descripcion = e.target.value;
@@ -88,45 +82,22 @@ function ListaProductos({ productos, setProductos }) {
             />
 
             <div className="d-flex align-items-center btn-group mx-2" role="group">
-              <button
-                type="button"
-                className="btn btn-sm btn-primary px-2"
-                onClick={() => {
-                  const nuevos = [...productos];
-                  nuevos[index].cantidad = Math.max(1, (producto.cantidad || 1) - 1);
-                  setProductos(nuevos);
-                }}
-              >
-                -
-              </button>
-              <input
-                type="number"
-                min="1"
-                max="9"
+              <select
+                className="form-select form-select-sm"
                 value={producto.cantidad || 1}
-                className="form-control form-control-sm text-center"
                 onChange={(e) => {
                   const nuevos = [...productos];
                   nuevos[index].cantidad = Number(e.target.value);
                   setProductos(nuevos);
                 }}
-                style={{
-                  width: "40px",
-                  height: "32px",
-                  padding: "0",
-                }}
-              />
-              <button
-                type="button"
-                className="btn btn-sm btn-primary px-2"
-                onClick={() => {
-                  const nuevos = [...productos];
-                  nuevos[index].cantidad = (producto.cantidad || 1) + 1;
-                  setProductos(nuevos);
-                }}
+                style={{ width: "60px" }}
               >
-                +
-              </button>
+                {[...Array(9)].map((_, i) => (
+                  <option key={i + 1} value={i + 1}>
+                    {i + 1}
+                  </option>
+                ))}
+              </select>
             </div>
 
             <strong>
@@ -158,7 +129,7 @@ function ListaProductos({ productos, setProductos }) {
           <option
             key={i}
             value={p.descripcion}
-            label={`Cód: ${p.codigo} | $${p.precio?.toLocaleString("es-AR", {
+            label={`Cód: ${p.codigo} | ${p.descripcion} | $${p.precio?.toLocaleString("es-AR", {
               minimumFractionDigits: 0,
               maximumFractionDigits: 0,
             }).replace(/,/g, ".")}`}
@@ -213,7 +184,7 @@ function ListaProductos({ productos, setProductos }) {
           </tbody>
         </table>
 
-        <h5 className="text-end fw-bold">
+        <h5 className="text-end fw-bold text-price">
           Total {contienePremium ? "Servicio Premium" : "Servicio Completo o Express"}: $
           {total
             .toLocaleString("es-AR", {
@@ -223,7 +194,7 @@ function ListaProductos({ productos, setProductos }) {
             .replace(/,/g, ".")}
         </h5>
         <h6 className="text-end text-muted">
-          Total en 6 cuotas sin interés con Visa o Mastercard (Exclusivo App YPF):{" "}
+          Total en 6 cuotas sin interés con Visa o Mastercard (Exclusivo App YPF): {" "}
           <strong>
             $
             {totalCuotas
@@ -231,8 +202,7 @@ function ListaProductos({ productos, setProductos }) {
                 minimumFractionDigits: 0,
                 maximumFractionDigits: 0,
               })
-              .replace(/,/g, ".")}{" "}
-            x 6
+              .replace(/,/g, ".")} x 6
           </strong>
         </h6>
       </div>

@@ -106,16 +106,6 @@
   display: none;
 }
 
-.btn-group .btn,
-.btn-group input[type="number"] {
-  height: 32px; /* o el valor que uses en tus inputs */
-  padding: 0 8px;
-  font-size: 0.875rem;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 
 
@@ -243,25 +233,7 @@
   display: none;
 
 }
-.cantidad-btn {
-  border-radius: 50% !important;
-  width: 30px;
-  height: 30px;
-  padding: 0 !important;
-  text-align: center;
-}
 
-.cantidad-control span {
-  font-size: 0.9rem;
-} 
-
-
-  .btn-group .btn {
-    border-radius: 50% !important;
-    width: 35px;
-    height: 35px;
-    padding: 0;
-  }
 
   .btn-mobile {
     font-size: 1.05rem !important; /* aumenta el tamaño de fuente */
