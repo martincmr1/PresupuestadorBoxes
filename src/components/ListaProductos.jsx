@@ -19,20 +19,11 @@ function ListaProductos({ productos, setProductos }) {
   const actualizarProductoPorDescripcion = (index, valor) => {
     const valorTrim = valor.trim();
     const valorNormalizado = valorTrim.replace(/\s+/g, "").toLowerCase();
-    const esCodigoValido = /^[0-9]{5,}$/.test(valorTrim);
 
-    let productoEncontrado = null;
-
-    if (esCodigoValido) {
-      productoEncontrado = baseProductos.find(
-        (p) => p.codigo?.toString() === valorTrim
-      );
-    } else {
-      productoEncontrado = baseProductos.find((p) => {
-        const descNormalizada = p.descripcion?.toLowerCase().replace(/\s+/g, "");
-        return descNormalizada === valorNormalizado;
-      });
-    }
+    const productoEncontrado = baseProductos.find((p) => {
+      const descNormalizada = p.descripcion?.toLowerCase().replace(/\s+/g, "");
+      return descNormalizada === valorNormalizado;
+    });
 
     const nuevos = [...productos];
 
@@ -43,7 +34,7 @@ function ListaProductos({ productos, setProductos }) {
       };
       setProductos(nuevos);
     } else {
-      nuevos.splice(index, 1); // eliminar si no es válido
+      nuevos.splice(index, 1);
       setProductos(nuevos);
     }
   };
@@ -126,14 +117,7 @@ function ListaProductos({ productos, setProductos }) {
 
       <datalist id="sugerencias-productos">
         {baseProductos.map((p, i) => (
-          <option
-            key={i}
-            value={p.descripcion}
-            label={`Cód: ${p.codigo} | ${p.descripcion} | $${p.precio?.toLocaleString("es-AR", {
-              minimumFractionDigits: 0,
-              maximumFractionDigits: 0,
-            }).replace(/,/g, ".")}`}
-          />
+          <option key={i} value={p.descripcion} label={p.descripcion} />
         ))}
       </datalist>
 

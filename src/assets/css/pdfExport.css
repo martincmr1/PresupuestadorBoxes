@@ -2,10 +2,14 @@
  @media print {
   .logo-boxes {
     height: 30px !important;
+  
   }
 }
 
+.revision-text{
+  color: white!important;
 
+}
 
 
  .presupuesto-print {

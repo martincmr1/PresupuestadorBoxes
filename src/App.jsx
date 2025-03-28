@@ -30,11 +30,11 @@ function App() {
   const prepararParaExportar = () => {
     document.querySelectorAll(".ocultar-al-exportar").forEach((el) => (el.style.display = "none"));
     document.querySelectorAll(".solo-al-exportar").forEach((el) => (el.style.display = "block"));
-  };
 
-  const restaurarDespuesDeExportar = () => {
-    document.querySelectorAll(".ocultar-al-exportar").forEach((el) => (el.style.display = "block"));
-    document.querySelectorAll(".solo-al-exportar").forEach((el) => (el.style.display = "none"));
+    // 🔴 Remover clases con estilos de media query antes de exportar
+    document.querySelectorAll(".background-print, .backgrund-membrete, .logo-invertido, .whatsapp-icon").forEach((el) => {
+      el.classList.remove("background-print", "backgrund-membrete", "logo-invertido", "whatsapp-icon");
+    });
   };
 
   const generarNombreArchivo = () => {
@@ -56,8 +56,9 @@ function App() {
 
   const exportarPDF = () => {
     prepararParaExportar();
+    const el = exportRef.current;
+    el.classList.add("exportar-forzado");
 
-    // 👉 Activar atributos para aplicar estilos especiales en PDF
     document.documentElement.setAttribute("data-pdf-export", "true");
 
     setTimeout(() => {
@@ -77,13 +78,9 @@ function App() {
         pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
       };
 
-      html2pdf().set(opt).from(exportRef.current).save();
-
-      setTimeout(() => {
-        // 👈 Restaurar luego del export
-        restaurarDespuesDeExportar();
-        document.documentElement.removeAttribute("data-pdf-export");
-      }, 500);
+      html2pdf().set(opt).from(el).save().then(() => {
+        window.location.reload(); // 🔄 Refrescar la página después del PDF
+      });
     }, 300);
   };
 
@@ -101,31 +98,28 @@ function App() {
       window.print();
       setTimeout(() => {
         document.head.removeChild(style);
-        restaurarDespuesDeExportar();
+        window.location.reload();
       }, 500);
     }, 300);
   };
 
   return (
-    <div className="modo-usuario">
-      <div className="text-end mb-3 ocultar-al-exportar container">
-        <button className="btn btn-primary me-5 btn-mobile" onClick={imprimir}>
-          <FaPrint /> Imprimir
-        </button>
-        <button className="btn btn-danger me-5 btn-mobile" onClick={exportarPDF}>
-          <FaFilePdf /> Exportar PDF
-        </button>
-      </div>
-
+    <div className="modo-usuario background-print">
       <div ref={exportRef} className="container mt-2 presupuesto-print">
         <Membrete direccion={direccion} telefono={telefono} />
         <BuscarModelo setProductos={setProductos} setVehiculoSeleccionado={setVehiculoSeleccionado} />
         <ListaProductos productos={productos} setProductos={setProductos} />
 
+        {/* Botones debajo de ListaProductos */}
+        <div className="text-end mb-3 ocultar-al-exportar">
+          <button className="btn btn-primary me-5 btn-mobile" onClick={imprimir}>
+            <FaPrint /> Imprimir
+          </button>
+          <button className="btn btn-danger me-5 btn-mobile" onClick={exportarPDF}>
+            <FaFilePdf /> Exportar PDF
+          </button>
+        </div>
 
-
-
-        
         <Promociones />
 
         {/* 🔥 Diagnóstico y NotaLegal solo visibles al exportar */}

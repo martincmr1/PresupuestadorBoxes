@@ -18,14 +18,14 @@ function Membrete() {
   const hora = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: false });
 
   return (
-    <div className="container-fluid bg-white p-1 shadow-sm">
+    <div className="container-fluid bg-white p-1 shadow-sm backgrund-membrete">
       <div className="row align-items-center justify-content-between">
         {/* 🔵 Logo en la esquina superior izquierda */}
         <div className="col-auto d-flex align-items-center">
           <a href="/" onClick={(e) => { e.preventDefault(); window.location.reload(); }}>
             <img 
               src="./logo boxes@200x.png" 
-              className="logo-boxes"
+              className="logo-boxes logo-invertido"
               alt="YPF Boxes" 
               style={{ height: "30px" }}
               
@@ -36,7 +36,7 @@ function Membrete() {
         {/* 📌 Texto Centrado */}
         <div className="col text-center texto-membrete">
           <h5 className="fw-bold mb-0 ">
-            <span className="text-muted fs-6">
+            <span className="text-muted fs-6 revision-text">
               27 PUNTOS DE REVISIÓN + ESCANEO ELECTRÓNICO
             </span>
           </h5>
@@ -53,7 +53,7 @@ function Membrete() {
       <div className="row align-items-center justify-content-between mt-2">
         {/* 📍 Dirección */}
         <div className="col-auto d-flex align-items-center">
-          <FaMapMarkerAlt size={18} className="text-dark me-2" />
+          <FaMapMarkerAlt size={18} className="text-dark me-2 whatsapp-icon" />
           <span className="me-4">{direccion}</span>
         </div>
 
@@ -64,13 +64,13 @@ function Membrete() {
           <span className="fw-bold text-dark me-2 turnos-text">Turnos</span> <span className="app-text">👉</span>
 
           <div className="d-flex align-items-center ms-3  ">
-            <img  className="app-text" src="./applogo.png" alt="APP YPF" style={{ height: "20px", marginRight: "5px" }} />
+            <img  className="app-text logo-invertido" src="./applogo.png" alt="APP YPF" style={{ height: "20px", marginRight: "5px" }} />
             <span className="text-dark fw-bold app-text">APP YPF</span>
           </div>
          
 
           <div className="d-flex align-items-center ms-3">
-            <FaWhatsapp size={22} className="text-success " />
+            <FaWhatsapp size={22} className="text-success whatsapp-icon" />
             <span className="ms-1 fw-bold">{telefono}</span> {/* 🔹 Teléfono ahora es texto normal */}
           </div>
         </div>

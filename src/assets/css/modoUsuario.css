@@ -1,10 +1,4 @@
- /* ------------------------- */
-/* 🔹 MODO USUARIO GENERAL */
-/* ------------------------- */
-/* ======================== */
-/* 🔹 MODO USUARIO GENERAL */
-/* ======================== */
-/* ======================== */
+ /* ======================== */
 /* 🔹 MODO USUARIO GENERAL */
 /* ======================== */
 
@@ -85,11 +79,6 @@
   font-size: 1rem;
 }
 
-/* Esta línea se elimina para evitar sobrescribir el tamaño del logo */
-/* .modo-usuario .container-fluid img {
-  max-height: 26px;
-} */
-
 .modo-usuario .diagnostico-texto {
   font-size: 0.7rem;
   line-height: 1.5;
@@ -99,23 +88,16 @@
   font-size: 1.2rem;
 }
 
-
-
 /* Oculta contenido fuera del PDF o impresión */
 .solo-al-exportar {
   display: none;
 }
-
-
-
-
 
 @media print {
   .solo-al-exportar {
     display: block !important;
   }
 }
-
 
 @media (max-width: 576px) {
   .modo-usuario .logo-boxes {
@@ -204,42 +186,94 @@
     text-align: left !important;
   }
 
-  
-  
-    .modo-usuario .texto-membrete {
-      display: none;
-    
+  .modo-usuario .texto-membrete {
+    display: none;
   }
 
   .modo-usuario .fecha-hora {
     display: none;
-  
+  }
 
+  .modo-usuario .turnos-text {
+    display: none;
+  }
 
-}
+  .modo-usuario .promos-mobile {
+    display: none;
+  }
 
-
-.modo-usuario .turnos-text {
-  display: none;
-
-}
-
-.modo-usuario .promos-mobile {
-  display: none;
-
-}
-  
-.modo-usuario .app-text {
-  display: none;
-
-}
-
+  .modo-usuario .app-text {
+    display: none;
+  }
 
   .btn-mobile {
-    font-size: 1.05rem !important; /* aumenta el tamaño de fuente */
-   padding: auto; /* agranda el padding para que se vean más grandes */
+    font-size: 1.05rem !important;
+    padding: auto;
+  }
+  .backgrund-membrete {
+    background: linear-gradient(90deg, #004a7c, #0077b3, #3399cc);
+    background-size: 200% 100%;
+    animation: gradientFlow 10s ease infinite;
+    color: white;
+    border-radius: 12px; /* 🔵 Bordes redondeados */
+    padding: 8px 12px; /* 🧩 Opcional: espacio interno para que no quede tan pegado */
+  }
+  
+ 
+  @keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .logo-invertido {
+    filter: brightness(0) invert(1);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .whatsapp-icon {
+    color: white !important;
+    fill: white !important;
   }
 
 
+  .logo-boxes {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
+  .modo-usuario .container-fluid .col-auto.d-flex.align-items-center {
+    justify-content: center !important;
+    width: 100%;
+  }
+
+  .modo-usuario .container-fluid .row.mt-2 {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+  }
+
+  .modo-usuario .container-fluid .row.mt-2 .col-auto {
+    width: 100%;
+    justify-content: center !important;
+    display: flex;
+    margin-bottom: 0.5rem;
+  }
+
+  .modo-usuario .container-fluid .d-flex.align-items-center.ms-3 {
+    justify-content: center !important;
+    margin-left: 0 !important;
+  }
+
+  .modo-usuario .container-fluid .d-flex.align-items-center.ms-3 span {
+    font-size: 1rem;
+  }
+
+  .background-print {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #eaeaea, #cfcfcf) !important;
+  }
 }
