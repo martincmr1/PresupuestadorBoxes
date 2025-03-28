@@ -134,7 +134,7 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
       {!seleccionado && !modoManual && (
         <div className="text-end mt-3 ocultar-al-exportar">
           <button
-            className="btn btn-outline-dark btn-sm ocultar-al-exportar btn-mobile"
+            className="btn btn-outline-dark btn-sm ocultar-al-exportar btn-mobile manual-v"
             onClick={() => {
               setModoManual(true);
               setFiltro('');

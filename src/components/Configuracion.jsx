@@ -45,7 +45,7 @@ function Configuracion({ actualizarDatos }) {
         />
       </div>
 
-      <button className="btn btn-primary w-100" onClick={guardarConfiguracion}>
+      <button className="btn btn-primary w-100 configuracion" onClick={guardarConfiguracion}>
         Guardar Configuración
       </button>
     </div>

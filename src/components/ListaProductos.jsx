@@ -117,9 +117,14 @@ function ListaProductos({ productos, setProductos }) {
 
       <datalist id="sugerencias-productos">
         {baseProductos.map((p, i) => (
-          <option key={i} value={p.descripcion} label={p.descripcion} />
+          <option
+            key={i}
+            value={`${p.descripcion}`}
+            label={`Cód: ${p.codigo} | ${p.descripcion}`}
+          />
         ))}
       </datalist>
+
 
       <div className="text-end mt-2 ocultar-al-exportar">
         <button

@@ -272,8 +272,26 @@
     font-size: 1rem;
   }
 
+.configuracion{
+  font-size: 1rem;
+}
+
+  .manual-v{
+    width: 100% !important;
+    text-align: center !important;
+    background-color: #6c757d !important; /* gris */
+    color: white !important;
+    border-color: #939699 !important;
+    margin-bottom: 10px; /* opcional: espacio inferior */
+  }
+
   .background-print {
     min-height: 100vh;
-    background: linear-gradient(to bottom, #eaeaea, #cfcfcf) !important;
+    background-image: url("/public/pngtree-sleek-and-elegant-white-and-gray-gradient-texture-with-a-minimalistic-image_13924879.png"); /* 🔁 reemplaza con tu URL */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed; /* opcional: mantiene la imagen fija al hacer scroll */
   }
+  
 }
