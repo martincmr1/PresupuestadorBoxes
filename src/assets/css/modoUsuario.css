@@ -93,11 +93,19 @@
   display: none;
 }
 
+
+
+
 @media print {
   .solo-al-exportar {
     display: block !important;
   }
 }
+
+.precio-destacado {
+  font-size: 1em;
+}
+
 
 @media (max-width: 576px) {
   .modo-usuario .logo-boxes {

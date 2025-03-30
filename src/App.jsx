@@ -6,6 +6,9 @@ import Configuracion from "./components/Configuracion.jsx";
 import Promociones from './components/Promociones.jsx';
 import Diagnosticos from './components/Diagnosticos.jsx';
 import NotaLegal from './components/NotaLegal.jsx';
+import CrudVehiculos from './components/CrudVehiculos.jsx';
+
+
 
 import './assets/css/modoUsuario.css';
 import './assets/css/pdfExport.css';
@@ -132,6 +135,8 @@ function App() {
 
         <div className="ocultar-al-exportar">
           <Configuracion actualizarDatos={actualizarDatos} />
+          <CrudVehiculos/>
+     
         </div>
       </div>
     </div>

@@ -172,16 +172,13 @@ function ListaProductos({ productos, setProductos }) {
             ))}
           </tbody>
         </table>
-
         <h5 className="text-end fw-bold text-price">
-          Total {contienePremium ? "Servicio Premium" : "Servicio Completo o Express"}: $
-          {total
-            .toLocaleString("es-AR", {
-              minimumFractionDigits: 0,
-              maximumFractionDigits: 0,
-            })
-            .replace(/,/g, ".")}
-        </h5>
+  Total {contienePremium ? "Servicio Premium" : "Servicio Completo o Express"}: 
+  <span className="precio-destacado">
+    ${total.toLocaleString("es-AR", { minimumFractionDigits: 0, maximumFractionDigits: 0 }).replace(/,/g, ".")}
+  </span>
+</h5>
+
         <h6 className="text-end text-muted">
           Total en 6 cuotas sin interés con Visa o Mastercard (Exclusivo App YPF): {" "}
           <strong>

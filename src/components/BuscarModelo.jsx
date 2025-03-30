@@ -10,9 +10,16 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
   const [vehiculoManual, setVehiculoManual] = useState('');
 
   useEffect(() => {
-    fetch('/services.json')
+    fetch('https://basevehiculos-9f3c5-default-rtdb.firebaseio.com/.json')
       .then(res => res.json())
-      .then(data => setModelos(data))
+      .then(data => {
+        if (data) {
+          const lista = Object.values(data).filter(
+            v => v && typeof v.modelo === 'string' && typeof v.marca === 'string' && Array.isArray(v.codigos)
+          );
+          setModelos(lista);
+        }
+      })
       .catch(err => console.error('Error cargando modelos:', err));
   }, []);
 
@@ -94,7 +101,6 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
         )}
       </div>
 
-      {/* Vehículo seleccionado o manual */}
       {(seleccionado || modoManual) && (
         <div className="vehiculo-seleccionado mt-2">
           <p>
@@ -103,7 +109,6 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
             {patente && <span> | Patente: {patente}</span>}
           </p>
 
-          {/* Mostrar input de patente si se habilitó */}
           {mostrarPatente && (
             <input
               type="text"
@@ -130,7 +135,6 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
         </div>
       )}
 
-      {/* Ingreso manual del vehículo */}
       {!seleccionado && !modoManual && (
         <div className="text-end mt-3 ocultar-al-exportar">
           <button
