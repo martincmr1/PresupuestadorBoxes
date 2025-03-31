@@ -122,8 +122,8 @@ function App() {
             <FaFilePdf /> Exportar PDF
           </button>
         </div>
-
-        <Promociones />
+ {/*  */}
+ <Promociones />
 
         {/* 🔥 Diagnóstico y NotaLegal solo visibles al exportar */}
         <div className="solo-al-exportar">

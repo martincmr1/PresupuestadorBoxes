@@ -3,21 +3,31 @@ import "../assets/css/Promociones.css"; // Estilos personalizados
 
 function Promociones() {
   const promociones = [
-    {
+   /*{
       id: 1,
-      imagen: "./Promo20porciento.jpg",
+      imagen: "./acapromo.png",
       descripcion: "20% de descuento con ELAION sintético y semisintético reservando turno en App YPF. <strong>Vigencia: hasta el 31/03/2025</strong>",
     },
+    */
+    
+    {
+      id: 1,
+      imagen: "./acapromo.png",
+      descripcion: "10% de descuento en Lubricantes Elaion de 1 y 4 litros . <strong>Exclusivo linea auto (tope mensual ACA)</strong>",
+    },
+    
+    
+    
     {
       id: 2,
       imagen: "./Promoescalonado.jpg",
-      descripcion: "Escalonada ServiClub (ahorrá hasta $49.000).<strong>Vigencia: hasta el 31/03/2025</strong>",
+      descripcion: "Escalonada ServiClub (ahorrá hasta $49.000).<strong>Vigencia: hasta el 30/04/2025</strong>",
     },
     {
       id: 3,
       imagen: "./Promo_cuotas.png",
       descripcion:
-        "3 y 6 cuotas sin interés Pagando con App YPF (VISA/MASTERCARD).<strong>Vigencia: hasta el 31/03/2025</strong>",
+        "3 y 6 cuotas sin interés Pagando con App YPF (VISA/MASTERCARD).<strong>Vigencia: hasta el 30/04/2025</strong>",
       
       
     },
@@ -25,12 +35,12 @@ function Promociones() {
       id: 4,
       imagen: "./nacion.jpg",
       descripcion:
-        "30% de descuento en tu cambio con aceites sintéticos (tope $25.000) Pagando a travez de App YPF. <strong>Vigencia: hasta el 31/03/2025</strong>",
+        "30% de descuento en tu cambio con aceites sintéticos (tope $25.000) Pagando a travez de App YPF. <strong>Vigencia: hasta el 30/04/2025</strong>",
     },
     {
       id: 5,
       imagen: "./Promo_uber.png",
-      descripcion: "Uber DIAMANTE - 30% de descuento (tope $23.000) Exclusivo linea Elaion Auro, Fs ó Ts .<strong>Vigencia: hasta el 31/03/2025</strong>",
+      descripcion: "Uber DIAMANTE - 30% de descuento (tope $23.000 Exclusivo linea Elaion Auro y Fs)  ó  (tope $8500 con linea Elaion Ts) .<strong>Vigencia: hasta el 30/04/2025</strong>",
      
     },
   ];
