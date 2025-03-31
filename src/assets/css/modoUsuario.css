@@ -92,6 +92,20 @@
 .solo-al-exportar {
   display: none;
 }
+.logo-brillante {
+  animation: pulseLogo 2.5s ease-in-out infinite;
+}
+
+@keyframes pulseLogo {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 0.9;
+  }
+}
 
 
 
@@ -301,5 +315,7 @@
     background-position: center;
     background-attachment: fixed; /* opcional: mantiene la imagen fija al hacer scroll */
   }
+
+  
   
 }

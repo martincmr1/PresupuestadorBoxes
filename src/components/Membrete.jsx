@@ -25,7 +25,7 @@ function Membrete() {
           <a href="/" onClick={(e) => { e.preventDefault(); window.location.reload(); }}>
             <img 
               src="./logo boxes@200x.png" 
-              className="logo-boxes logo-invertido"
+              className="logo-boxes logo-invertido logo-brillante"
               alt="YPF Boxes" 
               style={{ height: "30px" }}
               

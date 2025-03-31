@@ -40,3 +40,19 @@
     max-width: 19%;
   }
   
+
+  /* Animación solo cuando NO se está exportando */
+html:not([data-pdf-export="true"]) .logo-brillante {
+  animation: pulseLogo 2.5s ease-in-out infinite;
+}
+
+@keyframes pulseLogo {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 0.9;
+  }
+}
