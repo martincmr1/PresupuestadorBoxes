@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 
 function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
   const [modelos, setModelos] = useState([]);
-  const [filtro, setFiltro] = useState('');
+  const [marcas, setMarcas] = useState([]);
+  const [marcaFiltro, setMarcaFiltro] = useState('');
+  const [marcaSeleccionada, setMarcaSeleccionada] = useState('');
+  const [modeloFiltro, setModeloFiltro] = useState('');
   const [seleccionado, setSeleccionado] = useState(null);
   const [mostrarPatente, setMostrarPatente] = useState(false);
   const [patente, setPatente] = useState('');
@@ -18,15 +21,27 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
             v => v && typeof v.modelo === 'string' && typeof v.marca === 'string' && Array.isArray(v.codigos)
           );
           setModelos(lista);
+
+          // Extraer marcas únicas
+          const marcasUnicas = Array.from(new Set(lista.map(m => m.marca))).sort();
+          setMarcas(marcasUnicas);
         }
       })
       .catch(err => console.error('Error cargando modelos:', err));
   }, []);
 
-  const handleSelect = (modelo) => {
+  const handleSelectMarca = (marca) => {
+    setMarcaSeleccionada(marca);
+    setMarcaFiltro('');
+    setModeloFiltro('');
+  };
+
+  const handleSelectModelo = (modelo) => {
     setSeleccionado(modelo);
     setVehiculoSeleccionado(modelo);
-    setFiltro('');
+    setMarcaFiltro('');
+    setMarcaSeleccionada('');
+    setModeloFiltro('');
     setMostrarPatente(false);
     setPatente('');
     setModoManual(false);
@@ -59,7 +74,9 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
   const handleReset = () => {
     setSeleccionado(null);
     setVehiculoSeleccionado(null);
-    setFiltro('');
+    setMarcaFiltro('');
+    setMarcaSeleccionada('');
+    setModeloFiltro('');
     setProductos([]);
     setMostrarPatente(false);
     setPatente('');
@@ -69,38 +86,87 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
 
   const normalizarTexto = (texto) => texto.toLowerCase().replace(/\s+/g, '');
 
-  const modelosFiltrados = modelos.filter((m) =>
-    filtro.length > 0 &&
-    normalizarTexto(m.modelo).includes(normalizarTexto(filtro))
+  // Marcas filtradas según el input
+  const marcasFiltradas = marcas.filter(m =>
+    normalizarTexto(m).includes(normalizarTexto(marcaFiltro))
+  );
+
+  // Modelos filtrados según la marca seleccionada y lo que se escriba en modelo
+  const modelosFiltrados = modelos.filter(m =>
+    m.marca === marcaSeleccionada &&
+    normalizarTexto(m.modelo).includes(normalizarTexto(modeloFiltro))
   );
 
   return (
     <div className="mb-3">
       <div className="ocultar-al-exportar">
+        {/* INPUT de MARCA */}
         <input
           type="text"
-          className="form-control"
-          placeholder="Buscar modelo del vehiculo..."
-          value={filtro}
-          onChange={(e) => setFiltro(e.target.value)}
+          className="form-control mb-2"
+          placeholder="Buscar marca del vehículo..."
+          value={marcaFiltro}
+          onChange={(e) => {
+            setMarcaFiltro(e.target.value);
+            setMarcaSeleccionada('');
+            setModeloFiltro('');
+          }}
           disabled={!!seleccionado || modoManual}
         />
 
-        {filtro && !seleccionado && !modoManual && (
-          <ul className="list-group mt-2">
-            {modelosFiltrados.map((modelo, index) => (
-              <li
-                key={index}
-                className="list-group-item list-group-item-action"
-                onClick={() => handleSelect(modelo)}
-              >
-                {modelo.modelo}
-              </li>
-            ))}
+        {/* Lista de sugerencias de marcas */}
+        {marcaFiltro && !marcaSeleccionada && (
+          <ul className="list-group mb-2">
+            {marcasFiltradas.length > 0 ? (
+              marcasFiltradas.map((marca, i) => (
+                <li
+                  key={i}
+                  className="list-group-item list-group-item-action"
+                  onClick={() => handleSelectMarca(marca)}
+                >
+                  {marca}
+                </li>
+              ))
+            ) : (
+              <li className="list-group-item">No se encontraron marcas</li>
+            )}
           </ul>
+        )}
+
+        {/* INPUT de MODELO (solo aparece si hay marca seleccionada) */}
+        {marcaSeleccionada && (
+          <>
+            <input
+              type="text"
+              className="form-control mb-2"
+              placeholder={`Buscar modelo de ${marcaSeleccionada}...`}
+              value={modeloFiltro}
+              onChange={(e) => setModeloFiltro(e.target.value)}
+              disabled={!!seleccionado || modoManual}
+            />
+
+            {modeloFiltro && !seleccionado && (
+              <ul className="list-group">
+                {modelosFiltrados.length > 0 ? (
+                  modelosFiltrados.map((modelo, index) => (
+                    <li
+                      key={index}
+                      className="list-group-item list-group-item-action"
+                      onClick={() => handleSelectModelo(modelo)}
+                    >
+                      {modelo.modelo}
+                    </li>
+                  ))
+                ) : (
+                  <li className="list-group-item">No se encontraron modelos</li>
+                )}
+              </ul>
+            )}
+          </>
         )}
       </div>
 
+      {/* SELECCION MOSTRADA */}
       {(seleccionado || modoManual) && (
         <div className="vehiculo-seleccionado mt-2">
           <p>
@@ -122,26 +188,29 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
           <div className="d-flex gap-2 flex-wrap ocultar-al-exportar">
             {!mostrarPatente && (
               <button
-                className="btn btn-secondary btn-sm ocultar-al-exportar btn-mobile"
+                className="btn btn-secondary btn-sm ocultar-al-exportar"
                 onClick={() => setMostrarPatente(true)}
               >
                 Ingresar patente
               </button>
             )}
-            <button className="btn btn-primary btn-sm ocultar-al-exportar btn-mobile" onClick={handleReset}>
+            <button className="btn btn-primary btn-sm ocultar-al-exportar" onClick={handleReset}>
               Nueva búsqueda
             </button>
           </div>
         </div>
       )}
 
+      {/* BOTÓN MANUAL */}
       {!seleccionado && !modoManual && (
         <div className="text-end mt-3 ocultar-al-exportar">
           <button
-            className="btn btn-outline-dark btn-sm ocultar-al-exportar btn-mobile manual-v"
+            className="btn btn-outline-dark btn-sm"
             onClick={() => {
               setModoManual(true);
-              setFiltro('');
+              setModeloFiltro('');
+              setMarcaFiltro('');
+              setMarcaSeleccionada('');
               setSeleccionado(null);
             }}
           >
@@ -150,6 +219,7 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
         </div>
       )}
 
+      {/* INPUT MANUAL */}
       {modoManual && !seleccionado && (
         <div className="mt-2 ocultar-al-exportar">
           <input
