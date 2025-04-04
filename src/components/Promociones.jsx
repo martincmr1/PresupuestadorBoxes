@@ -20,8 +20,8 @@ function Promociones() {
     
     {
       id: 2,
-      imagen: "./Promoescalonado.jpg",
-      descripcion: "Escalonada ServiClub (ahorrá hasta $49.000).<strong>Vigencia: hasta el 30/04/2025</strong>",
+      imagen: "./servi50.jpg",
+      descripcion: "Escalonada ServiClub 50% puntos(Exclusivo para servicios reservados con App YPF).<strong>Vigencia: hasta el 15/04/2025</strong>",
     },
     {
       id: 3,
