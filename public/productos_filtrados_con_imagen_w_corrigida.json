@@ -1,0 +1,717 @@
+[
+  {
+    "codigo": "4011558338411",
+    "descripcion": "FIL AC MANN W66/2 ",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_66.2.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "4011558732707",
+    "descripcion": "FIL AC W 1170/7",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_1170.7.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "16257",
+    "descripcion": "FIL AC W 610/3 WIX Mann 1 Un",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_610.3.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "4011558729509",
+    "descripcion": "FIL AC W 712/52 MANN",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_712.52.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "4011558744502",
+    "descripcion": "FIL AC W 712/75 MANN",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_712.75.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "15364",
+    "descripcion": "FIL AC W 712/91 Unidad Un",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_712.91.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "15497",
+    "descripcion": "FIL AC W 712/94",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_712.94.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "4011558707507",
+    "descripcion": "FIL AC W 818/81 MANN",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_818.81.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "15442",
+    "descripcion": "FIL ACEITE W 7013/1 Mann Un",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_7013.1.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "15437",
+    "descripcion": "FIL ACEITE W 940/69 Mann Un",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_940.69.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "15411",
+    "descripcion": "FIL MANN AC W 914/28 Aceite Unidad Un",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_914.28.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "15502",
+    "descripcion": "Fil Mann Aceite W 712/95 Un",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_712.95.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "15091",
+    "descripcion": "Filtro AC W 610/2 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_610.2.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "15089",
+    "descripcion": "Filtro AC W 712/4 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_712.4.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "15170",
+    "descripcion": "FILTRO AC W 719/45 Mann 1 Un",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_719.45.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "15162",
+    "descripcion": "Filtro AC W 830/3 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_830.3.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "15119",
+    "descripcion": "Filtro AC W 920/14 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_920.14.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "15090",
+    "descripcion": "Filtro AC W 921/80 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_921.80.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "15116",
+    "descripcion": "Filtro AC W 925/A Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_925..jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18497",
+    "descripcion": "FILTRO AC W 927/1 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_927.1.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "15092",
+    "descripcion": "Filtro AC W 929/3 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_929.3.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "15094",
+    "descripcion": "Filtro AC W 950/18 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_950.18.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18967",
+    "descripcion": "FILTRO AC W918/1 Mann Un",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_918.1.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18963",
+    "descripcion": "FILTRO AC W940/34 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_940.34.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18566",
+    "descripcion": "Filtro aceite  AC W 1114/80 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_1114.80.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18568",
+    "descripcion": "Filtro aceite  AC W 1126/4 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_1126.4.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18571",
+    "descripcion": "Filtro aceite  AC W 610/1 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_610.1.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18573",
+    "descripcion": "Filtro aceite  AC W 610/4 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_610.4.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18575",
+    "descripcion": "Filtro aceite  AC W 610/82 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_610.82.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18579",
+    "descripcion": "Filtro aceite  AC W 67/2 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_67.2.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18584",
+    "descripcion": "Filtro aceite  AC W 712/12 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_712.12.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18585",
+    "descripcion": "Filtro aceite  AC W 712/16 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_712.16.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18586",
+    "descripcion": "Filtro aceite  AC W 712/19 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_712.19.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18587",
+    "descripcion": "Filtro aceite  AC W 712/2 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_712.2.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18588",
+    "descripcion": "Filtro aceite  AC W 712/21 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_712.21.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18590",
+    "descripcion": "Filtro aceite  AC W 712/37 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_712.37.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18591",
+    "descripcion": "Filtro aceite  AC W 712/38 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_712.38.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18592",
+    "descripcion": "Filtro aceite  AC W 712/41 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_712.41.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18593",
+    "descripcion": "Filtro aceite  AC W 712/43 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_712.43.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18594",
+    "descripcion": "Filtro aceite  AC W 712/47 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_712.47.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18596",
+    "descripcion": "Filtro aceite  AC W 712/6 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_712.6.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18597",
+    "descripcion": "Filtro aceite  AC W 712/73 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_712.73.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18598",
+    "descripcion": "Filtro aceite  AC W 712/8 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_712.8.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18599",
+    "descripcion": "Filtro aceite  AC W 712/9 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_712.9.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18603",
+    "descripcion": "Filtro aceite  AC W 713/18 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_713.18.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18605",
+    "descripcion": "Filtro aceite  AC W 713/23 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_713.23.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18606",
+    "descripcion": "Filtro aceite  AC W 713/4 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_713.4.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18607",
+    "descripcion": "Filtro aceite  AC W 713/9 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_713.9.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18608",
+    "descripcion": "Filtro aceite  AC W 714/2 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_714.2.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18609",
+    "descripcion": "Filtro aceite  AC W 714/4 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_714.4.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18610",
+    "descripcion": "Filtro aceite  AC W 717/2 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_717.2.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18611",
+    "descripcion": "Filtro aceite  AC W 718/3 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_718.3.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18612",
+    "descripcion": "Filtro aceite  AC W 719/11 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_719.11.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18613",
+    "descripcion": "Filtro aceite  AC W 719/12 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_719.12.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18614",
+    "descripcion": "Filtro aceite  AC W 719/13 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_719.13.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18615",
+    "descripcion": "Filtro aceite  AC W 719/14 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_719.14.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18616",
+    "descripcion": "Filtro aceite  AC W 719/15 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_719.15.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18618",
+    "descripcion": "Filtro aceite  AC W 719/29 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_719.29.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18619",
+    "descripcion": "Filtro aceite  AC W 719/30 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_719.30.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18620",
+    "descripcion": "Filtro aceite  AC W 719/33 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_719.33.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18623",
+    "descripcion": "Filtro aceite  AC W 724/4 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_724.4.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18627",
+    "descripcion": "Filtro aceite  AC W 811/81 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_811.81.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18628",
+    "descripcion": "Filtro aceite  AC W 811/84 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_811.84.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18629",
+    "descripcion": "Filtro aceite  AC W 811/85 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_811.85.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18630",
+    "descripcion": "Filtro aceite  AC W 813/6 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_813.6.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18632",
+    "descripcion": "Filtro aceite  AC W 815/3 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_815.3.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18633",
+    "descripcion": "Filtro aceite  AC W 815/80 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_815.80.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18634",
+    "descripcion": "Filtro aceite  AC W 815/82 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_815.82.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18635",
+    "descripcion": "Filtro aceite  AC W 816/80 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_816.80.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18636",
+    "descripcion": "Filtro aceite  AC W 818/16 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_818.16.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18637",
+    "descripcion": "Filtro aceite  AC W 818/4 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_818.4.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18638",
+    "descripcion": "Filtro aceite  AC W 818/8 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_818.8.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18639",
+    "descripcion": "Filtro aceite  AC W 818/82 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_818.82.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18640",
+    "descripcion": "Filtro aceite  AC W 818/84 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_818.84.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18641",
+    "descripcion": "Filtro aceite  AC W 830/1 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_830.1.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18643",
+    "descripcion": "Filtro aceite  AC W 910/1 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_910.1.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18644",
+    "descripcion": "Filtro aceite  AC W 914/13 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_914.13.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18645",
+    "descripcion": "Filtro aceite  AC W 914/24 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_914.24.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18646",
+    "descripcion": "Filtro aceite  AC W 914/26 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_914.26.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18647",
+    "descripcion": "Filtro aceite  AC W 914/7 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_914.7.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18648",
+    "descripcion": "Filtro aceite  AC W 915/9 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_915.9.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18650",
+    "descripcion": "Filtro aceite  AC W 917/1 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_917.1.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18651",
+    "descripcion": "Filtro aceite  AC W 920/11 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_920.11.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18652",
+    "descripcion": "Filtro aceite  AC W 920/16 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_920.16.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18653",
+    "descripcion": "Filtro aceite  AC W 920/21 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_920.21.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18654",
+    "descripcion": "Filtro aceite  AC W 920/25 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_920.25.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18655",
+    "descripcion": "Filtro aceite  AC W 920/3 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_920.3.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18656",
+    "descripcion": "Filtro aceite  AC W 920/31 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_920.31.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18657",
+    "descripcion": "Filtro aceite  AC W 920/32 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_920.32.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18658",
+    "descripcion": "Filtro aceite  AC W 920/34 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_920.34.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18659",
+    "descripcion": "Filtro aceite  AC W 920/38 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_920.38.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18660",
+    "descripcion": "Filtro aceite  AC W 920/41 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_920.41.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18661",
+    "descripcion": "Filtro aceite  AC W 920/45 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_920.45.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18662",
+    "descripcion": "Filtro aceite  AC W 920/6 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_920.6.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18663",
+    "descripcion": "Filtro aceite  AC W 920/7 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_920.7.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18664",
+    "descripcion": "Filtro aceite  AC W 920/8 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_920.8.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18669",
+    "descripcion": "Filtro aceite  AC W 928/1 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_928.1.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18670",
+    "descripcion": "Filtro aceite  AC W 930/20 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_930.20.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18671",
+    "descripcion": "Filtro aceite  AC W 930/21 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_930.21.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18672",
+    "descripcion": "Filtro aceite  AC W 930/26 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_930.26.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18673",
+    "descripcion": "Filtro aceite  AC W 930/6 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_930.6.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18675",
+    "descripcion": "Filtro aceite  AC W 932/81 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_932.81.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18676",
+    "descripcion": "Filtro aceite  AC W 933/1 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_933.1.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18677",
+    "descripcion": "Filtro aceite  AC W 933/2 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_933.2.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18678",
+    "descripcion": "Filtro aceite  AC W 933/4 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_933.4.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18679",
+    "descripcion": "Filtro aceite  AC W 933/80 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_933.80.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18681",
+    "descripcion": "Filtro aceite  AC W 936/4 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_936.4.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18682",
+    "descripcion": "Filtro aceite  AC W 936/5 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_936.5.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18684",
+    "descripcion": "Filtro aceite  AC W 940/1 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_940.1.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18685",
+    "descripcion": "Filtro aceite  AC W 940/18 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_940.18.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18686",
+    "descripcion": "Filtro aceite  AC W 940/23 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_940.23.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18687",
+    "descripcion": "Filtro aceite  AC W 940/29 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_940.29.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18688",
+    "descripcion": "Filtro aceite  AC W 940/44 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_940.44.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18689",
+    "descripcion": "Filtro aceite  AC W 940/81 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_940.81.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18690",
+    "descripcion": "Filtro aceite  AC W 950/14 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_950.14.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18691",
+    "descripcion": "Filtro aceite  AC W 950/35 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_950.35.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18692",
+    "descripcion": "Filtro aceite  AC W 950/4 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_950.4.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18693",
+    "descripcion": "Filtro aceite  AC W 950/7 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_950.7.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "4011558077884",
+    "descripcion": "Filtro aceite AC W 610/10 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_610.10.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18580",
+    "descripcion": "Filtro aceite AC W 68/3 Mann Lt",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_68.3.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "11203",
+    "descripcion": "Filtro aceite AC W 940/24 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_940.24.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "4011558747206",
+    "descripcion": "Filtro aceite AC W 940/4 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_940.4.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18572",
+    "descripcion": "Filtro aceite W 610/3 Mann 1 Un",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_610.3.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18578",
+    "descripcion": "Filtro aceite W 67/1 Mann 1 Un",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_67.1.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18581",
+    "descripcion": "Filtro aceite W 68/80 Mann 1 Un",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_68.80.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18589",
+    "descripcion": "Filtro aceite W 712/22 Mann 1 Un",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_712.22.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "15076",
+    "descripcion": "FILTRO ACEITE W 712/82 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_712.82.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "15143",
+    "descripcion": "Filtro aceite W 712/83 Mann 1 Un",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_712.83.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18601",
+    "descripcion": "Filtro aceite W 713/15 Mann 1 Un",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_713.15.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18602",
+    "descripcion": "Filtro aceite W 713/16 Mann 1 Un",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_713.16.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18604",
+    "descripcion": "Filtro aceite W 713/19 Mann 1 Un",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_713.19.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18617",
+    "descripcion": "Filtro aceite W 719/27 Mann 1 Un",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_719.27.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18622",
+    "descripcion": "Filtro aceite W 719/5 Mann 1 Un",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_719.5.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "11522",
+    "descripcion": "Filtro aceite W 75/2 Mann 1 Un",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_75.2.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18624",
+    "descripcion": "Filtro aceite W 75/3 Mann 1 Un",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_75.3.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "15357",
+    "descripcion": "Filtro aceite W 920/48 Mann 1 Un",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_920.48.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "18940",
+    "descripcion": "Filtro aceite W 950/26 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_950.26.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "15068",
+    "descripcion": "FILTRO ACEITE W711/80 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_711.80.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "15056",
+    "descripcion": "FILTRO ACEITE W719/50 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_719.50.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "15063",
+    "descripcion": "FILTRO ACEITE W75/5 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_75.5.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "15066",
+    "descripcion": "FILTRO ACEITE W811/80 Mann",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_811.80.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "15508",
+    "descripcion": "Filtro Mann Aceite W 610/7",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_610.7.jpg.transform/w.1680/image.jpg"
+  },
+  {
+    "codigo": "4011558734107",
+    "descripcion": "FIL AC W 716/1",
+    "imagen": "https://www.mann-filter.com/content/dam/mann-filter/pim-assets/product-image/W_716.1.jpg.transform/w.1680/image.jpg"
+  }
+]
