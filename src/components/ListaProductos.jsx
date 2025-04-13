@@ -53,19 +53,37 @@ function ListaProductos({ productos, setProductos }) {
   const maximoProductos = 7;
   const puedeAgregarProducto = productos.length < maximoProductos;
 
-  // Cargar disponibilidad de imágenes
+  // Modificado: verificar si hay imagen .jpg o .png
   useEffect(() => {
     const verificarImagenes = async () => {
       const disponibilidad = {};
       for (const producto of productos) {
         const codigo = producto.codigo?.toString().trim();
-        const url = `/img/${codigo}.jpg`;
         if (!codigo) continue;
+
+        const urlJPG = `/img/${codigo}.jpg`;
+        const urlPNG = `/img/${codigo}.png`;
+
+        let existe = false;
         try {
-          const res = await fetch(url, { method: "HEAD" });
-          disponibilidad[codigo] = res.ok;
-        } catch {
-          disponibilidad[codigo] = false;
+          const resJPG = await fetch(urlJPG, { method: "HEAD" });
+          if (resJPG.ok) {
+            disponibilidad[codigo] = ".jpg";
+            existe = true;
+          }
+        } catch {}
+
+        if (!existe) {
+          try {
+            const resPNG = await fetch(urlPNG, { method: "HEAD" });
+            if (resPNG.ok) {
+              disponibilidad[codigo] = ".png";
+            } else {
+              disponibilidad[codigo] = null;
+            }
+          } catch {
+            disponibilidad[codigo] = null;
+          }
         }
       }
       setImagenesDisponibles(disponibilidad);
@@ -181,8 +199,9 @@ function ListaProductos({ productos, setProductos }) {
           <tbody>
             {productos.map((producto, index) => {
               const codigo = producto.codigo?.toString().trim();
-              const rutaImagen = codigo ? `/img/${codigo}.jpg` : null;
-              const mostrarOjo = imagenesDisponibles[codigo];
+              const extension = imagenesDisponibles[codigo];
+              const rutaImagen = extension ? `/img/${codigo}${extension}` : null;
+              const mostrarOjo = !!extension;
 
               return (
                 <tr key={index}>
