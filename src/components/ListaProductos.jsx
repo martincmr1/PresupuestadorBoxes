@@ -8,6 +8,7 @@ function ListaProductos({ productos, setProductos }) {
   const [imagenSeleccionada, setImagenSeleccionada] = useState(null);
   const [descripcionSeleccionada, setDescripcionSeleccionada] = useState("");
   const [imagenesDisponibles, setImagenesDisponibles] = useState({});
+  const [cargando, setCargando] = useState(true); // Loader agregado
 
   const total = productos.reduce(
     (acc, p) => acc + p.precio * (p.cantidad || 1),
@@ -16,10 +17,17 @@ function ListaProductos({ productos, setProductos }) {
   const totalCuotas = total / 6;
 
   useEffect(() => {
+    setCargando(true);
     fetch("https://api-boxes-default-rtdb.firebaseio.com/productos.json")
       .then((res) => res.json())
-      .then((data) => setBaseProductos(data || []))
-      .catch((err) => console.error("Error cargando productos:", err));
+      .then((data) => {
+        setBaseProductos(data || []);
+        setCargando(false);
+      })
+      .catch((err) => {
+        console.error("Error cargando productos:", err);
+        setCargando(false);
+      });
   }, []);
 
   const actualizarProductoPorDescripcion = (index, valor) => {
@@ -53,7 +61,6 @@ function ListaProductos({ productos, setProductos }) {
   const maximoProductos = 7;
   const puedeAgregarProducto = productos.length < maximoProductos;
 
-  // Modificado: verificar si hay imagen .jpg o .png
   useEffect(() => {
     const verificarImagenes = async () => {
       const disponibilidad = {};
@@ -90,6 +97,18 @@ function ListaProductos({ productos, setProductos }) {
     };
     if (productos.length > 0) verificarImagenes();
   }, [productos]);
+
+  // Mostrar loader si está cargando
+  if (cargando) {
+    return (
+      <div className="text-center p-5">
+        <div className="spinner-border text-primary" role="status">
+          <span className="visually-hidden">Cargando...</span>
+        </div>
+        <p className="mt-3">Cargando productos...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="container p-0 m-0">

@@ -5,6 +5,11 @@
     display: none !important;
   }
 
+  /* Aumenta el tamaño del texto del total */
+  .text-price {
+    font-size: 125% !important;
+  }
+
   .solo-al-exportar {
     display: block !important;
   }
@@ -24,8 +29,6 @@
   }
 
   /* Ajustes generales para la impresión del presupuesto */
- 
-
   .presupuesto-print {
     font-size: 0.75rem;
     page-break-inside: avoid;
@@ -35,13 +38,8 @@
     padding: 0;
   }
 
-
-
-
-
-
-
-  .presupuesto-print h5,
+  /* Aplicar solo si h5 NO tiene clase especial como .text-price */
+  .presupuesto-print h5:not(.text-price),
   .presupuesto-print h6,
   .presupuesto-print strong {
     font-size: 0.8rem !important;
@@ -61,10 +59,6 @@
     line-height: 1.3;
   }
 
-  /* Ajustes para tarjetas de promoción */
-
-  
- 
   .membrete {
     padding-top: 0 !important;
     margin-top: 0 !important;
@@ -91,8 +85,3 @@ html:not([data-pdf-export="true"]) .logo-brillante {
     opacity: 0.9;
   }
 }
-
-
-
-
-
