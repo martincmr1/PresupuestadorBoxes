@@ -8,10 +8,15 @@ function ListaProductos({ productos, setProductos }) {
   const [imagenSeleccionada, setImagenSeleccionada] = useState(null);
   const [descripcionSeleccionada, setDescripcionSeleccionada] = useState("");
   const [imagenesDisponibles, setImagenesDisponibles] = useState({});
-  const [cargando, setCargando] = useState(true); // Loader agregado
+  const [cargando, setCargando] = useState(true);
+
+  const obtenerPrecioSeguro = (precio, cantidad = 1) => {
+    const valor = parseFloat((precio || "0").toString().replace(",", "."));
+    return isNaN(valor) ? 0 : valor * cantidad;
+  };
 
   const total = productos.reduce(
-    (acc, p) => acc + p.precio * (p.cantidad || 1),
+    (acc, p) => acc + obtenerPrecioSeguro(p.precio, p.cantidad || 1),
     0
   );
   const totalCuotas = total / 6;
@@ -41,7 +46,7 @@ function ListaProductos({ productos, setProductos }) {
 
     const nuevos = [...productos];
 
-    if (productoEncontrado && productoEncontrado.precio > 0) {
+    if (productoEncontrado && parseFloat((productoEncontrado.precio || "0").replace(",", ".")) > 0) {
       nuevos[index] = {
         ...productoEncontrado,
         cantidad: productos[index].cantidad || 1,
@@ -98,7 +103,6 @@ function ListaProductos({ productos, setProductos }) {
     if (productos.length > 0) verificarImagenes();
   }, [productos]);
 
-  // Mostrar loader si está cargando
   if (cargando) {
     return (
       <div className="text-center p-5">
@@ -155,8 +159,7 @@ function ListaProductos({ productos, setProductos }) {
             </div>
 
             <strong>
-              $
-              {(producto.precio * (producto.cantidad || 1))
+              ${obtenerPrecioSeguro(producto.precio, producto.cantidad || 1)
                 .toLocaleString("es-AR", {
                   minimumFractionDigits: 0,
                   maximumFractionDigits: 0,
@@ -244,8 +247,7 @@ function ListaProductos({ productos, setProductos }) {
                   <td className="text-end">{producto.cantidad || 1}</td>
                   <td className="text-end">
                     <strong>
-                      $
-                      {(producto.precio * (producto.cantidad || 1))
+                      ${obtenerPrecioSeguro(producto.precio, producto.cantidad || 1)
                         .toLocaleString("es-AR", {
                           minimumFractionDigits: 0,
                           maximumFractionDigits: 0,
@@ -269,8 +271,7 @@ function ListaProductos({ productos, setProductos }) {
         <h6 className="text-end text-muted">
           Total en 6 cuotas sin interés con Visa o Mastercard (Exclusivo App YPF):{" "}
           <strong>
-            $
-            {totalCuotas
+            ${totalCuotas
               .toLocaleString("es-AR", {
                 minimumFractionDigits: 0,
                 maximumFractionDigits: 0,
