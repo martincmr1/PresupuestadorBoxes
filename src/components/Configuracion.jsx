@@ -1,53 +1,77 @@
 import React, { useState, useEffect } from "react";
+import { Form, Row, Col, Button } from "react-bootstrap";
 
-function Configuracion({ actualizarDatos }) {
-  const [direccion, setDireccion] = useState("");
-  const [telefono, setTelefono] = useState("");
+function Configuracion({ actualizarDatos, esAca, setEsAca }) {
+  const [direccionLocal, setDireccionLocal] = useState("");
+  const [telefonoLocal, setTelefonoLocal] = useState("");
+  const [esAcaLocal, setEsAcaLocal] = useState(true);
 
-  // Cargar datos guardados en localStorage al montar el componente
   useEffect(() => {
-    const dirGuardada = localStorage.getItem("direccion") || "Bartolomé Mitre 1666";
-    const telGuardado = localStorage.getItem("telefono") || "1138110074";
-
-    setDireccion(dirGuardada);
-    setTelefono(telGuardado);
+    setDireccionLocal(localStorage.getItem("direccion") || "");
+    setTelefonoLocal(localStorage.getItem("telefono") || "");
+    const guardado = localStorage.getItem("esAca");
+    const valor = guardado === null ? true : guardado === "true";
+    setEsAcaLocal(valor);
+    setEsAca(valor);
   }, []);
 
-  // Guardar datos en localStorage y actualizar en la app
-  const guardarConfiguracion = () => {
-    localStorage.setItem("direccion", direccion);
-    localStorage.setItem("telefono", telefono);
-    actualizarDatos(direccion, telefono);
-    alert("Configuración guardada correctamente ✅");
+  const handleGuardar = () => {
+    localStorage.setItem("direccion", direccionLocal);
+    localStorage.setItem("telefono", telefonoLocal);
+    localStorage.setItem("esAca", esAcaLocal);
+
+    actualizarDatos(direccionLocal, telefonoLocal);
+    setEsAca(esAcaLocal);
+
+    // 🔄 Recargar la página para aplicar cambios globalmente
+    window.location.reload();
   };
 
   return (
-    <div className="container mt-4 p-3 border rounded shadow-sm">
-      <h4 className="text-center">Configuración</h4>
+    <div className="container my-3">
+      <Row className="align-items-center mb-3">
+        <Col xs={12} md={6}>
+          <Form.Check
+            type="switch"
+            id="switch-aca"
+            label="¿Estación ACA?"
+            checked={esAcaLocal}
+            onChange={() => setEsAcaLocal(!esAcaLocal)}
+          />
+        </Col>
+      </Row>
 
-      <div className="mb-3">
-        <label className="form-label fw-bold">Dirección</label>
-        <input
-          type="text"
-          className="form-control"
-          value={direccion}
-          onChange={(e) => setDireccion(e.target.value)}
-        />
-      </div>
+      <Row className="mb-3">
+        <Col xs={12} md={6}>
+          <Form.Group>
+            <Form.Label>Dirección</Form.Label>
+            <Form.Control
+              type="text"
+              value={direccionLocal}
+              onChange={(e) => setDireccionLocal(e.target.value)}
+            />
+          </Form.Group>
+        </Col>
 
-      <div className="mb-3">
-        <label className="form-label fw-bold">Número de Teléfono</label>
-        <input
-          type="text"
-          className="form-control"
-          value={telefono}
-          onChange={(e) => setTelefono(e.target.value)}
-        />
-      </div>
+        <Col xs={12} md={6}>
+          <Form.Group>
+            <Form.Label>Teléfono</Form.Label>
+            <Form.Control
+              type="text"
+              value={telefonoLocal}
+              onChange={(e) => setTelefonoLocal(e.target.value)}
+            />
+          </Form.Group>
+        </Col>
+      </Row>
 
-      <button className="btn btn-primary w-100 configuracion" onClick={guardarConfiguracion}>
-        Guardar Configuración
-      </button>
+      <Row className="mt-2">
+        <Col>
+          <Button variant="success" onClick={handleGuardar}>
+            Guardar configuración
+          </Button>
+        </Col>
+      </Row>
     </div>
   );
 }

@@ -13,12 +13,12 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
     />
 
-    <!-- Política de seguridad más segura sin romper CSS -->
+    <!-- Política de seguridad para permitir Firebase -->
     <meta
       http-equiv="Content-Security-Policy"
       content="
         default-src 'self';
-        script-src 'self' https://cdn.jsdelivr.net;
+        script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net;
         style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net;
         font-src 'self' https://cdn.jsdelivr.net;
         connect-src 'self' https://api-boxes-default-rtdb.firebaseio.com https://basevehiculos-9f3c5-default-rtdb.firebaseio.com;

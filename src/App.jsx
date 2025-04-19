@@ -1,5 +1,4 @@
-import React, { useState, useRef } from 'react';
-import Membrete from "./components/Membrete";
+import React, { useState, useRef } from "react";
 import BuscarModelo from './components/BuscarModelo.jsx';
 import ListaProductos from './components/ListaProductos.jsx';
 import Configuracion from "./components/Configuracion.jsx";
@@ -7,9 +6,7 @@ import Promociones from './components/Promociones.jsx';
 import Diagnosticos from './components/Diagnosticos.jsx';
 import NotaLegal from './components/NotaLegal.jsx';
 import CrudVehiculos from './components/CrudVehiculos.jsx';
-
-
-
+import Membrete from './components/Membrete.jsx';
 
 import './assets/css/modoUsuario.css';
 import './assets/css/pdfExport.css';
@@ -23,19 +20,19 @@ function App() {
   const [direccion, setDireccion] = useState(localStorage.getItem("direccion") || "Bartolomé Mitre 1666");
   const [telefono, setTelefono] = useState(localStorage.getItem("telefono") || "1138110074");
   const [vehiculoSeleccionado, setVehiculoSeleccionado] = useState(null);
+  const [esAca, setEsAca] = useState(true); // ✅ nuevo switch
 
   const exportRef = useRef();
 
   const actualizarDatos = (nuevaDireccion, nuevoTelefono) => {
-    setDireccion(nuevaDireccion);
-    setTelefono(nuevoTelefono);
+    if (nuevaDireccion) setDireccion(nuevaDireccion);
+    if (nuevoTelefono) setTelefono(nuevoTelefono);
   };
 
   const prepararParaExportar = () => {
     document.querySelectorAll(".ocultar-al-exportar").forEach((el) => (el.style.display = "none"));
     document.querySelectorAll(".solo-al-exportar").forEach((el) => (el.style.display = "block"));
 
-    // 🔴 Remover clases con estilos de media query antes de exportar
     document.querySelectorAll(".background-print, .backgrund-membrete, .logo-invertido, .whatsapp-icon").forEach((el) => {
       el.classList.remove("background-print", "backgrund-membrete", "logo-invertido", "whatsapp-icon");
     });
@@ -83,7 +80,7 @@ function App() {
       };
 
       html2pdf().set(opt).from(el).save().then(() => {
-        window.location.reload(); // 🔄 Refrescar la página después del PDF
+        window.location.reload();
       });
     }, 300);
   };
@@ -114,7 +111,6 @@ function App() {
         <BuscarModelo setProductos={setProductos} setVehiculoSeleccionado={setVehiculoSeleccionado} />
         <ListaProductos productos={productos} setProductos={setProductos} />
 
-        {/* Botones debajo de ListaProductos */}
         <div className="text-end mb-3 ocultar-al-exportar">
           <button className="btn btn-primary me-5 btn-mobile" onClick={imprimir}>
             <FaPrint /> Imprimir
@@ -123,10 +119,9 @@ function App() {
             <FaFilePdf /> Exportar PDF
           </button>
         </div>
- {/*  */}
- <Promociones />
 
-        {/* 🔥 Diagnóstico y NotaLegal solo visibles al exportar */}
+        <Promociones esAca={esAca} />
+
         <div className="solo-al-exportar">
           <Diagnosticos />
           <div className="nota-legal border rounded mt-4 bg-light text-center small text-muted" style={{ fontStyle: "italic" }}>
@@ -135,9 +130,8 @@ function App() {
         </div>
 
         <div className="ocultar-al-exportar">
-          <Configuracion actualizarDatos={actualizarDatos} />
-          <CrudVehiculos/>
-     
+          <Configuracion actualizarDatos={actualizarDatos} esAca={esAca} setEsAca={setEsAca} />
+          <CrudVehiculos />
         </div>
       </div>
     </div>
