@@ -1,27 +1,29 @@
-import React, { useState, useRef } from "react";
-import BuscarModelo from './components/BuscarModelo.jsx';
-import ListaProductos from './components/ListaProductos.jsx';
-import Configuracion from "./components/Configuracion.jsx";
-import Promociones from './components/Promociones.jsx';
-import Diagnosticos from './components/Diagnosticos.jsx';
-import NotaLegal from './components/NotaLegal.jsx';
-import CrudVehiculos from './components/CrudVehiculos.jsx';
-import Membrete from './components/Membrete.jsx';
-
-import './assets/css/modoUsuario.css';
-import './assets/css/pdfExport.css';
-import './assets/css/printMode.css';
-
-import { FaPrint, FaFilePdf } from "react-icons/fa";
+import React, { useEffect, useRef, useState } from "react";
+import { FaEye, FaPrint, FaFilePdf } from "react-icons/fa";
 import html2pdf from "html2pdf.js";
+import Modal from "react-bootstrap/Modal";
+
+import ListaProductos from "./components/ListaProductos";
+import ListaProductosYer from "./components/ListaProductosYer";
+import BuscarModelo from "./components/BuscarModelo";
+import Configuracion from "./components/Configuracion";
+import Promociones from "./components/Promociones";
+import Diagnosticos from "./components/Diagnosticos";
+import NotaLegal from "./components/NotaLegal";
+import CrudVehiculos from "./components/CrudVehiculos";
+import Membrete from "./components/Membrete";
+import BeneficiosRuta from "./components/BeneficiosRuta";
+
+import "./assets/css/modoUsuario.css";
+import "./assets/css/pdfExport.css";
+import "./assets/css/printMode.css";
 
 function App() {
   const [productos, setProductos] = useState([]);
   const [direccion, setDireccion] = useState(localStorage.getItem("direccion") || "Bartolomé Mitre 1666");
   const [telefono, setTelefono] = useState(localStorage.getItem("telefono") || "1138110074");
   const [vehiculoSeleccionado, setVehiculoSeleccionado] = useState(null);
-  const [esAca, setEsAca] = useState(true); // ✅ nuevo switch
-
+  const [esAca, setEsAca] = useState(true);
   const exportRef = useRef();
 
   const actualizarDatos = (nuevaDireccion, nuevoTelefono) => {
@@ -104,12 +106,19 @@ function App() {
     }, 300);
   };
 
+  const renderListaProductos = () => {
+    if (vehiculoSeleccionado?.modelo === "YER") {
+      return <ListaProductosYer productos={productos} setProductos={setProductos} />;
+    }
+    return <ListaProductos productos={productos} setProductos={setProductos} />;
+  };
+
   return (
     <div className="modo-usuario background-print">
       <div ref={exportRef} className="container mt-2 presupuesto-print">
         <Membrete direccion={direccion} telefono={telefono} />
         <BuscarModelo setProductos={setProductos} setVehiculoSeleccionado={setVehiculoSeleccionado} />
-        <ListaProductos productos={productos} setProductos={setProductos} />
+        {renderListaProductos()}
 
         <div className="text-end mb-3 ocultar-al-exportar">
           <button className="btn btn-primary me-5 btn-mobile" onClick={imprimir}>
@@ -120,7 +129,11 @@ function App() {
           </button>
         </div>
 
-        <Promociones esAca={esAca} />
+        {vehiculoSeleccionado?.modelo === "YER" ? (
+          <BeneficiosRuta />
+        ) : (
+          <Promociones esAca={esAca} />
+        )}
 
         <div className="solo-al-exportar">
           <Diagnosticos />

@@ -1,0 +1,1119 @@
+{
+  "productos": [
+    {
+      "codigo": "",
+      "descripcion": "",
+      "precio": 0
+    },
+    {
+      "codigo": "7790968914428",
+      "descripcion": "ELAION AURO FE 530 12/1",
+      "precio": 23752
+    },
+    {
+      "codigo": "7790968914435",
+      "descripcion": "ELAION AURO FE 530 4/4",
+      "precio": 88058
+    },
+    {
+      "codigo": "7790968914466",
+      "descripcion": "ELAION AURO D2 530 12/1",
+      "precio": 23866
+    },
+    {
+      "codigo": "7790968914473",
+      "descripcion": "ELAION AURO D2 530 4/4",
+      "precio": 88477
+    },
+    {
+      "codigo": "7790968914442",
+      "descripcion": "ELAION AURO PLUS 540 12/1",
+      "precio": 23743
+    },
+    {
+      "codigo": "7790968914459",
+      "descripcion": "ELAION AURO PLUS 540 4/4",
+      "precio": 88035
+    },
+    {
+      "codigo": "7790968914381",
+      "descripcion": "ELAION AURO FR 530 12/1",
+      "precio": 23631
+    },
+    {
+      "codigo": "7790968914398",
+      "descripcion": "ELAION AURO FR 530 4/4",
+      "precio": 87618
+    },
+    {
+      "codigo": "7790968914619",
+      "descripcion": "ELAION AURO D1 530 GEN 3 4/4",
+      "precio": 90246
+    },
+    {
+      "codigo": "7790968914602",
+      "descripcion": "ELAION AURO D1 530 GEN 3 12/1",
+      "precio": 24344
+    },
+    {
+      "codigo": "7790968914589",
+      "descripcion": "ELAION AURO D1 020 GEN 3 12/1",
+      "precio": 24344
+    },
+    {
+      "codigo": "7790968914596",
+      "descripcion": "ELAION AURO D1 020 GEN 3 4/4",
+      "precio": 90246
+    },
+    {
+      "codigo": "7790968914329",
+      "descripcion": "ELAION AURO DPF 530 12/1",
+      "precio": 24607
+    },
+    {
+      "codigo": "7790968914336",
+      "descripcion": "ELAION AURO DPF 530 4/4",
+      "precio": 91021
+    },
+    {
+      "codigo": "7790968914404",
+      "descripcion": "ELAION AURO FR 540 12/1",
+      "precio": 23632
+    },
+    {
+      "codigo": "7790968914411",
+      "descripcion": "ELAION AURO FR 540 4/4",
+      "precio": 87618
+    },
+    {
+      "codigo": "7790968914565",
+      "descripcion": "ELAION AURO FE 530 20 L BALDE 20LTS",
+      "precio": 359553
+    },
+    {
+      "codigo": "7790968914701",
+      "descripcion": "ELAION FS 540 12/1",
+      "precio": 21716
+    },
+    {
+      "codigo": "7790968914718",
+      "descripcion": "ELAION FS 540 4/4",
+      "precio": 80658
+    },
+    {
+      "codigo": "7790968914688",
+      "descripcion": "ELAION FS 530 12/1",
+      "precio": 21716
+    },
+    {
+      "codigo": "7790968914695",
+      "descripcion": "ELAION FS 530 4/4",
+      "precio": 80658
+    },
+    {
+      "codigo": "7790968914664",
+      "descripcion": "ELAION TS 1040 12/1",
+      "precio": 13310
+    },
+    {
+      "codigo": "7790968914671",
+      "descripcion": "ELAION TS 1040 4/4",
+      "precio": 48754
+    },
+    {
+      "codigo": "7790968914626",
+      "descripcion": "ELAION MI 1540 12/1",
+      "precio": 11374
+    },
+    {
+      "codigo": "7790968914633",
+      "descripcion": "ELAION MI 1540 4/4",
+      "precio": 41018
+    },
+    {
+      "codigo": "7790968914640",
+      "descripcion": "ELAION MI 2050 12/1",
+      "precio": 8791
+    },
+    {
+      "codigo": "7790968914657",
+      "descripcion": "ELAION MI 2050 4/4",
+      "precio": 32041
+    },
+    {
+      "codigo": "7790968915081",
+      "descripcion": "ELAION FS 540  20L",
+      "precio": 312736
+    },
+    {
+      "codigo": "7790968915074",
+      "descripcion": "ELAION TS 1040  20L",
+      "precio": 191775
+    },
+    {
+      "codigo": "7790968915067",
+      "descripcion": "ELAION MI 2050  20L",
+      "precio": 120108
+    },
+    {
+      "codigo": "7790968915050",
+      "descripcion": "ELAION MI 1540  20L",
+      "precio": 151361
+    },
+    {
+      "codigo": "7790968914152",
+      "descripcion": "ELAION F10 15W-40 GR",
+      "precio": 8896
+    },
+    {
+      "codigo": "7790968914145",
+      "descripcion": "SUPER 20W50 GR",
+      "precio": 5203
+    },
+    {
+      "codigo": "7790968911694",
+      "descripcion": "SUPER 20W50 C12/1",
+      "precio": 9003
+    },
+    {
+      "codigo": "7790968911700",
+      "descripcion": "SUPER 20W50 C4/4",
+      "precio": 27704
+    },
+    {
+      "codigo": "7790968911991",
+      "descripcion": "SUPER 20W50 B20",
+      "precio": 107628
+    },
+    {
+      "codigo": "7790968194097",
+      "descripcion": "SUPER 20W50 T205",
+      "precio": 823168
+    },
+    {
+      "codigo": "7790968913711",
+      "descripcion": "HD SUPLEMENTO 1 10W T205",
+      "precio": 729185
+    },
+    {
+      "codigo": "7790968010823",
+      "descripcion": "HD SUPLEMENTO 1 30 C12/1",
+      "precio": 8758
+    },
+    {
+      "codigo": "7790968910826",
+      "descripcion": "HD SUPLEMENTO 1 30 C4/4",
+      "precio": 23643
+    },
+    {
+      "codigo": "7790968912004",
+      "descripcion": "HD SUPLEMENTO 1 30 B20",
+      "precio": 96762
+    },
+    {
+      "codigo": "7790968910970",
+      "descripcion": "HD SUPLEMENTO 1 40 C12/1",
+      "precio": 8758
+    },
+    {
+      "codigo": "7790968910994",
+      "descripcion": "HD SUPLEMENTO 1 40 C4/4",
+      "precio": 23911
+    },
+    {
+      "codigo": "7790968912011",
+      "descripcion": "HD SUPLEMENTO 1 40 B20",
+      "precio": 96762
+    },
+    {
+      "codigo": "7790968108292",
+      "descripcion": "HD SUPLEMENTO 1 40 T205",
+      "precio": 736151
+    },
+    {
+      "codigo": "7790968910987",
+      "descripcion": "HD SUPLEMENTO 1 50 C12/1",
+      "precio": 8758
+    },
+    {
+      "codigo": "7790968912028",
+      "descripcion": "HD SUPLEMENTO 1 50 B20",
+      "precio": 96762
+    },
+    {
+      "codigo": "7790968913728",
+      "descripcion": "HD SUPLEMENTO 1 50 T205",
+      "precio": 736151
+    },
+    {
+      "codigo": "7790968914138",
+      "descripcion": "HD SUPLEMENTO 1 40 GR",
+      "precio": 4448
+    },
+    {
+      "codigo": "7790968913698",
+      "descripcion": "NORMAL 20 T205",
+      "precio": 686215
+    },
+    {
+      "codigo": "7790968913704",
+      "descripcion": "NORMAL 30 T205",
+      "precio": 686215
+    },
+    {
+      "codigo": "7790968911830",
+      "descripcion": "NORMAL 40 T205",
+      "precio": 692871
+    },
+    {
+      "codigo": "7790968911847",
+      "descripcion": "NORMAL 50 T205",
+      "precio": 692871
+    },
+    {
+      "codigo": "7790968915128",
+      "descripcion": "EXTRAVIDA XVT 600",
+      "precio": 2096745
+    },
+    {
+      "codigo": "7790968914824",
+      "descripcion": "EXTRAVIDA XVT 550 5W-30",
+      "precio": 266632
+    },
+    {
+      "codigo": "7790968915135",
+      "descripcion": "EXTRAVIDA XVT 550 5W-30",
+      "precio": 2057758
+    },
+    {
+      "codigo": "7790968914794",
+      "descripcion": "EXTRAVIDA XVT 300",
+      "precio": 138086
+    },
+    {
+      "codigo": "7790968915159",
+      "descripcion": "EXTRAVIDA XVT 300",
+      "precio": 1168039
+    },
+    {
+      "codigo": "7790968914831",
+      "descripcion": "EXTRAVIDA XVT 550 10W-40",
+      "precio": 264705
+    },
+    {
+      "codigo": "7790968915142",
+      "descripcion": "EXTRAVIDA XVT 550 10W-40",
+      "precio": 2054055
+    },
+    {
+      "codigo": "7790968000176",
+      "descripcion": "EXTRA VIDA XV300 C12/1",
+      "precio": 13395
+    },
+    {
+      "codigo": "7790968000183",
+      "descripcion": "EXTRAVIDA XV300 C4/4",
+      "precio": 47156
+    },
+    {
+      "codigo": "7790968000251",
+      "descripcion": "EXTRA VIDA XV300 B20",
+      "precio": 115328
+    },
+    {
+      "codigo": "7790968913933",
+      "descripcion": "EXTRA VIDA XV300 T205",
+      "precio": 977026
+    },
+    {
+      "codigo": "7790968000190",
+      "descripcion": "EXTRA VIDA XV100 B20",
+      "precio": 100402
+    },
+    {
+      "codigo": "7790968913926",
+      "descripcion": "EXTRA VIDA XV100 T205",
+      "precio": 835289
+    },
+    {
+      "codigo": "7790968912035",
+      "descripcion": "MULTITURBO 25W50 B20",
+      "precio": 95625
+    },
+    {
+      "codigo": "7790968913957",
+      "descripcion": "MULTITURBO 25W50 T205.",
+      "precio": 730300
+    },
+    {
+      "codigo": "7790968911076",
+      "descripcion": "AT TURBO 40 C12/1",
+      "precio": 7725
+    },
+    {
+      "codigo": "7790968911083",
+      "descripcion": "AT TURBO 40 C4/4",
+      "precio": 25526
+    },
+    {
+      "codigo": "7790968912042",
+      "descripcion": "AT TURBO 40 B20",
+      "precio": 91723
+    },
+    {
+      "codigo": "7790968913865",
+      "descripcion": "AT TURBO 40 T205",
+      "precio": 728574
+    },
+    {
+      "codigo": "7790968001265",
+      "descripcion": "HIDRO 19 B20",
+      "precio": 91636
+    },
+    {
+      "codigo": "7790968913858",
+      "descripcion": "HIDRO 19 T205",
+      "precio": 778992
+    },
+    {
+      "codigo": "7790968001500",
+      "descripcion": "ATF D-VI C12/1",
+      "precio": 22627
+    },
+    {
+      "codigo": "7790968912578",
+      "descripcion": "ATF D-VI C4/4",
+      "precio": 79809
+    },
+    {
+      "codigo": "7790968101965",
+      "descripcion": "ATF D-III 12/1",
+      "precio": 11648
+    },
+    {
+      "codigo": "7790968914022",
+      "descripcion": "ATF D-III T205",
+      "precio": 1502746
+    },
+    {
+      "codigo": "7790968912981",
+      "descripcion": "HIDRO ATF C12/1",
+      "precio": 9387
+    },
+    {
+      "codigo": "7790968912998",
+      "descripcion": "HIDRO ATF C4/4",
+      "precio": 32102
+    },
+    {
+      "codigo": "7790968912059",
+      "descripcion": "HIDRO ATF B20",
+      "precio": 104355
+    },
+    {
+      "codigo": "7790968913841",
+      "descripcion": "HIDRO ATF T205",
+      "precio": 985055
+    },
+    {
+      "codigo": "7790968102061",
+      "descripcion": "HELICOIDAL 75W-90",
+      "precio": 18595
+    },
+    {
+      "codigo": "7790968911182",
+      "descripcion": "HELICOIDAL M 80W C12/1",
+      "precio": 8925
+    },
+    {
+      "codigo": "7790968912066",
+      "descripcion": "HELICOIDAL M 80W B20",
+      "precio": 111614
+    },
+    {
+      "codigo": "7790968913834",
+      "descripcion": "HELICOIDAL M 80W T205",
+      "precio": 898627
+    },
+    {
+      "codigo": "7790968912073",
+      "descripcion": "TRANSMISION 90 B20",
+      "precio": 81223
+    },
+    {
+      "codigo": "7790968913735",
+      "descripcion": "TRANSMISION 90 T205",
+      "precio": 659928
+    },
+    {
+      "codigo": "7790968912080",
+      "descripcion": "TRANSMISION 140 B20.",
+      "precio": 85412
+    },
+    {
+      "codigo": "7790968913742",
+      "descripcion": "TRANSMISION 140",
+      "precio": 696030
+    },
+    {
+      "codigo": "7790968912097",
+      "descripcion": "TRANSMISION 250 B20",
+      "precio": 103527
+    },
+    {
+      "codigo": "7790968913759",
+      "descripcion": "TRANSMISION 250 T205",
+      "precio": 948983
+    },
+    {
+      "codigo": "7790968912103",
+      "descripcion": "HIPOIDAL SUPER S 75W90",
+      "precio": 681863
+    },
+    {
+      "codigo": "7790968914039",
+      "descripcion": "Hipoidal Super S. 75W90",
+      "precio": 5622964
+    },
+    {
+      "codigo": "7790968913001",
+      "descripcion": "HIPOIDAL 80W90 C12/1",
+      "precio": 9714
+    },
+    {
+      "codigo": "7790968913018",
+      "descripcion": "HIPOIDAL 80W90 C4/4",
+      "precio": 33218
+    },
+    {
+      "codigo": "7790968912110",
+      "descripcion": "HIPOIDAL 80W90 B20",
+      "precio": 113173
+    },
+    {
+      "codigo": "7790968913810",
+      "descripcion": "HIPOIDAL 80W90 T205",
+      "precio": 936432
+    },
+    {
+      "codigo": "7790968912721",
+      "descripcion": "HIPOIDAL 85W140 C4/4",
+      "precio": 31857
+    },
+    {
+      "codigo": "7790968912127",
+      "descripcion": "HIPOIDAL 85W140 B20",
+      "precio": 113173
+    },
+    {
+      "codigo": "7790968913827",
+      "descripcion": "HIPOIDAL 85W/140 T205",
+      "precio": 936432
+    },
+    {
+      "codigo": "7790968911496",
+      "descripcion": "KRIOX AUTOMOTRIZ INORGANICO C20/500",
+      "precio": 5800
+    },
+    {
+      "codigo": "7790968911502",
+      "descripcion": "KRIOX AUTOMOTRIZ INORGANICO C12/1",
+      "precio": 8341
+    },
+    {
+      "codigo": "7790968001296",
+      "descripcion": "KRIOX AUTOMOTRÍZ INORGANICO 20L",
+      "precio": 146241
+    },
+    {
+      "codigo": "7790968000855",
+      "descripcion": "KRIOX AUTOMOTRIZ ORGANICO FUCSIA C12/1",
+      "precio": 8840
+    },
+    {
+      "codigo": "7790968913544",
+      "descripcion": "KRIOX AUTOMOTRIZ ORGANICO FUCSIA 20L",
+      "precio": 148252
+    },
+    {
+      "codigo": "7790968000718",
+      "descripcion": "KRIOX AUTOMOTRIZ ORGANICO AMARILLO C12/1",
+      "precio": 8840
+    },
+    {
+      "codigo": "7790968000893",
+      "descripcion": "KRIOX AUTOMOTRIZ ORGANICO VIOLETA C12/1",
+      "precio": 8840
+    },
+    {
+      "codigo": "7790968914046",
+      "descripcion": "KRIOX ATI TR",
+      "precio": 1604508
+    },
+    {
+      "codigo": "7790968186733",
+      "descripcion": "LIQ. P/FRENOS HIDRÁULICOS DOT4 24X200 CC",
+      "precio": 5895
+    },
+    {
+      "codigo": "7790968186740",
+      "descripcion": "LIQ. P/ FRENOS HIDRÁULICOS DOT4 20X500",
+      "precio": 11261
+    },
+    {
+      "codigo": "7790968186795",
+      "descripcion": "LIQ. P/ FRENOS HIDRÁULICOS DOT4 12X1",
+      "precio": 19774
+    },
+    {
+      "codigo": "7790968911519",
+      "descripcion": "LIQUIDO P/FRENOS DOT 3 C24/200",
+      "precio": 3150
+    },
+    {
+      "codigo": "7790968911533",
+      "descripcion": "LIQUIDO P/FRENOS DOT 3 C20/500",
+      "precio": 5606
+    },
+    {
+      "codigo": "7790968912714",
+      "descripcion": "LIQUIDO P/FRENOS DOT 3 C12/1",
+      "precio": 9866
+    },
+    {
+      "codigo": "7790968915203",
+      "descripcion": "RÖD 2T 60X100",
+      "precio": 1905
+    },
+    {
+      "codigo": "7790968915210",
+      "descripcion": "RÖD 2T 40X200",
+      "precio": 2482
+    },
+    {
+      "codigo": "7790968915227",
+      "descripcion": "RÖD 2T 12X1",
+      "precio": 7014
+    },
+    {
+      "codigo": "7790968915234",
+      "descripcion": "RÖD 2T BALDE",
+      "precio": 95296
+    },
+    {
+      "codigo": "",
+      "descripcion": "RÖD 2T TAMBOR",
+      "precio": 875330
+    },
+    {
+      "codigo": "7790968915302",
+      "descripcion": "RÖD 4T 10W-50 12X1",
+      "precio": 19162
+    },
+    {
+      "codigo": "7790968915296",
+      "descripcion": "RÖD 4T 10W-40 BALDE",
+      "precio": 118138
+    },
+    {
+      "codigo": "7790968915289",
+      "descripcion": "RÖD 4T 10W-40 12X1",
+      "precio": 12114
+    },
+    {
+      "codigo": "7790968915241",
+      "descripcion": "RÖD 4T 20W-50 12X1",
+      "precio": 9314
+    },
+    {
+      "codigo": "7790968915258",
+      "descripcion": "RÖD 4T 20W-50 BALDE",
+      "precio": 88044
+    },
+    {
+      "codigo": "7790968915319",
+      "descripcion": "RÖD CADENAS",
+      "precio": 9317
+    },
+    {
+      "codigo": "7790968915272",
+      "descripcion": "RÖD 4T 10W-30 BALDE",
+      "precio": 118138
+    },
+    {
+      "codigo": "7790968915265",
+      "descripcion": "RÖD 4T 10W-30 12X1",
+      "precio": 12114
+    },
+    {
+      "codigo": "7790968001241",
+      "descripcion": "ELAION NAUTICO 2T SEMISINTÉTICO",
+      "precio": 17501
+    },
+    {
+      "codigo": "7790968001067",
+      "descripcion": "ELAION NAUTICO 2T",
+      "precio": 11654
+    },
+    {
+      "codigo": "7790968001074",
+      "descripcion": "ELAION NAUTICO 2T",
+      "precio": 163485
+    },
+    {
+      "codigo": "7790968914060",
+      "descripcion": "ELAION NAUTICO 2T",
+      "precio": 1537232
+    },
+    {
+      "codigo": "7790968001098",
+      "descripcion": "ELAION NAUTICO 4T",
+      "precio": 10550
+    },
+    {
+      "codigo": "7790968001104",
+      "descripcion": "ELAION NAUTICO 4T ",
+      "precio": 151158
+    },
+    {
+      "codigo": "7790968000756",
+      "descripcion": "LAVA PARABRISAS 30/ 50ML",
+      "precio": 4239
+    },
+    {
+      "codigo": "7790968000831",
+      "descripcion": "LAVA PARABRISAS 12/1 L",
+      "precio": 4647
+    },
+    {
+      "codigo": "7790968000749",
+      "descripcion": "LAVA PARABRISAS 6/4 L",
+      "precio": 15360
+    },
+    {
+      "codigo": "7790968000787",
+      "descripcion": "AROMATIZADOR AMBIENTAL P/AUTOS 36/10G",
+      "precio": 3377
+    },
+    {
+      "codigo": "7790968000954",
+      "descripcion": "CERA BRILLO FINAL 20/500 ML",
+      "precio": 5409
+    },
+    {
+      "codigo": "7790968000947",
+      "descripcion": "LAVA AUTOS 20/500ML",
+      "precio": 5426
+    },
+    {
+      "codigo": "7790968000992",
+      "descripcion": "LIMPIA MOTORES 12/400 ML",
+      "precio": 6772
+    },
+    {
+      "codigo": "7790968000985",
+      "descripcion": "LIMPIA TAPIZADOS 12/400 ML",
+      "precio": 6772
+    },
+    {
+      "codigo": "7790968000961",
+      "descripcion": "RENOVADOR C/SILIC. LAVANDA 12/400 ML",
+      "precio": 6772
+    },
+    {
+      "codigo": "7790968000978",
+      "descripcion": "RENOVADOR C/SILIC. VAINILLA 12/400ML",
+      "precio": 6772
+    },
+    {
+      "codigo": "7790968000770",
+      "descripcion": "MULTIPROPOSITO LIMIT 25/220ML",
+      "precio": 4797
+    },
+    {
+      "codigo": "7790968913803",
+      "descripcion": "TRANSMISION EP 68 T205",
+      "precio": 883578
+    },
+    {
+      "codigo": "7790968913773",
+      "descripcion": "TRANSMISION EP 150 T205",
+      "precio": 970589
+    },
+    {
+      "codigo": "7790968001524",
+      "descripcion": "TRANSMISION EP 220 B20",
+      "precio": 110891
+    },
+    {
+      "codigo": "7790968913780",
+      "descripcion": "TRANSMISION EP 220 T205",
+      "precio": 970589
+    },
+    {
+      "codigo": "7790968914121",
+      "descripcion": "TRANSMISION EP 320 T205",
+      "precio": 970589
+    },
+    {
+      "codigo": "7790968913797",
+      "descripcion": "TRANSMISION EP 680 TR",
+      "precio": 1061183
+    },
+    {
+      "codigo": "7790968913872",
+      "descripcion": "HIDRAULICO BP 22 T205",
+      "precio": 765135
+    },
+    {
+      "codigo": "7790968912134",
+      "descripcion": "HIDRAULICO BP 32 B20",
+      "precio": 91980
+    },
+    {
+      "codigo": "7790968913889",
+      "descripcion": "HIDRAULICO BP 32 T205",
+      "precio": 765135
+    },
+    {
+      "codigo": "7790968912141",
+      "descripcion": "HIDRAULICO BP 37 B20",
+      "precio": 91980
+    },
+    {
+      "codigo": "7790968913766",
+      "descripcion": "HIDRAULICO BP 37 T205 LT",
+      "precio": 765135
+    },
+    {
+      "codigo": "7790968912158",
+      "descripcion": "HIDRAULICO BP 46 B20",
+      "precio": 94597
+    },
+    {
+      "codigo": "7790968913902",
+      "descripcion": "HIDRAULICO BP 46 T205",
+      "precio": 765135
+    },
+    {
+      "codigo": "7790968912165",
+      "descripcion": "HIDRAULICO BP 68 B20",
+      "precio": 89375
+    },
+    {
+      "codigo": "7790968913919",
+      "descripcion": "HIDRAULICO BP 68 T205",
+      "precio": 765135
+    },
+    {
+      "codigo": "7790968912172",
+      "descripcion": "HIDRAULICO BP 100 B20",
+      "precio": 98035
+    },
+    {
+      "codigo": "7790968913896",
+      "descripcion": "HIDRAULICO BP 150 T205",
+      "precio": 974198
+    },
+    {
+      "codigo": "7790968912189",
+      "descripcion": "LIMIT MO 2 B18",
+      "precio": 209133
+    },
+    {
+      "codigo": "7790968914077",
+      "descripcion": "LIMIT MO-2 T180",
+      "precio": 1925858
+    },
+    {
+      "codigo": "7790968912356",
+      "descripcion": "LIMIT 1 B18",
+      "precio": 149184
+    },
+    {
+      "codigo": "7790968914084",
+      "descripcion": "LIMIT 2 T180",
+      "precio": 1434721
+    },
+    {
+      "codigo": "7790968912202",
+      "descripcion": "LIMIT 2 B18",
+      "precio": 159019
+    },
+    {
+      "codigo": "7790968912219",
+      "descripcion": "GRASA 60 EP B18",
+      "precio": 134413
+    },
+    {
+      "codigo": "7790968912356",
+      "descripcion": "GRASA 62 EP C6/2",
+      "precio": 24745
+    },
+    {
+      "codigo": "7790968912349",
+      "descripcion": "GRASA 62 EP C2/5",
+      "precio": 49637
+    },
+    {
+      "codigo": "7790968912226",
+      "descripcion": "GRASA 62 EP BALDE 18 KG",
+      "precio": 146321
+    },
+    {
+      "codigo": "7790968913971",
+      "descripcion": "GRASA 62 EP T180",
+      "precio": 1397503
+    },
+    {
+      "codigo": "7790968912233",
+      "descripcion": "GRASA 63 EP B18",
+      "precio": 134098
+    },
+    {
+      "codigo": "7790968914091",
+      "descripcion": "GRASA 63 FC T180 KG",
+      "precio": 1363834
+    },
+    {
+      "codigo": "7790968913988",
+      "descripcion": "GRASALGON T170",
+      "precio": 907380
+    },
+    {
+      "codigo": "7790968912745",
+      "descripcion": "GRASA 3 B18",
+      "precio": 103922
+    },
+    {
+      "codigo": "7790968912752",
+      "descripcion": "GRASA 8 BALDE 18 KG",
+      "precio": 97039
+    },
+    {
+      "codigo": "7790968913025",
+      "descripcion": "GRASA 30 C C6/2",
+      "precio": 15551
+    },
+    {
+      "codigo": "7790968912738",
+      "descripcion": "GRASA 30 C C2/5",
+      "precio": 31873
+    },
+    {
+      "codigo": "7790968912240",
+      "descripcion": "GRASA 30 C BALDE 18 KG",
+      "precio": 126700
+    },
+    {
+      "codigo": "7790968913964",
+      "descripcion": "GRASA 30 C T180",
+      "precio": 925062
+    },
+    {
+      "codigo": "7790968912257",
+      "descripcion": "GRASA 102 B18",
+      "precio": 156431
+    },
+    {
+      "codigo": "7790968912264",
+      "descripcion": "GRASA 107 EP B18",
+      "precio": 171998
+    },
+    {
+      "codigo": "7790968914107",
+      "descripcion": "GRASA 107 EP T180",
+      "precio": 1390024
+    },
+    {
+      "codigo": "7790968912288",
+      "descripcion": "NEREA CL EP 2 - B.18",
+      "precio": 295743
+    },
+    {
+      "codigo": "7790968912295",
+      "descripcion": "NEREA CL AW 2 - B.18",
+      "precio": 299934
+    },
+    {
+      "codigo": "7516300298532",
+      "descripcion": "AZUL32   GR",
+      "precio": 1538
+    },
+    {
+      "codigo": "7790968912318",
+      "descripcion": "AZUL32    Bi20",
+      "precio": 33536
+    },
+    {
+      "codigo": "7790968516349",
+      "descripcion": "AZUL32   Bi10",
+      "precio": 17784
+    },
+    {
+      "codigo": "7790968912417",
+      "descripcion": "Azul 32 Tambor 200 lts",
+      "precio": 318733
+    },
+    {
+      "codigo": "7790968914114",
+      "descripcion": "AZUL32    Contenedor",
+      "precio": 1549318
+    },
+    {
+      "codigo": "7790968913063",
+      "descripcion": "LUB_YPF Filtros Cat. A",
+      "precio": 2480
+    },
+    {
+      "codigo": "7790968913070",
+      "descripcion": "LUB_YPF Filtros Cat. B",
+      "precio": 4153
+    },
+    {
+      "codigo": "7790968913087",
+      "descripcion": "LUB_YPF Filtros Cat. C",
+      "precio": 5813
+    },
+    {
+      "codigo": "7790968913094",
+      "descripcion": "LUB_YPF Filtros Cat. D",
+      "precio": 7472
+    },
+    {
+      "codigo": "7790968913100",
+      "descripcion": "LUB_YPF Filtros Cat. E",
+      "precio": 9130
+    },
+    {
+      "codigo": "7790968913117",
+      "descripcion": "LUB_YPF Filtros Cat. F",
+      "precio": 10782
+    },
+    {
+      "codigo": "7790968913124",
+      "descripcion": "LUB_YPF Filtros Cat. G",
+      "precio": 12450
+    },
+    {
+      "codigo": "7790968913131",
+      "descripcion": "LUB_YPF Filtros Cat. H",
+      "precio": 14956
+    },
+    {
+      "codigo": "7790968913148",
+      "descripcion": "LUB_YPF Filtros Cat. J",
+      "precio": 19093
+    },
+    {
+      "codigo": "7790968913155",
+      "descripcion": "LUB_YPF Filtros Cat. K",
+      "precio": 24063
+    },
+    {
+      "codigo": "7790968913162",
+      "descripcion": "LUB_YPF Filtros Cat. L",
+      "precio": 30710
+    },
+    {
+      "codigo": "7790968913179",
+      "descripcion": "LUB_YPF Filtros Cat. M",
+      "precio": 36516
+    },
+    {
+      "codigo": "7790968913186",
+      "descripcion": "LUB_YPF Filtros Cat. N",
+      "precio": 41493
+    },
+    {
+      "codigo": "7790968913193",
+      "descripcion": "LUB_YPF Filtros Cat. O",
+      "precio": 45656
+    },
+    {
+      "codigo": "7790968913209",
+      "descripcion": "LUB_YPF Filtros Cat. P",
+      "precio": 49797
+    },
+    {
+      "codigo": "7790968913216",
+      "descripcion": "LUB_YPF Filtros Cat. Q",
+      "precio": 58092
+    },
+    {
+      "codigo": "7790968913223",
+      "descripcion": "LUB_YPF Filtros Cat. R",
+      "precio": 66392
+    },
+    {
+      "codigo": "7790968913230",
+      "descripcion": "LUB_YPF Filtros Cat. S",
+      "precio": 74683
+    },
+    {
+      "codigo": "7790968913247",
+      "descripcion": "LUB_YPF Filtros Cat. T",
+      "precio": 82997
+    },
+    {
+      "codigo": "7790968913254",
+      "descripcion": "LUB_YPF Filtros Cat. U",
+      "precio": 91282
+    },
+    {
+      "codigo": "7790968913261",
+      "descripcion": "LUB_YPF Filtros Cat. V",
+      "precio": 99576
+    },
+    {
+      "codigo": "7790968913278",
+      "descripcion": "LUB_YPF Filtros Cat. W",
+      "precio": 107872
+    },
+    {
+      "codigo": "7790968913285",
+      "descripcion": "LUB_YPF Filtros Cat. X",
+      "precio": 116193
+    },
+    {
+      "codigo": "7790968913292",
+      "descripcion": "LUB_YPF Filtros Cat. Y",
+      "precio": 122007
+    },
+    {
+      "codigo": "7790968913308",
+      "descripcion": "LUB_YPF Filtros Cat. Z",
+      "precio": 127810
+    },
+    {
+      "codigo": "7790968913315",
+      "descripcion": "LUB_YPF Filtros Cat. ZZ",
+      "precio": 134433
+    },
+    {
+      "codigo": "7790968913445",
+      "descripcion": "LUB_YPF Filtro moto Cat1",
+      "precio": 4153
+    },
+    {
+      "codigo": "7790968913452",
+      "descripcion": "LUB_YPF Filtro moto Cat2",
+      "precio": 8293
+    },
+    {
+      "codigo": "7790968913469",
+      "descripcion": "LUB_YPF Filtro moto Cat3 ",
+      "precio": 13280
+    },
+    {
+      "codigo": "7790968913476",
+      "descripcion": "LUB_YPF Filtro moto Cat4",
+      "precio": 54627
+    },
+    {
+      "codigo": "7790968912660",
+      "descripcion": "S-ESCANEO",
+      "precio": 5000
+    }
+  ]
+}

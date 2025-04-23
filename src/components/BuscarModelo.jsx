@@ -1,3 +1,4 @@
+ // BuscarModelo integrado con botón Presupuesto YER que activa carga manual
 import React, { useState, useEffect } from 'react';
 
 function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
@@ -22,7 +23,6 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
           );
           setModelos(lista);
 
-          // Extraer marcas únicas
           const marcasUnicas = Array.from(new Set(lista.map(m => m.marca))).sort();
           setMarcas(marcasUnicas);
         }
@@ -71,6 +71,17 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
       .catch(err => console.error('Error cargando productos:', err));
   };
 
+  const handlePresupuestoYER = () => {
+    setModoManual(true);
+    setSeleccionado(null);
+    setMarcaFiltro('');
+    setMarcaSeleccionada('');
+    setModeloFiltro('');
+   
+    setVehiculoSeleccionado({ marca: 'Presupuesto', modelo: 'YER' });
+    setProductos([]);
+  };
+
   const handleReset = () => {
     setSeleccionado(null);
     setVehiculoSeleccionado(null);
@@ -86,12 +97,10 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
 
   const normalizarTexto = (texto) => texto.toLowerCase().replace(/\s+/g, '');
 
-  // Marcas filtradas según el input
   const marcasFiltradas = marcas.filter(m =>
     normalizarTexto(m).includes(normalizarTexto(marcaFiltro))
   );
 
-  // Modelos filtrados según la marca seleccionada y lo que se escriba en modelo
   const modelosFiltrados = modelos.filter(m =>
     m.marca === marcaSeleccionada &&
     normalizarTexto(m.modelo).includes(normalizarTexto(modeloFiltro))
@@ -100,7 +109,6 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
   return (
     <div className="mb-3">
       <div className="ocultar-al-exportar">
-        {/* INPUT de MARCA */}
         <input
           type="text"
           className="form-control mb-2"
@@ -114,7 +122,6 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
           disabled={!!seleccionado || modoManual}
         />
 
-        {/* Lista de sugerencias de marcas */}
         {marcaFiltro && !marcaSeleccionada && (
           <ul className="list-group mb-2">
             {marcasFiltradas.length > 0 ? (
@@ -133,7 +140,6 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
           </ul>
         )}
 
-        {/* INPUT de MODELO (solo aparece si hay marca seleccionada) */}
         {marcaSeleccionada && (
           <>
             <input
@@ -164,13 +170,39 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
             )}
           </>
         )}
+
+        {/* Botón extra para Presupuesto YER */}
+        {!seleccionado && !modoManual && (
+          <div className="text-end mt-2">
+         <button
+  className="btn p-0 border-0 bg-transparent"
+  onClick={handlePresupuestoYER}
+  title="Presupuesto YER"
+  style={{
+    outline: "none",
+    borderRadius: "6px" // ✅ bordes suavemente redondeados
+  }}
+>
+  <img
+    src="/logoruta.jpg"
+    alt="Presupuesto YER"
+    style={{
+      height: "35px",
+      cursor: "pointer",
+      borderRadius: "6px" // ✅ también aplica al borde de la imagen
+    }}
+  />
+</button>
+
+
+          </div>
+        )}
       </div>
 
-      {/* SELECCION MOSTRADA */}
       {(seleccionado || modoManual) && (
         <div className="vehiculo-seleccionado mt-2">
           <p>
-            <strong>Vehículo:</strong>{" "}
+            <strong>Vehículo:</strong>{' '}
             {modoManual ? vehiculoManual : `${seleccionado.marca} - ${seleccionado.modelo}`}
             {patente && <span> | Patente: {patente}</span>}
           </p>
@@ -201,7 +233,6 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
         </div>
       )}
 
-      {/* BOTÓN MANUAL */}
       {!seleccionado && !modoManual && (
         <div className="text-end mt-3 ocultar-al-exportar">
           <button
@@ -219,7 +250,6 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
         </div>
       )}
 
-      {/* INPUT MANUAL */}
       {modoManual && !seleccionado && (
         <div className="mt-2 ocultar-al-exportar">
           <input
