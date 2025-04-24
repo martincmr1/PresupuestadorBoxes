@@ -173,7 +173,7 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
 
         {/* Botón extra para Presupuesto YER */}
         {!seleccionado && !modoManual && (
-          <div className="text-end mt-2">
+          <div className="text-start mt-2">
          <button
   className="btn p-0 border-0 bg-transparent"
   onClick={handlePresupuestoYER}
@@ -234,7 +234,7 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
       )}
 
       {!seleccionado && !modoManual && (
-        <div className="text-end mt-3 ocultar-al-exportar">
+        <div className="text-start mt-3 ocultar-al-exportar">
           <button
             className="btn btn-outline-dark btn-sm"
             onClick={() => {

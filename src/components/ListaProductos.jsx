@@ -1,20 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { FaEye } from "react-icons/fa";
 import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
 
-function ListaProductos({ productos, setProductos }) {
+function ListaProductos({ productos, setProductos, setMostrarAcciones }) {
   const [baseProductos, setBaseProductos] = useState([]);
   const [imagenSeleccionada, setImagenSeleccionada] = useState(null);
   const [descripcionSeleccionada, setDescripcionSeleccionada] = useState("");
   const [imagenesDisponibles, setImagenesDisponibles] = useState({});
-  const [cargando, setCargando] = useState(true); // Loader agregado
+  const [cargando, setCargando] = useState(true);
 
   const total = productos.reduce(
     (acc, p) => acc + p.precio * (p.cantidad || 1),
     0
   );
   const totalCuotas = total / 6;
+
+  // Avisar si hay productos cargados
+  useEffect(() => {
+    if (typeof setMostrarAcciones === "function") {
+      setMostrarAcciones(productos.length > 0);
+    }
+  }, [productos, setMostrarAcciones]);
 
   useEffect(() => {
     setCargando(true);
@@ -98,7 +104,6 @@ function ListaProductos({ productos, setProductos }) {
     if (productos.length > 0) verificarImagenes();
   }, [productos]);
 
-  // Mostrar loader si está cargando
   if (cargando) {
     return (
       <div className="text-center p-5">
@@ -188,7 +193,7 @@ function ListaProductos({ productos, setProductos }) {
         ))}
       </datalist>
 
-      <div className="text-end mt-2 ocultar-al-exportar">
+      <div className="text-start mt-2 ocultar-al-exportar">
         <button
           className="btn btn-primary btn-mobile"
           onClick={() =>
@@ -205,80 +210,82 @@ function ListaProductos({ productos, setProductos }) {
         )}
       </div>
 
-      <div className="p-3 border bg-white mt-4 presupuesto-print-inner">
-        <table className="table">
-          <thead>
-            <tr>
-              <th>Descripción</th>
-              <th className="text-center ocultar-al-exportar">Ver</th>
-              <th className="text-end">Cantidad</th>
-              <th className="text-end">Subtotal</th>
-            </tr>
-          </thead>
-          <tbody>
-            {productos.map((producto, index) => {
-              const codigo = producto.codigo?.toString().trim();
-              const extension = imagenesDisponibles[codigo];
-              const rutaImagen = extension ? `/img/${codigo}${extension}` : null;
-              const mostrarOjo = !!extension;
+      {productos.length > 0 && (
+        <div className="p-3 border bg-white mt-4 presupuesto-print-inner">
+          <table className="table">
+            <thead>
+              <tr>
+                <th>Descripción</th>
+                <th className="text-center ocultar-al-exportar">Ver</th>
+                <th className="text-end">Cantidad</th>
+                <th className="text-end">Subtotal</th>
+              </tr>
+            </thead>
+            <tbody>
+              {productos.map((producto, index) => {
+                const codigo = producto.codigo?.toString().trim();
+                const extension = imagenesDisponibles[codigo];
+                const rutaImagen = extension ? `/img/${codigo}${extension}` : null;
+                const mostrarOjo = !!extension;
 
-              return (
-                <tr key={index}>
-                  <td>{producto.descripcion}</td>
-                  <td className="text-center ocultar-al-exportar">
-                    {mostrarOjo ? (
-                      <button
-                        className="btn btn-outline-secondary btn-sm"
-                        onClick={() => {
-                          setImagenSeleccionada(rutaImagen);
-                          setDescripcionSeleccionada(producto.descripcion);
-                        }}
-                        title="Ver imagen"
-                      >
-                        <FaEye />
-                      </button>
-                    ) : (
-                      <span style={{ display: "inline-block", width: "32px" }}></span>
-                    )}
-                  </td>
-                  <td className="text-end">{producto.cantidad || 1}</td>
-                  <td className="text-end">
-                    <strong>
-                      $
-                      {(producto.precio * (producto.cantidad || 1))
-                        .toLocaleString("es-AR", {
-                          minimumFractionDigits: 0,
-                          maximumFractionDigits: 0,
-                        })
-                        .replace(/,/g, ".")}
-                    </strong>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+                return (
+                  <tr key={index}>
+                    <td>{producto.descripcion}</td>
+                    <td className="text-center ocultar-al-exportar">
+                      {mostrarOjo ? (
+                        <button
+                          className="btn btn-outline-secondary btn-sm"
+                          onClick={() => {
+                            setImagenSeleccionada(rutaImagen);
+                            setDescripcionSeleccionada(producto.descripcion);
+                          }}
+                          title="Ver imagen"
+                        >
+                          <FaEye />
+                        </button>
+                      ) : (
+                        <span style={{ display: "inline-block", width: "32px" }}></span>
+                      )}
+                    </td>
+                    <td className="text-end">{producto.cantidad || 1}</td>
+                    <td className="text-end">
+                      <strong>
+                        $
+                        {(producto.precio * (producto.cantidad || 1))
+                          .toLocaleString("es-AR", {
+                            minimumFractionDigits: 0,
+                            maximumFractionDigits: 0,
+                          })
+                          .replace(/,/g, ".")}
+                      </strong>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
 
-        <h5 className="text-end fw-bold text-price">
-          Total {contienePremium ? "Servicio Premium" : "Servicio Completo o Express"}:
-          <span className="precio-destacado">
-            ${total.toLocaleString("es-AR", { minimumFractionDigits: 0, maximumFractionDigits: 0 }).replace(/,/g, ".")}
-          </span>
-        </h5>
+          <h5 className="text-end fw-bold text-price">
+            Total {contienePremium ? "Servicio Premium" : "Servicio Completo o Express"}:
+            <span className="precio-destacado">
+              ${total.toLocaleString("es-AR", { minimumFractionDigits: 0, maximumFractionDigits: 0 }).replace(/,/g, ".")}
+            </span>
+          </h5>
 
-        <h6 className="text-end text-muted">
-          Total en 6 cuotas sin interés con Visa o Mastercard (Exclusivo App YPF):{" "}
-          <strong>
-            $
-            {totalCuotas
-              .toLocaleString("es-AR", {
-                minimumFractionDigits: 0,
-                maximumFractionDigits: 0,
-              })
-              .replace(/,/g, ".")} x 6
-          </strong>
-        </h6>
-      </div>
+          <h6 className="text-end text-muted">
+            Total en 6 cuotas sin interés con Visa o Mastercard (Exclusivo App YPF):{" "}
+            <strong>
+              $
+              {totalCuotas
+                .toLocaleString("es-AR", {
+                  minimumFractionDigits: 0,
+                  maximumFractionDigits: 0,
+                })
+                .replace(/,/g, ".")} x 6
+            </strong>
+          </h6>
+        </div>
+      )}
 
       <Modal show={!!imagenSeleccionada} onHide={() => setImagenSeleccionada(null)} centered size="lg">
         <Modal.Header closeButton>

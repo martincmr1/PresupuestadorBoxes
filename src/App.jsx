@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { FaEye, FaPrint, FaFilePdf } from "react-icons/fa";
+import { FaPrint, FaFilePdf } from "react-icons/fa";
 import html2pdf from "html2pdf.js";
 import Modal from "react-bootstrap/Modal";
 
@@ -24,6 +24,7 @@ function App() {
   const [telefono, setTelefono] = useState(localStorage.getItem("telefono") || "1138110074");
   const [vehiculoSeleccionado, setVehiculoSeleccionado] = useState(null);
   const [esAca, setEsAca] = useState(true);
+  const [mostrarAcciones, setMostrarAcciones] = useState(false);
   const exportRef = useRef();
 
   const actualizarDatos = (nuevaDireccion, nuevoTelefono) => {
@@ -108,26 +109,42 @@ function App() {
 
   const renderListaProductos = () => {
     if (vehiculoSeleccionado?.modelo === "YER") {
-      return <ListaProductosYer productos={productos} setProductos={setProductos} />;
+      return (
+        <ListaProductosYer
+          productos={productos}
+          setProductos={setProductos}
+          setMostrarAcciones={setMostrarAcciones}
+        />
+      );
     }
-    return <ListaProductos productos={productos} setProductos={setProductos} />;
+    return (
+      <ListaProductos
+        productos={productos}
+        setProductos={setProductos}
+        setMostrarAcciones={setMostrarAcciones}
+      />
+    );
   };
 
   return (
     <div className="modo-usuario background-print">
       <div ref={exportRef} className="container mt-2 presupuesto-print">
         <Membrete direccion={direccion} telefono={telefono} />
+
         <BuscarModelo setProductos={setProductos} setVehiculoSeleccionado={setVehiculoSeleccionado} />
+
         {renderListaProductos()}
 
-        <div className="text-end mb-3 ocultar-al-exportar">
-          <button className="btn btn-primary me-5 btn-mobile" onClick={imprimir}>
-            <FaPrint /> Imprimir
-          </button>
-          <button className="btn btn-danger me-5 btn-mobile" onClick={exportarPDF}>
-            <FaFilePdf /> Exportar PDF
-          </button>
-        </div>
+        {mostrarAcciones && (
+          <div className="text-end mb-3 ocultar-al-exportar">
+            <button className="btn btn-primary me-5 btn-mobile" onClick={imprimir}>
+              <FaPrint /> Imprimir
+            </button>
+            <button className="btn btn-danger me-5 btn-mobile" onClick={exportarPDF}>
+              <FaFilePdf /> Exportar PDF
+            </button>
+          </div>
+        )}
 
         {vehiculoSeleccionado?.modelo === "YER" ? (
           <BeneficiosRuta />
