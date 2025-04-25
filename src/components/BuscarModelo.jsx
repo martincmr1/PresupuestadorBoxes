@@ -1,4 +1,3 @@
- // BuscarModelo integrado con botón Presupuesto YER que activa carga manual
 import React, { useState, useEffect } from 'react';
 
 function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
@@ -22,7 +21,6 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
             v => v && typeof v.modelo === 'string' && typeof v.marca === 'string' && Array.isArray(v.codigos)
           );
           setModelos(lista);
-
           const marcasUnicas = Array.from(new Set(lista.map(m => m.marca))).sort();
           setMarcas(marcasUnicas);
         }
@@ -47,15 +45,23 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
     setModoManual(false);
     setVehiculoManual('');
 
-    fetch('https://api-boxes-default-rtdb.firebaseio.com/productos.json')
+    // --- Cambio aquí ---
+    const fuente =
+      localStorage.getItem('variante') === '2'
+        ? '/clustervariante_2.json'
+        : 'https://api-boxes-default-rtdb.firebaseio.com/productos.json';
+
+    fetch(fuente)
       .then(res => res.json())
       .then(data => {
+        const productosBase = Array.isArray(data) ? data : data.productos || data || [];
+
         const productosMap = {};
         const productosOrdenados = [];
 
         modelo.codigos.forEach((codigo) => {
           const codStr = codigo.toString();
-          const producto = data.find(p => p.codigo === codStr);
+          const producto = productosBase.find(p => p.codigo === codStr);
           if (producto) {
             if (!productosMap[codStr]) {
               productosMap[codStr] = { ...producto, cantidad: 1 };
@@ -77,7 +83,6 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
     setMarcaFiltro('');
     setMarcaSeleccionada('');
     setModeloFiltro('');
-   
     setVehiculoSeleccionado({ marca: 'Presupuesto', modelo: 'YER' });
     setProductos([]);
   };
@@ -97,14 +102,8 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
 
   const normalizarTexto = (texto) => texto.toLowerCase().replace(/\s+/g, '');
 
-  const marcasFiltradas = marcas.filter(m =>
-    normalizarTexto(m).includes(normalizarTexto(marcaFiltro))
-  );
-
-  const modelosFiltrados = modelos.filter(m =>
-    m.marca === marcaSeleccionada &&
-    normalizarTexto(m.modelo).includes(normalizarTexto(modeloFiltro))
-  );
+  const marcasFiltradas = marcas.filter(m => normalizarTexto(m).includes(normalizarTexto(marcaFiltro)));
+  const modelosFiltrados = modelos.filter(m => m.marca === marcaSeleccionada && normalizarTexto(m.modelo).includes(normalizarTexto(modeloFiltro)));
 
   return (
     <div className="mb-3">
@@ -126,11 +125,7 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
           <ul className="list-group mb-2">
             {marcasFiltradas.length > 0 ? (
               marcasFiltradas.map((marca, i) => (
-                <li
-                  key={i}
-                  className="list-group-item list-group-item-action"
-                  onClick={() => handleSelectMarca(marca)}
-                >
+                <li key={i} className="list-group-item list-group-item-action" onClick={() => handleSelectMarca(marca)}>
                   {marca}
                 </li>
               ))
@@ -155,11 +150,7 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
               <ul className="list-group">
                 {modelosFiltrados.length > 0 ? (
                   modelosFiltrados.map((modelo, index) => (
-                    <li
-                      key={index}
-                      className="list-group-item list-group-item-action"
-                      onClick={() => handleSelectModelo(modelo)}
-                    >
+                    <li key={index} className="list-group-item list-group-item-action" onClick={() => handleSelectModelo(modelo)}>
                       {modelo.modelo}
                     </li>
                   ))
@@ -171,30 +162,20 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
           </>
         )}
 
-        {/* Botón extra para Presupuesto YER */}
         {!seleccionado && !modoManual && (
           <div className="text-start mt-2">
-         <button
-  className="btn p-0 border-0 bg-transparent"
-  onClick={handlePresupuestoYER}
-  title="Presupuesto YER"
-  style={{
-    outline: "none",
-    borderRadius: "6px" // ✅ bordes suavemente redondeados
-  }}
->
-  <img
-    src="/logoruta.jpg"
-    alt="Presupuesto YER"
-    style={{
-      height: "35px",
-      cursor: "pointer",
-      borderRadius: "6px" // ✅ también aplica al borde de la imagen
-    }}
-  />
-</button>
-
-
+            <button
+              className="btn p-0 border-0 bg-transparent"
+              onClick={handlePresupuestoYER}
+              title="Presupuesto YER"
+              style={{ outline: 'none', borderRadius: '6px' }}
+            >
+              <img
+                src="/logoruta.jpg"
+                alt="Presupuesto YER"
+                style={{ height: '35px', cursor: 'pointer', borderRadius: '6px' }}
+              />
+            </button>
           </div>
         )}
       </div>
@@ -202,8 +183,7 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
       {(seleccionado || modoManual) && (
         <div className="vehiculo-seleccionado mt-2">
           <p>
-            <strong>Vehículo:</strong>{' '}
-            {modoManual ? vehiculoManual : `${seleccionado.marca} - ${seleccionado.modelo}`}
+            <strong>Vehículo:</strong> {modoManual ? vehiculoManual : `${seleccionado.marca} - ${seleccionado.modelo}`}
             {patente && <span> | Patente: {patente}</span>}
           </p>
 
@@ -219,10 +199,7 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
 
           <div className="d-flex gap-2 flex-wrap ocultar-al-exportar">
             {!mostrarPatente && (
-              <button
-                className="btn btn-secondary btn-sm ocultar-al-exportar"
-                onClick={() => setMostrarPatente(true)}
-              >
+              <button className="btn btn-secondary btn-sm ocultar-al-exportar" onClick={() => setMostrarPatente(true)}>
                 Ingresar patente
               </button>
             )}
@@ -230,23 +207,6 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
               Nueva búsqueda
             </button>
           </div>
-        </div>
-      )}
-
-      {!seleccionado && !modoManual && (
-        <div className="text-start mt-3 ocultar-al-exportar">
-          <button
-            className="btn btn-outline-dark btn-sm"
-            onClick={() => {
-              setModoManual(true);
-              setModeloFiltro('');
-              setMarcaFiltro('');
-              setMarcaSeleccionada('');
-              setSeleccionado(null);
-            }}
-          >
-            Ingresar vehículo manualmente
-          </button>
         </div>
       )}
 
