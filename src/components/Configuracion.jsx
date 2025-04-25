@@ -5,6 +5,7 @@ function Configuracion({ actualizarDatos, esAca, setEsAca }) {
   const [direccionLocal, setDireccionLocal] = useState("");
   const [telefonoLocal, setTelefonoLocal] = useState("");
   const [esAcaLocal, setEsAcaLocal] = useState(true);
+  const [variante, setVariante] = useState("1");
 
   useEffect(() => {
     setDireccionLocal(localStorage.getItem("direccion") || "");
@@ -13,17 +14,18 @@ function Configuracion({ actualizarDatos, esAca, setEsAca }) {
     const valor = guardado === null ? true : guardado === "true";
     setEsAcaLocal(valor);
     setEsAca(valor);
+    setVariante(localStorage.getItem("variante") || "1");
   }, []);
 
   const handleGuardar = () => {
     localStorage.setItem("direccion", direccionLocal);
     localStorage.setItem("telefono", telefonoLocal);
     localStorage.setItem("esAca", esAcaLocal);
+    localStorage.setItem("variante", variante);
 
     actualizarDatos(direccionLocal, telefonoLocal);
     setEsAca(esAcaLocal);
 
-    // 🔄 Recargar la página para aplicar cambios globalmente
     window.location.reload();
   };
 
@@ -62,6 +64,34 @@ function Configuracion({ actualizarDatos, esAca, setEsAca }) {
               onChange={(e) => setTelefonoLocal(e.target.value)}
             />
           </Form.Group>
+        </Col>
+      </Row>
+
+      <Row className="mb-3">
+        <Col>
+          <Form.Label>Seleccionar Cluster de Lubricantes</Form.Label>
+          <div>
+            <Form.Check
+              inline
+              label="Cluster Variante 1"
+              name="variante"
+              type="radio"
+              id="variante1"
+              value="1"
+              checked={variante === "1"}
+              onChange={(e) => setVariante(e.target.value)}
+            />
+            <Form.Check
+              inline
+              label="Cluster Variante 2"
+              name="variante"
+              type="radio"
+              id="variante2"
+              value="2"
+              checked={variante === "2"}
+              onChange={(e) => setVariante(e.target.value)}
+            />
+          </div>
         </Col>
       </Row>
 

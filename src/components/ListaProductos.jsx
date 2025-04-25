@@ -9,13 +9,9 @@ function ListaProductos({ productos, setProductos, setMostrarAcciones }) {
   const [imagenesDisponibles, setImagenesDisponibles] = useState({});
   const [cargando, setCargando] = useState(true);
 
-  const total = productos.reduce(
-    (acc, p) => acc + p.precio * (p.cantidad || 1),
-    0
-  );
+  const total = productos.reduce((acc, p) => acc + p.precio * (p.cantidad || 1), 0);
   const totalCuotas = total / 6;
 
-  // Avisar si hay productos cargados
   useEffect(() => {
     if (typeof setMostrarAcciones === "function") {
       setMostrarAcciones(productos.length > 0);
@@ -24,10 +20,16 @@ function ListaProductos({ productos, setProductos, setMostrarAcciones }) {
 
   useEffect(() => {
     setCargando(true);
-    fetch("https://api-boxes-default-rtdb.firebaseio.com/productos.json")
+    const fuente =
+      localStorage.getItem("variante") === "2"
+        ? "/clustervariante_2.json"
+        : "https://api-boxes-default-rtdb.firebaseio.com/productos.json";
+
+    fetch(fuente)
       .then((res) => res.json())
       .then((data) => {
-        setBaseProductos(data || []);
+        const lista = Array.isArray(data) ? data : data.productos || data || [];
+        setBaseProductos(lista);
         setCargando(false);
       })
       .catch((err) => {
@@ -37,16 +39,12 @@ function ListaProductos({ productos, setProductos, setMostrarAcciones }) {
   }, []);
 
   const actualizarProductoPorDescripcion = (index, valor) => {
-    const valorTrim = valor.trim();
-    const valorNormalizado = valorTrim.replace(/\s+/g, "").toLowerCase();
-
-    const productoEncontrado = baseProductos.find((p) => {
-      const descNormalizada = p.descripcion?.toLowerCase().replace(/\s+/g, "");
-      return descNormalizada === valorNormalizado;
-    });
+    const valorTrim = valor.trim().toLowerCase().replace(/\s+/g, "");
+    const productoEncontrado = baseProductos.find((p) =>
+      p.descripcion?.toLowerCase().replace(/\s+/g, "") === valorTrim
+    );
 
     const nuevos = [...productos];
-
     if (productoEncontrado && productoEncontrado.precio > 0) {
       nuevos[index] = {
         ...productoEncontrado,
@@ -89,11 +87,7 @@ function ListaProductos({ productos, setProductos, setMostrarAcciones }) {
         if (!existe) {
           try {
             const resPNG = await fetch(urlPNG, { method: "HEAD" });
-            if (resPNG.ok) {
-              disponibilidad[codigo] = ".png";
-            } else {
-              disponibilidad[codigo] = null;
-            }
+            disponibilidad[codigo] = resPNG.ok ? ".png" : null;
           } catch {
             disponibilidad[codigo] = null;
           }
@@ -135,11 +129,9 @@ function ListaProductos({ productos, setProductos, setMostrarAcciones }) {
                 setProductos(nuevos);
               }}
               onBlur={(e) => actualizarProductoPorDescripcion(index, e.target.value)}
-              inputMode="text"
               autoComplete="off"
               style={{ textAlign: "left", paddingLeft: "8px", paddingRight: "8px" }}
             />
-
             <div className="d-flex align-items-center btn-group mx-2" role="group">
               <select
                 className="form-select form-select-sm"
@@ -152,13 +144,10 @@ function ListaProductos({ productos, setProductos, setMostrarAcciones }) {
                 style={{ width: "60px" }}
               >
                 {[...Array(9)].map((_, i) => (
-                  <option key={i + 1} value={i + 1}>
-                    {i + 1}
-                  </option>
+                  <option key={i + 1} value={i + 1}>{i + 1}</option>
                 ))}
               </select>
             </div>
-
             <strong>
               $
               {(producto.precio * (producto.cantidad || 1))
@@ -168,10 +157,8 @@ function ListaProductos({ productos, setProductos, setMostrarAcciones }) {
                 })
                 .replace(/,/g, ".")}
             </strong>
-
             <button
               className="btn btn-danger btn-sm ms-2 ocultar-al-exportar"
-              title="Eliminar producto"
               onClick={() => {
                 const nuevos = productos.filter((_, i) => i !== index);
                 setProductos(nuevos);
@@ -185,11 +172,7 @@ function ListaProductos({ productos, setProductos, setMostrarAcciones }) {
 
       <datalist id="sugerencias-productos">
         {baseProductos.map((p, i) => (
-          <option
-            key={i}
-            value={`${p.descripcion}`}
-            label={`Cód: ${p.codigo} | ${p.descripcion}`}
-          />
+          <option key={i} value={p.descripcion} label={`Cód: ${p.codigo}`} />
         ))}
       </datalist>
 
@@ -239,7 +222,6 @@ function ListaProductos({ productos, setProductos, setMostrarAcciones }) {
                             setImagenSeleccionada(rutaImagen);
                             setDescripcionSeleccionada(producto.descripcion);
                           }}
-                          title="Ver imagen"
                         >
                           <FaEye />
                         </button>
@@ -293,12 +275,7 @@ function ListaProductos({ productos, setProductos, setMostrarAcciones }) {
         </Modal.Header>
         <Modal.Body className="text-center">
           {imagenSeleccionada && (
-            <img
-              src={imagenSeleccionada}
-              alt="Imagen producto"
-              className="img-fluid"
-              style={{ maxHeight: "400px" }}
-            />
+            <img src={imagenSeleccionada} alt="Imagen producto" className="img-fluid" style={{ maxHeight: "400px" }} />
           )}
         </Modal.Body>
       </Modal>
