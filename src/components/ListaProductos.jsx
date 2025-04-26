@@ -184,7 +184,7 @@ function ListaProductos({ productos, setProductos, setMostrarAcciones }) {
           }
           disabled={!puedeAgregarProducto}
         >
-          Agregar Producto
+          Agregar Producto<i className="bi bi-cart3 ms-2"></i>
         </button>
         {!puedeAgregarProducto && (
           <small className="text-danger d-block mt-1">

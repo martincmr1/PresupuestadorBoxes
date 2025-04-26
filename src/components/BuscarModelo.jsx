@@ -45,7 +45,6 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
     setModoManual(false);
     setVehiculoManual('');
 
-    // --- Cambio aquí ---
     const fuente =
       localStorage.getItem('variante') === '2'
         ? '/clustervariante_2.json'
@@ -163,20 +162,48 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
         )}
 
         {!seleccionado && !modoManual && (
-          <div className="text-start mt-2">
+          <>
+            <div className="text-start mt-3 mb-2 ocultar-al-exportar">
+              <button
+                className="btn btn-outline-dark btn-sm w-100"
+                onClick={() => {
+                  setModoManual(true);
+                  setModeloFiltro('');
+                  setMarcaFiltro('');
+                  setMarcaSeleccionada('');
+                  setSeleccionado(null);
+                }}
+              >
+                Ingresar vehículo manualmente <i className="bi bi-car-front-fill"></i>
+
+              </button>
+            </div>
+            <hr className="my-2" />
+            <div className="text-start mb-2">
             <button
-              className="btn p-0 border-0 bg-transparent"
-              onClick={handlePresupuestoYER}
-              title="Presupuesto YER"
-              style={{ outline: 'none', borderRadius: '6px' }}
-            >
-              <img
-                src="/logoruta.jpg"
-                alt="Presupuesto YER"
-                style={{ height: '35px', cursor: 'pointer', borderRadius: '6px' }}
-              />
-            </button>
-          </div>
+  className="btn text-white border-0  align-items-center w-100"
+  onClick={handlePresupuestoYER}
+  title="Presupuesto YER"
+  style={{
+    backgroundColor: '#000000',
+    borderRadius: '8px',
+    padding: '7px 7px'
+  }}
+>
+  <img
+    src="/logoruta.jpg"
+    alt="Presupuesto YER"
+    style={{ height: '3px', borderRadius: '2px', marginRight: '1px' }}
+  />
+  <span style={{ fontSize: '1.2rem' }}>Presupuesto</span>
+</button>
+
+
+
+
+            </div>
+            <hr className="my-2" />
+          </>
         )}
       </div>
 
@@ -184,7 +211,7 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
         <div className="vehiculo-seleccionado mt-2">
           <p>
             <strong>Vehículo:</strong> {modoManual ? vehiculoManual : `${seleccionado.marca} - ${seleccionado.modelo}`}
-            {patente && <span> | Patente: {patente}</span>}
+            {patente && <span> | <strong>Patente:</strong> {patente}</span>}
           </p>
 
           {mostrarPatente && (

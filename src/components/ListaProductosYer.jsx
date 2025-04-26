@@ -165,7 +165,7 @@
            onClick={() => setProductos([...productos, { descripcion: "", cantidad: 1, precio: 0 }])}
            disabled={!puedeAgregarProducto}
          >
-           Agregar Producto YER
+           Agregar Producto YER<i className="bi bi-cart3 ms-2"></i>
          </button>
          {!puedeAgregarProducto && (
            <small className="text-danger d-block mt-1">
