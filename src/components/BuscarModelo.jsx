@@ -11,6 +11,7 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
   const [patente, setPatente] = useState('');
   const [modoManual, setModoManual] = useState(false);
   const [vehiculoManual, setVehiculoManual] = useState('');
+  const [cargandoProductos, setCargandoProductos] = useState(false); // Nuevo spinner
 
   useEffect(() => {
     fetch('https://basevehiculos-9f3c5-default-rtdb.firebaseio.com/.json')
@@ -35,6 +36,7 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
   };
 
   const handleSelectModelo = (modelo) => {
+    setCargandoProductos(true); // Empieza a cargar
     setSeleccionado(modelo);
     setVehiculoSeleccionado(modelo);
     setMarcaFiltro('');
@@ -72,8 +74,12 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
         });
 
         setProductos(productosOrdenados);
+        setCargandoProductos(false); // Termina de cargar
       })
-      .catch(err => console.error('Error cargando productos:', err));
+      .catch(err => {
+        console.error('Error cargando productos:', err);
+        setCargandoProductos(false); // También termina en error
+      });
   };
 
   const handlePresupuestoYER = () => {
@@ -110,7 +116,7 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
         <input
           type="text"
           className="form-control mb-2"
-          placeholder="Buscar marca del vehículo..."
+          placeholder="Buscar marca del vehículo...(automático)"
           value={marcaFiltro}
           onChange={(e) => {
             setMarcaFiltro(e.target.value);
@@ -165,7 +171,7 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
           <>
             <div className="text-start mt-3 mb-2 ocultar-al-exportar">
               <button
-                className="btn btn-outline-dark btn-sm w-100"
+                className="btn btn-secondary btn-sm w-100"
                 onClick={() => {
                   setModoManual(true);
                   setModeloFiltro('');
@@ -175,37 +181,37 @@ function BuscarModelo({ setProductos, setVehiculoSeleccionado }) {
                 }}
               >
                 Ingresar vehículo manualmente <i className="bi bi-car-front-fill"></i>
-
               </button>
             </div>
             <hr className="my-2" />
             <div className="text-start mb-2">
-            <button
-  className="btn text-white border-0  align-items-center w-100"
-  onClick={handlePresupuestoYER}
-  title="Presupuesto YER"
-  style={{
-    backgroundColor: '#000000',
-    borderRadius: '8px',
-    padding: '7px 7px'
-  }}
->
-  <img
-    src="/logoruta.jpg"
-    alt="Presupuesto YER"
-    style={{ height: '3px', borderRadius: '2px', marginRight: '1px' }}
-  />
-  <span style={{ fontSize: '1.2rem' }}>Presupuesto</span>
-</button>
-
-
-
-
+              <button
+                className="btn text-white btn-sm w-100"
+                onClick={handlePresupuestoYER}
+                title="Presupuesto YER"
+                style={{
+                  backgroundColor: '#000000',
+                  
+                }}
+              >
+                <span style={{ fontSize: '1rem' }}>
+                  Presupuesto Yer <i className="bi bi-credit-card text-white"></i>
+                </span>
+              </button>
             </div>
             <hr className="my-2" />
           </>
         )}
       </div>
+
+      {/* SPINNER DE CARGA */}
+      {cargandoProductos && (
+        <div className="d-flex justify-content-center my-3">
+          <div className="spinner-border text-primary" role="status">
+            <span className="visually-hidden">Cargando productos...</span>
+          </div>
+        </div>
+      )}
 
       {(seleccionado || modoManual) && (
         <div className="vehiculo-seleccionado mt-2">
