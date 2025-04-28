@@ -25,6 +25,7 @@ function App() {
   const [vehiculoSeleccionado, setVehiculoSeleccionado] = useState(null);
   const [esAca, setEsAca] = useState(true);
   const [mostrarAcciones, setMostrarAcciones] = useState(false);
+  const [exportandoPDF, setExportandoPDF] = useState(false);
   const exportRef = useRef();
 
   const actualizarDatos = (nuevaDireccion, nuevoTelefono) => {
@@ -35,7 +36,6 @@ function App() {
   const prepararParaExportar = () => {
     document.querySelectorAll(".ocultar-al-exportar").forEach((el) => (el.style.display = "none"));
     document.querySelectorAll(".solo-al-exportar").forEach((el) => (el.style.display = "block"));
-
     document.querySelectorAll(".background-print, .backgrund-membrete, .logo-invertido, .whatsapp-icon").forEach((el) => {
       el.classList.remove("background-print", "backgrund-membrete", "logo-invertido", "whatsapp-icon");
     });
@@ -50,42 +50,43 @@ function App() {
       hour: '2-digit',
       minute: '2-digit'
     }).replace(/[-:T\s]/g, '');
-
     const modelo = vehiculoSeleccionado
       ? `${vehiculoSeleccionado.marca}-${vehiculoSeleccionado.modelo}`.replace(/\s+/g, '-')
       : 'Presupuesto';
-
     return `${modelo}_${fechaHora}.pdf`;
   };
 
   const exportarPDF = () => {
-    prepararParaExportar();
-    const el = exportRef.current;
-    el.classList.add("exportar-forzado");
-
-    document.documentElement.setAttribute("data-pdf-export", "true");
-
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     setTimeout(() => {
-      const opt = {
-        margin: 0,
-        filename: generarNombreArchivo(),
-        html2canvas: {
-          scale: 1.3,
-          useCORS: true,
-          scrollY: 0
-        },
-        jsPDF: {
-          unit: "mm",
-          format: "a4",
-          orientation: "portrait"
-        },
-        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
-      };
+      prepararParaExportar();
+      const el = exportRef.current;
+      el.classList.add("exportar-forzado");
 
-      html2pdf().set(opt).from(el).save().then(() => {
-        window.location.reload();
-      });
-    }, 300);
+      document.documentElement.setAttribute("data-pdf-export", "true");
+
+      setTimeout(() => {
+        const opt = {
+          margin: 0,
+          filename: generarNombreArchivo(),
+          html2canvas: {
+            scale: 1.3,
+            useCORS: true,
+            scrollY: 0
+          },
+          jsPDF: {
+            unit: "mm",
+            format: "a4",
+            orientation: "portrait"
+          },
+          pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+        };
+
+        html2pdf().set(opt).from(el).save().then(() => {
+          window.location.reload();
+        });
+      }, 500);
+    }, 500);
   };
 
   const imprimir = () => {
@@ -110,19 +111,11 @@ function App() {
   const renderListaProductos = () => {
     if (vehiculoSeleccionado?.modelo === "YER") {
       return (
-        <ListaProductosYer
-          productos={productos}
-          setProductos={setProductos}
-          setMostrarAcciones={setMostrarAcciones}
-        />
+        <ListaProductosYer productos={productos} setProductos={setProductos} setMostrarAcciones={setMostrarAcciones} />
       );
     }
     return (
-      <ListaProductos
-        productos={productos}
-        setProductos={setProductos}
-        setMostrarAcciones={setMostrarAcciones}
-      />
+      <ListaProductos productos={productos} setProductos={setProductos} setMostrarAcciones={setMostrarAcciones} />
     );
   };
 
