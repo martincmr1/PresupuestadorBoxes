@@ -3,5 +3,36 @@
     box-shadow: none !important;
   }
 
+  /* Solo en pantallas chicas (mobile) */
+@media (max-width: 767px) {
+  .promociones-container .row {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
 
-  
+  .promociones-container .row .col {
+    flex: 0 0 90%; /* 90% del ancho de pantalla */
+    max-width: 90%;
+    scroll-snap-align: start;
+    padding-right: 1rem;
+  }
+
+  .promo-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}
+
+/* En pantallas grandes, todo queda como siempre */
+@media (min-width: 768px) {
+  .promociones-container .row {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+}
