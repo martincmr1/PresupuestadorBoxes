@@ -129,7 +129,7 @@ function CrudVehiculos() {
     <div className="mt-5">
       {!mostrarCRUD ? (
         <div className="text-center">
-          <button className="btn btn-dark" onClick={() => document.getElementById('claveInput').style.display = 'block'}>
+          <button className="btn btn-dark w-100" onClick={() => document.getElementById('claveInput').style.display = 'block'}>
             <FaCar className="me-1" /> <FaTools className="me-1" /> Administración de Vehículos
           </button>
           <div id="claveInput" className="mt-3" style={{ display: 'none' }}>
