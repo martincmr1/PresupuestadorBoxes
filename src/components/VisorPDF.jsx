@@ -1,22 +1,16 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Card, Button, Modal } from "react-bootstrap";
+import { FaFilePdf } from "react-icons/fa"; // 👈 Agregamos el ícono
 
 const archivos = [
   {
     nombre: "Promo Uber",
     archivo: "BeneficioUberYPFBOXES.pdf",
   },
-
   {
     nombre: "Promo Escalonado",
     archivo: "INSTRUCTIVO-NUEVO-ESCALONADO-BOXES-ABRIL.2024.pdf",
   },
-
-
-  
-
-
-
 ];
 
 function VisorPDF() {
@@ -51,8 +45,12 @@ function VisorPDF() {
             <Card className="h-100 shadow-sm">
               <Card.Body className="d-flex flex-column justify-content-between">
                 <Card.Title>{doc.nombre}</Card.Title>
-                <Button variant="primary" onClick={() => abrirPDF(doc.archivo)}>
-                  Ver PDF
+                <Button
+                  variant="danger"
+                  onClick={() => abrirPDF(doc.archivo)}
+                  className="d-flex align-items-center gap-2"
+                >
+                  <FaFilePdf /> Ver PDF
                 </Button>
               </Card.Body>
             </Card>
