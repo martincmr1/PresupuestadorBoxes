@@ -38,6 +38,9 @@
     padding: 0;
   }
 
+ 
+  
+
   /* Aplicar solo si h5 NO tiene clase especial como .text-price */
   .presupuesto-print h5:not(.text-price),
   .presupuesto-print h6,
@@ -69,6 +72,18 @@
     page-break-inside: avoid;
   }
 }
+
+.precio-destacado {
+  font-size: 18px !important;
+  font-weight: bold !important;
+}
+
+
+.text-price .precio-destacado {
+  font-size: 18px !important;
+}
+
+
 
 /* Animación solo cuando NO se está exportando */
 html:not([data-pdf-export="true"]) .logo-brillante {
