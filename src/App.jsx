@@ -13,6 +13,7 @@ import NotaLegal from "./components/NotaLegal";
 import CrudVehiculos from "./components/CrudVehiculos";
 import Membrete from "./components/Membrete";
 import BeneficiosRuta from "./components/BeneficiosRuta";
+import VisorPDF from "./components/VisorPDF";
 
 import "./assets/css/modoUsuario.css";
 import "./assets/css/pdfExport.css";
@@ -153,8 +154,10 @@ function App() {
         </div>
 
         <div className="ocultar-al-exportar">
+        <VisorPDF /> 
           <Configuracion actualizarDatos={actualizarDatos} esAca={esAca} setEsAca={setEsAca} />
           <CrudVehiculos />
+         
         </div>
       </div>
     </div>
