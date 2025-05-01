@@ -11,6 +11,19 @@ const archivos = [
     nombre: "Promo Escalonado",
     archivo: "INSTRUCTIVO-NUEVO-ESCALONADO-BOXES-ABRIL.2024.pdf",
   },
+  {
+    nombre: "Promo Raspadita",
+    archivo: "RaspaditaYPFBOXES.pdf",
+  },
+  {
+    nombre: "Guía de Lubricación 2024",
+    archivo: "GuíadeLubricaciónLivianos2024.pdf",
+  },
+  {
+    nombre: "Codigos DTC OBD2",
+    archivo: "obd2codigos.pdf",
+  },
+
 ];
 
 function VisorPDF() {
