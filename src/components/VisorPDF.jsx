@@ -51,7 +51,7 @@ function VisorPDF() {
 
   return (
     <Container className="my-4">
-      <h4 className="mb-3">📄 Instructivos/Promociones</h4>
+      <h4 className="mb-3">📄 Instructivos/Promociones/Guías</h4>
       <Row className="g-3">
         {archivos.map((doc, index) => (
           <Col xs={12} md={6} lg={4} key={index}>

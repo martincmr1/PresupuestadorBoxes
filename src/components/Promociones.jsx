@@ -11,22 +11,22 @@ function Promociones({ esAca }) {
     {
       id: 2,
       imagen: "./Promoescalonado.jpg",
-      descripcion: "Escalonada ServiClub (ahorrá hasta $49.000). <strong>Vigencia: hasta el 30/04/2025</strong>",
+      descripcion: "Escalonada ServiClub (ahorrá hasta $49.000). <strong>Vigencia: hasta el 31/12/2025</strong>",
     },
     {
       id: 3,
       imagen: "./Promo_cuotas.png",
-      descripcion: "3 y 6 cuotas sin interés Pagando con App YPF (VISA/MASTERCARD).<strong>Vigencia: hasta el 30/04/2025</strong>",
+      descripcion: "3 y 6 cuotas sin interés Pagando con App YPF (VISA/MASTERCARD).<strong>Vigencia: hasta el 31/05/2025</strong>",
     },
     {
       id: 4,
       imagen: "./nacion.jpg",
-      descripcion: "30% de descuento en tu cambio con aceites sintéticos (tope $25.000) Pagando a través de App YPF. <strong>Vigencia: hasta el 30/04/2025</strong>",
+      descripcion: "30% de descuento en tu cambio con aceites sintéticos (tope $25.000) Pagando a través de App YPF. <strong>Vigencia: hasta el 31/05/2025</strong>",
     },
     {
       id: 5,
       imagen: "./Promo_uber.png",
-      descripcion: "Uber DIAMANTE - 30% de descuento (tope $23.000 Exclusivo línea Elaion Auro y Fs) ó (tope $8500 con línea Elaion Ts). <strong>Vigencia: hasta el 30/04/2025</strong>",
+      descripcion: "Uber DIAMANTE - 30% de descuento (tope $22.000 Exclusivo línea Elaion Auro y Fs) ó (tope $8500 con línea Elaion Ts). <strong>Vigencia: hasta el 31/05/2025</strong>",
     },
   ];
 
