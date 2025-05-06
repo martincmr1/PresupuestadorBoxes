@@ -24,6 +24,13 @@ const archivos = [
     archivo: "obd2codigos.pdf",
   },
 
+
+  {
+    nombre: "Lista YER",
+    archivo: "ListaEESSYER.pdf",
+  },
+
+
 ];
 
 function VisorPDF() {
