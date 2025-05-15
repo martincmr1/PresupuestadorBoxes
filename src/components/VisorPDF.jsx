@@ -3,6 +3,12 @@ import { Container, Row, Col, Card, Button, Modal } from "react-bootstrap";
 import { FaFilePdf } from "react-icons/fa"; // 👈 Agregamos el ícono
 
 const archivos = [
+{
+    nombre: "Promo Pick Up 20%",
+    archivo: "PromoPickup.pdf",
+  },
+
+
   {
     nombre: "Promo Uber",
     archivo: "BeneficioUberYPFBOXES.pdf",

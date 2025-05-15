@@ -8,11 +8,21 @@ function Promociones({ esAca }) {
       imagen: "./acapromo.png",
       descripcion: "10% de descuento en Lubricantes Elaion de 1 y 4 litros. <strong>Exclusivo línea auto (tope mensual ACA)</strong>",
     },
+
+{
+      id: 2,
+      imagen: "./camioneta.jpg",
+      descripcion: "Promo Pickup 20% (20% de descuento en ELAION sintético línea Auro o FS llevando <strong>2</strong> envases de 4 litros). <strong>Vigencia: hasta el 15/06/2025</strong>",
+    },
+
+
+    /*
     {
       id: 2,
       imagen: "./Promoescalonado.jpg",
       descripcion: "Escalonada ServiClub (ahorrá hasta $49.000). <strong>Vigencia: hasta el 31/12/2025</strong>",
     },
+    */
     {
       id: 3,
       imagen: "./Promo_cuotas.png",
