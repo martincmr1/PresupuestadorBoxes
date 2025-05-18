@@ -12,7 +12,7 @@ function Promociones({ esAca }) {
 {
       id: 2,
       imagen: "./camioneta.jpg",
-      descripcion: "Promo Pickup 20% (20% de descuento en ELAION sintético línea Auro o FS llevando <strong>2</strong> envases de 4 litros). <strong>Vigencia: hasta el 15/06/2025</strong>",
+      descripcion: "Promo Pickup 20% (20% de descuento en ELAION sintético línea Auro o FS llevando <strong>2</strong> envases de 4 litros). Sólo para pagos via App YPF. <strong>Vigencia: hasta el 15/06/2025</strong>",
     },
 
 
